@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapped Society | Premier Party Enhancement</title>
+    <title>Snapped Society | Enhance Your Event</title>
     <meta name="description" content="NY/NJ's premier photo booth and event enhancement service. Live printing, backdrops, and unforgettable experiences.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Braah+One&family=Inter:wght@300;400;500;600&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,13 +16,14 @@
         }
 
         :root {
-            --primary: #1a1a1a;
-            --secondary: #2d2d2d;
-            --accent: #c9a962;
-            --accent-hover: #e0c178;
+            --primary: #000000;
+            --secondary: #1a1a1a;
+            --accent: #f4a4b8;
+            --accent-dark: #e88fa3;
+            --accent-light: #ffc6d4;
             --text: #ffffff;
             --text-muted: #a0a0a0;
-            --surface: #0d0d0d;
+            --surface: #0a0a0a;
         }
 
         html {
@@ -30,7 +31,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Albert Sans', 'Inter', sans-serif;
             background: var(--surface);
             color: var(--text);
             line-height: 1.6;
@@ -38,8 +39,9 @@
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+            font-family: 'Braah One', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
         }
 
         .container {
@@ -55,14 +57,14 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(13, 13, 13, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            padding: 16px 0;
+            padding: 20px 0;
             transition: all 0.3s ease;
         }
 
         nav.scrolled {
-            padding: 12px 0;
+            padding: 14px 0;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
@@ -73,12 +75,13 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-decoration: none;
-            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
         }
 
         .nav-cta {
@@ -89,10 +92,11 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
+            font-family: 'Albert Sans', sans-serif;
         }
 
         .nav-cta:hover {
-            background: var(--accent-hover);
+            background: var(--accent-dark);
             transform: translateY(-2px);
         }
 
@@ -104,50 +108,41 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: linear-gradient(135deg, var(--surface) 0%, var(--primary) 100%);
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
             overflow: hidden;
+            padding: 120px 0 80px;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(201, 169, 98, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(201, 169, 98, 0.05) 0%, transparent 40%);
-            animation: heroGlow 15s ease-in-out infinite;
-        }
-
-        @keyframes heroGlow {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-5%, 5%); }
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(244, 164, 184, 0.15) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            padding: 120px 0 80px;
         }
 
         .hero-subtitle {
             color: var(--accent);
-            font-size: 0.875rem;
-            letter-spacing: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 24px;
-            font-weight: 500;
+            font-weight: 600;
+            font-family: 'Albert Sans', sans-serif;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 7vw, 5rem);
             line-height: 1.1;
             margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p {
@@ -155,6 +150,7 @@
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto 40px;
+            font-weight: 300;
         }
 
         .hero-cta {
@@ -163,19 +159,19 @@
             gap: 12px;
             background: var(--accent);
             color: var(--primary);
-            padding: 18px 40px;
+            padding: 18px 42px;
             border-radius: 50px;
-            font-size: 1.125rem;
+            font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(201, 169, 98, 0.3);
+            font-family: 'Albert Sans', sans-serif;
         }
 
         .hero-cta:hover {
-            background: var(--accent-hover);
+            background: var(--accent-dark);
             transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(201, 169, 98, 0.4);
+            box-shadow: 0 10px 40px rgba(244, 164, 184, 0.3);
         }
 
         .scroll-indicator {
@@ -190,6 +186,10 @@
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
             40% { transform: translateX(-50%) translateY(-10px); }
             60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .scroll-indicator svg {
+            stroke: var(--accent);
         }
 
         /* Services Section */
@@ -210,80 +210,125 @@
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1.125rem;
+            font-size: 1.1rem;
+            font-weight: 300;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
         }
 
         .service-card {
-            background: var(--surface);
-            padding: 40px 32px;
-            border-radius: 20px;
+            background: var(--secondary);
+            padding: 48px 36px;
+            border-radius: 24px;
             text-align: center;
             transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent);
+            border-color: rgba(244, 164, 184, 0.3);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
 
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
         .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent) 0%, #e0c178 100%);
-            border-radius: 20px;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 2rem;
+            margin: 0 auto 28px;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 30px rgba(244, 164, 184, 0.3);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.6rem;
+            margin-bottom: 14px;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
         }
 
         .service-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.7;
         }
 
-        /* Why Choose Section */
-        .why-us {
+        /* About Section */
+        .about {
             padding: 120px 0;
-            background: var(--surface);
+            background: var(--secondary);
+            position: relative;
         }
 
-        .why-content {
+        .about-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Braah One', serif;
+            font-size: clamp(8rem, 20vw, 20rem);
+            color: rgba(244, 164, 184, 0.03);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
+            position: relative;
         }
 
         @media (max-width: 900px) {
-            .why-content {
+            .about-content {
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
         }
 
-        .why-text h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
+        .about-text h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
             margin-bottom: 24px;
         }
 
-        .why-text p {
+        .about-text p {
             color: var(--text-muted);
-            margin-bottom: 32px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .about-highlight {
+            color: var(--accent);
+            font-weight: 500;
         }
 
         .stats-grid {
@@ -293,24 +338,34 @@
         }
 
         .stat-item {
-            background: var(--primary);
-            padding: 32px;
-            border-radius: 16px;
+            background: var(--surface);
+            padding: 36px 28px;
+            border-radius: 20px;
             text-align: center;
+            border: 1px solid rgba(244, 164, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
         }
 
         .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
+            font-family: 'Braah One', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
             color: var(--accent);
             line-height: 1;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .stat-label {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         /* Quote Form Section */
@@ -353,27 +408,29 @@
 
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
             font-size: 0.9rem;
+            color: var(--text);
+            font-family: 'Albert Sans', sans-serif;
         }
 
         input, select, textarea {
             width: 100%;
             padding: 16px 20px;
-            background: var(--surface);
+            background: var(--secondary);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             color: var(--text);
             font-size: 1rem;
-            font-family: inherit;
+            font-family: 'Albert Sans', sans-serif;
             transition: all 0.3s ease;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.1);
+            box-shadow: 0 0 0 3px rgba(244, 164, 184, 0.1);
         }
 
         input::placeholder, textarea::placeholder {
@@ -381,14 +438,14 @@
         }
 
         textarea {
-            min-height: 120px;
+            min-height: 140px;
             resize: vertical;
         }
 
         select {
             cursor: pointer;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c9a962' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f4a4b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 20px center;
         }
@@ -410,12 +467,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 16px;
+            font-family: 'Albert Sans', sans-serif;
         }
 
         .submit-btn:hover {
-            background: var(--accent-hover);
+            background: var(--accent-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(201, 169, 98, 0.3);
+            box-shadow: 0 10px 40px rgba(244, 164, 184, 0.3);
         }
 
         .submit-btn:disabled {
@@ -429,6 +487,7 @@
             margin-top: 20px;
             color: var(--text-muted);
             font-size: 0.875rem;
+            font-weight: 300;
         }
 
         /* Footer */
@@ -440,16 +499,37 @@
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
         }
 
         .footer-text {
             color: var(--text-muted);
             font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .footer-social a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent-dark);
         }
 
         /* Animations */
@@ -469,8 +549,8 @@
             display: none;
             text-align: center;
             padding: 60px 40px;
-            background: var(--surface);
-            border-radius: 20px;
+            background: var(--secondary);
+            border-radius: 24px;
             border: 1px solid var(--accent);
         }
 
@@ -480,15 +560,16 @@
         }
 
         .success-icon {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 2.5rem;
+            margin: 0 auto 28px;
+            font-size: 3rem;
+            color: var(--primary);
         }
 
         @keyframes fadeIn {
@@ -501,7 +582,9 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container nav-inner">
-            <a href="#" class="logo">SNAPPED SOCIETY</a>
+            <a href="#" class="logo">
+                <img src="https://images.squarespace-cdn.com/content/v1/6758cd802be632426dc1b668/152fa61b-4682-4568-9ede-86085c2c71b9/SNAPPEDLOGO-PINK.png" alt="Snapped Society Logo">
+            </a>
             <a href="#quote" class="nav-cta">Get a Quote</a>
         </div>
     </nav>
@@ -510,7 +593,7 @@
     <section class="hero">
         <div class="hero-content container">
             <p class="hero-subtitle">NY/NJ's Premier Party Enhancement</p>
-            <h1>Elevate Your Event with Unforgettable Experiences</h1>
+            <h1>Enhance Your Event With Unforgettable Experiences</h1>
             <p>From stunning photobooths to elegant backdrops and live printing — we create moments that last forever.</p>
             <a href="#quote" class="hero-cta">
                 Request Your Free Quote
@@ -568,14 +651,16 @@
         </div>
     </section>
 
-    <!-- Why Choose Section -->
-    <section class="why-us">
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-bg-text">SOCIETY</div>
         <div class="container">
-            <div class="why-content">
-                <div class="why-text fade-in">
+            <div class="about-content">
+                <div class="about-text fade-in">
                     <h2>Why Event Professionals Choose Snapped Society</h2>
                     <p>With over 14 years in the events industry and a decade running NY/NJ's premier photo booth service, we bring expertise, professionalism, and passion to every event.</p>
-                    <p>As a woman-owned business led by Melanie "Booth Babe," we're dedicated to creating memorable moments that exceed expectations.</p>
+                    <p>As a <span class="about-highlight">woman-owned business</span> led by Melanie "Booth Babe," we're dedicated to creating memorable moments that exceed expectations.</p>
+                    <p>From intimate gatherings to large-scale corporate events, our team delivers exceptional service with a personal touch.</p>
                 </div>
                 <div class="stats-grid fade-in">
                     <div class="stat-item">
@@ -660,7 +745,7 @@
 
                     <div class="form-group">
                         <label for="services">Services Interested In</label>
-                        <select id="services" name="services" multiple style="height: 120px;">
+                        <select id="services" name="services" multiple style="height: 140px;">
                             <option value="photobooth">Photo Booth</option>
                             <option value="video">Video Experience</option>
                             <option value="live-printing">Live Printing</option>
@@ -700,7 +785,7 @@
             <div id="success-message" class="success-message">
                 <div class="success-icon">✓</div>
                 <h3>Thank You!</h3>
-                <p style="color: var(--text-muted); margin-top: 16px;">Your quote request has been received. A member of our team will be in touch shortly to discuss your event.</p>
+                <p style="color: var(--text-muted); margin-top: 16px; font-size: 1.1rem;">Your quote request has been received. A member of our team will be in touch shortly to discuss your event.</p>
             </div>
         </div>
     </section>
@@ -708,9 +793,16 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-logo">SNAPPED SOCIETY</div>
+            <div class="footer-logo">
+                <img src="https://images.squarespace-cdn.com/content/v1/6758cd802be632426dc1b668/152fa61b-4682-4568-9ede-86085c2c71b9/SNAPPEDLOGO-PINK.png" alt="Snapped Society Logo">
+            </div>
             <p class="footer-text">Premier Party Enhancement | NY/NJ's Premier Photo Booth Service</p>
-            <p class="footer-text" style="margin-top: 8px;">© 2026 Snapped Society. All rights reserved.</p>
+            <p class="footer-text">© 2026 Snapped Society. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/snappedsociety/">Instagram</a>
+                <a href="https://www.facebook.com/snappedsociety/">Facebook</a>
+                <a href="mailto:info@snappedsociety.com">Contact</a>
+            </div>
         </div>
     </footer>
 
