@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glambot | Captivate Your Event — Snapped Society</title>
+    <meta name="description" content="The Glambot® — A celebrity-style video experience with on-site director, instant sharing, and red carpet treatment. Book now for your event!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Braah+One&family=Inter:wght@300;400;500;600&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #1a1a1a;
+            --accent: #f4a4b8;
+            --accent-dark: #e88fa3;
+            --accent-light: #ffc6d4;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --surface: #0a0a0a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Albert Sans', 'Inter', sans-serif;
+            background: var(--surface);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Braah One', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 14px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Albert Sans', sans-serif;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(244, 164, 184, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--primary);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 7rem);
+            line-height: 1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--text);
+            margin-bottom: 24px;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 20px 48px;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Albert Sans', sans-serif;
+            box-shadow: 0 10px 40px rgba(244, 164, 184, 0.3);
+        }
+
+        .hero-cta:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(244, 164, 184, 0.4);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-family: 'Braah One', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        .hero-stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 120px 0;
+            background: var(--primary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            position: relative;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Braah One', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(244, 164, 184, 0.3);
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 14px;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 0;
+            background: var(--secondary);
+            position: relative;
+        }
+
+        .features-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Braah One', serif;
+            font-size: clamp(6rem, 18vw, 16rem);
+            color: rgba(244, 164, 184, 0.03);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .features-content {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .features-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+
+        .features-list h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 28px;
+            padding: 24px;
+            background: var(--surface);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: rgba(244, 164, 184, 0.3);
+            transform: translateX(8px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            box-shadow: 0 6px 20px rgba(244, 164, 184, 0.25);
+        }
+
+        .feature-text h4 {
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
+        }
+
+        .feature-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .venue-requirements {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(244, 164, 184, 0.2);
+        }
+
+        .venue-requirements h3 {
+            font-size: 1.5rem;
+            margin-bottom: 28px;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .requirement-item:last-child {
+            border-bottom: none;
+        }
+
+        .requirement-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(244, 164, 184, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .requirement-text {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .requirement-text strong {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 120px 0;
+            background: var(--primary);
+        }
+
+        .timeline-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            align-items: start;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-time {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .timeline-time-value {
+            font-family: 'Braah One', serif;
+            font-size: 1.4rem;
+            color: var(--accent);
+        }
+
+        .timeline-time-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
+        }
+
+        .timeline-details p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Quote Form Section */
+        .quote-section {
+            padding: 120px 0;
+            background: var(--primary);
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .quote-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text);
+            font-family: 'Albert Sans', sans-serif;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: 'Albert Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(244, 164, 184, 0.1);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f4a4b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+        }
+
+        select option {
+            background: var(--primary);
+            color: var(--text);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+            font-family: 'Albert Sans', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(244, 164, 184, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            background: var(--surface);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 55px;
+            width: auto;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .footer-social a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent-dark);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--secondary);
+            border-radius: 24px;
+            border: 1px solid var(--accent);
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="https://www.snappedsociety.com" class="logo">
+                <img src="https://images.squarespace-cdn.com/content/v1/6758cd802be632426dc1b668/152fa61b-4682-4568-9ede-86085c2c71b9/SNAPPEDLOGO-PINK.png" alt="Snapped Society Logo">
+            </a>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#quote" class="nav-cta">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <span class="hero-badge">✨ The Glambot Experience</span>
+            <h1>THE GLAMBOT</h1>
+            <p class="hero-tagline">A Celebrity-Style Video Experience</p>
+            <p>On-site director, instant video sharing, and red carpet treatment. Create unforgettable moments for your guests.</p>
+            <a href="#quote" class="hero-cta">
+                Request Pricing
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">10-30s</div>
+                    <div class="hero-stat-label">Video Length</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">1-3 min</div>
+                    <div class="hero-stat-label">Total Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">∞</div>
+                    <div class="hero-stat-label">Unlimited Videos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>An Experience Like No Other</h2>
+                <p>Four simple steps to create share-worthy moments</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Directing</h3>
+                    <p>Our experienced directors will help guide guests before and during the Glambot® filming for the perfect shot.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Filming</h3>
+                    <p>Glambot® is a high speed robot, so filming is quick. The actual filming lasts between 3-10 seconds.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Sharing</h3>
+                    <p>Guests are able to instantly share their videos via text or email directly from our sharing station.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Loving</h3>
+                    <p>Once a guest receives their video, they can download it directly to their device for social sharing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-bg-text">GLAMBOT</div>
+        <div class="container">
+            <div class="features-content">
+                <div class="features-list fade-in">
+                    <h2>What's Included</h2>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎬</div>
+                        <div class="feature-text">
+                            <h4>On-Site Director</h4>
+                            <p>Professional guidance for every guest</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👨‍💼</div>
+                        <div class="feature-text">
+                            <h4>On-Site Operator</h4>
+                            <p>Expert technical handling of the experience</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎥</div>
+                        <div class="feature-text">
+                            <h4>Unlimited Videos</h4>
+                            <p>No limits on memories created</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💎</div>
+                        <div class="feature-text">
+                            <h4>Logo Watermarking</h4>
+                            <p>Your branding on every video</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-text">
+                            <h4>Instant Sharing</h4>
+                            <p>Text and email delivery on the spot</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔆</div>
+                        <div class="feature-text">
+                            <h4>LED Video Lighting</h4>
+                            <p>Perfect lighting every time</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎞️</div>
+                        <div class="feature-text">
+                            <h4>Red Carpet Entry</h4>
+                            <p>4'x12' red carpet for the grand entrance</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">☁️</div>
+                        <div class="feature-text">
+                            <h4>Online Hosting</h4>
+                            <p>All videos hosted online for easy access</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚚</div>
+                        <div class="feature-text">
+                            <h4>Full Service</h4>
+                            <p>Delivery, set-up and takedown included</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="venue-requirements">
+                        <h3>📍 Venue Requirements</h3>
+                        <div class="requirement-item">
+                            <div class="requirement-icon">⚡</div>
+                            <div class="requirement-text">
+                                <strong>Power:</strong> 110V Dedicated Power Outlet
+                            </div>
+                        </div>
+                        <div class="requirement-item">
+                            <div class="requirement-icon">📐</div>
+                            <div class="requirement-text">
+                                <strong>Space:</strong> 12' Wide x 12' Deep x 10' High
+                            </div>
+                        </div>
+                        <div class="requirement-item">
+                            <div class="requirement-icon">🏢</div>
+                            <div class="requirement-text">
+                                <strong>Surface:</strong> Hard Surface Only (no grass, dirt, sand)
+                            </div>
+                        </div>
+                        <div class="requirement-item">
+                            <div class="requirement-icon">🚗</div>
+                            <div class="requirement-text">
+                                <strong>Access:</strong> Clear path & drive-up access within 100'
+                            </div>
+                        </div>
+                        <div class="requirement-item">
+                            <div class="requirement-icon">🪜</div>
+                            <div class="requirement-text">
+                                <strong>Stations:</strong> 4+ stantions provided by client
+                            </div>
+                        </div>
+                        <div class="requirement-item">
+                            <div class="requirement-icon">♿</div>
+                            <div class="requirement-text">
+                                <strong>Accessibility:</strong> Can accommodate guests with disabilities
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Timeline Breakdown</h2>
+                <p>What to expect during the Glambot experience</p>
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-time">
+                        <div class="timeline-time-value">1-3</div>
+                        <div class="timeline-time-label">Minutes</div>
+                    </div>
+                    <div class="timeline-details">
+                        <h3>Total Experience Time</h3>
+                        <p>Glambot® takes between 1-3 minutes depending on guest aptitude and video rendering times. Guests move through quickly, keeping lines moving!</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-time">
+                        <div class="timeline-time-value">3-10</div>
+                        <div class="timeline-time-label">Seconds</div>
+                    </div>
+                    <div class="timeline-details">
+                        <h3>Filming Time</h3>
+                        <p>High-speed robotic filming captures the action in seconds. The robot moves quickly, creating dynamic, cinematic shots.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-time">
+                        <div class="timeline-time-value">10-30</div>
+                        <div class="timeline-time-label">Seconds</div>
+                    </div>
+                    <div class="timeline-details">
+                        <h3>Final Video Length</h3>
+                        <p>Videos are instantly edited in real time with effects. Total video length will be between 10-30 seconds depending on effects chosen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-section" id="quote">
+        <div class="container quote-container">
+            <div class="section-header fade-in">
+                <h2>Book The Glambot</h2>
+                <p>Get pricing and availability for your event</p>
+            </div>
+
+            <div id="quote-form-container" class="fade-in">
+                <form id="quote-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Event Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="eventType">Event Type *</label>
+                            <select id="eventType" name="eventType" required>
+                                <option value="">Select event type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="social">Social Gathering</option>
+                                <option value="nonprofit">Non-Profit / Charity</option>
+                                <option value="product-launch">Product Launch</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guestCount">Estimated Guest Count</label>
+                            <select id="guestCount" name="guestCount">
+                                <option value="">Select range</option>
+                                <option value="0-50">Under 50</option>
+                                <option value="50-100">50-100</option>
+                                <option value="100-200">100-200</option>
+                                <option value="200-500">200-500</option>
+                                <option value="500+">500+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="venue">Venue Name & Location *</label>
+                        <input type="text" id="venue" name="venue" placeholder="e.g., The Grand Ballroom, NYC" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="branding">Enhanced Branding</label>
+                            <select id="branding" name="branding">
+                                <option value="no">No thanks</option>
+                                <option value="yes">Yes, add branding (+$)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="intro">Intro/Outro Videos</label>
+                            <select id="intro" name="intro">
+                                <option value="no">No thanks</option>
+                                <option value="yes">Yes, add intro/outro (+$)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="soundtrack">Custom Soundtrack</label>
+                        <select id="soundtrack" name="soundtrack">
+                            <option value="no">No thanks</option>
+                            <option value="yes">Yes, add custom soundtrack (+$)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" placeholder="Tell us more about your event, special requests, or questions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Get My Free Quote</button>
+                    <p class="form-note">We typically respond within 24 hours</p>
+                </form>
+            </div>
+
+            <div id="success-message" class="success-message">
+                <div class="success-icon">✓</div>
+                <h3>Thank You!</h3>
+                <p style="color: var(--text-muted); margin-top: 16px; font-size: 1.1rem;">Your quote request has been received. A member of our team will be in touch shortly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <a href="https://www.snappedsociety.com">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6758cd802be632426dc1b668/152fa61b-4682-4568-9ede-86085c2c71b9/SNAPPEDLOGO-PINK.png" alt="Snapped Society Logo">
+                </a>
+            </div>
+            <p class="footer-text">Premier Party Enhancement | NY/NJ's Premier Photo Booth Service</p>
+            <p class="footer-text">© 2026 Snapped Society. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/snappedsociety/">Instagram</a>
+                <a href="https://www.facebook.com/snappedsociety/">Facebook</a>
+                <a href="mailto:info@snappedsociety.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Form handling
+        const form = document.getElementById('quote-form');
+        const formContainer = document.getElementById('quote-form-container');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Collect form data
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                if (data[key]) {
+                    if (!Array.isArray(data[key])) {
+                        data[key] = [data[key]];
+                    }
+                    data[key].push(value);
+                } else {
+                    data[key] = value;
+                }
+            });
+
+            console.log('Form submission:', data);
+
+            // Simulate API call (replace with actual endpoint)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            // Show success message
+            formContainer.style.display = 'none';
+            successMessage.classList.add('show');
+
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
