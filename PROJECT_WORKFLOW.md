@@ -1,16 +1,19 @@
 # AIPreneurTools — Project Workflow & Status
 
 **Last Updated:** February 3, 2026
-**Status:** 🟡 Live with Pending Improvements
+**Status:** 🔄 In Progress — Link Fixes & CTA Expansion
 
 ---
 
 ## 🎯 Project Overview
 
-**Business Name:** AIPreneurTools (AI Business Tools)
-**Domain:** aipreneurtools.com | aipreneur.tools
-**Status:** Deployed and live on Cloudflare Pages
-**Repository:** GitHub connected
+| Item | Status |
+|------|--------|
+| **Business Name** | AIPreneurTools (AI Business Tools) |
+| **Domains** | aipreneurtools.com • aipreneur.tools |
+| **Hosting** | Cloudflare Pages (Live) |
+| **Repository** | GitHub Connected |
+| **Status** | 🟡 Live with Improvements in Progress |
 
 ---
 
@@ -41,15 +44,63 @@
 |------|--------|-------|
 | Standardized article styles | ✅ | Feb 3 |
 | Fixed dead links | ✅ | Feb 3 |
-| Added GA4 tracking | ✅ | Feb 3 |
+| Added GA4 tracking code | ✅ | Feb 3 |
 | Fixed contact form | ✅ | Feb 3 |
-| Added affiliate links (homepage) | ✅ | Feb 3 |
-| Added CTAs (articles) | ✅ | Feb 3 |
+| Affiliate links (homepage) | ✅ | Feb 3 |
+| CTAs (articles) | ✅ | Feb 3 |
 | Fixed breadcrumb navigation | ✅ | Feb 3 |
 | Fixed footer links | ✅ | Feb 3 |
-| Button text: "Learn More" → "Visit" | 🔄 In Progress | Subagent running |
-| Sticky header | 🔄 In Progress | Subagent running |
-| Comparison tables | 🔄 In Progress | Subagent running |
+| "Visit [Product]" buttons | ✅ | Feb 3 |
+| Sticky header | ✅ | Feb 3 |
+| Comparison page created | ✅ | Feb 3 |
+
+---
+
+## 🔄 Current Tasks (In Progress)
+
+### Subagent Running: Comprehensive Link & CTA Fix
+
+**Status:** 🔄 In Progress (started Feb 3, 16:00)
+
+**Tasks:**
+- [ ] Verify all internal links work correctly
+- [ ] Fix broken navigation paths
+- [ ] Add missing CTAs to articles
+- [ ] Compile affiliate links reference document
+
+**Expected Completion:** ~2 minutes
+
+---
+
+## 📋 Pending Tasks by Priority
+
+### 🔴 HIGH PRIORITY (This Week)
+
+| Task | Description | Action Needed |
+|------|-------------|--------------|
+| 1. **Link Verification** | All clickable paths must work | Subagent fixing now |
+| 2. **Add Missing CTAs** | Each article needs 2-4 CTAs | Subagent fixing now |
+| 3. **Replace GA4 Placeholder** | Change `G-XXXXXXXXXX` to real ID | You - Google Analytics |
+| 4. **Submit Sitemap to Google** | Get indexed in search | You - Search Console |
+
+### 🟡 MEDIUM PRIORITY (This Month)
+
+| Task | Description | Action Needed |
+|------|-------------|--------------|
+| 5. **Connect Newsletter** | ConvertKit signup form | You |
+| 6. **Replace Affiliate Placeholders** | Update `?ref=aipreneurtools` with real IDs | You - After approval |
+| 7. **Apply to Affiliate Programs** | Get approved for commissions | You |
+| 8. **Create OG Images** | Replace placeholders with real images | Later |
+| 9. **Add 3-5 New Articles** | Expand content library | Week 2-4 |
+
+### 🟢 LOW PRIORITY (Month 2+)
+
+| Task | Description | Action Needed |
+|------|-------------|--------------|
+| 10. **Tool Comparison Calculator** | Interactive feature | Future |
+| 11. **User Review Integration** | Social proof section | Future |
+| 12. **Video Content** | YouTube strategy | Future |
+| 13. **Internal Linking Strategy** | Link between all articles | After more content |
 
 ---
 
@@ -57,80 +108,38 @@
 
 ```
 ai-business-tools/
-├── index.html                  # Homepage
-├── reviews.html                # Reviews hub
-├── guides.html                 # Guides hub
-├── about.html                  # About page
-├── contact.html               # Contact form
-├── privacy-policy.html         # Legal
-├── terms.html                  # Legal
-├── comparison.html             # NEW - Comparison table
-├── dashboard.html              # Internal tracking
-├── content/
-│   └── articles/
-│       ├── best-ai-writing-tools.html
-│       ├── notion-vs-clickup.html
-│       ├── business-automation-guide.html
-│       ├── ai-tools-photographers.html
-│       ├── solopreneur-ai-stack.html
-│       └── ai-tools-pricing.html
-├── images/                    # OG images
-├── docs/
+├── 📄 CORE PAGES
+│   ├── index.html                  # Homepage
+│   ├── comparison.html             # 🆕 Comparison tables
+│   ├── reviews.html               # Reviews hub
+│   └── guides.html                # Guides hub
+│
+├── 📄 LEGAL & INFO
+│   ├── about.html                 # About page
+│   ├── contact.html               # Contact form
+│   ├── privacy-policy.html        # Legal
+│   └── terms.html                 # Legal
+│
+├── 📄 ARTICLES (content/articles/)
+│   ├── best-ai-writing-tools.html # ✅ Has CTAs
+│   ├── notion-vs-clickup.html     # ✅ Has CTAs
+│   ├── business-automation-guide.html  # ✅ Has CTAs
+│   ├── ai-tools-photographers.html    # ✅ Has CTAs
+│   ├── solopreneur-ai-stack.html      # ✅ Has CTAs
+│   └── ai-tools-pricing.html     # ✅ Has CTAs
+│
+├── 📁 docs/
 │   ├── ROADMAP.md
 │   ├── AFFILIATE_SITE_RESEARCH.md
-│   └── (other docs)
-├── TASKS.md                   # Task board
-├── FINANCIAL_MODEL.md         # Revenue projections
-├── BUSINESS_PLAN.md          # Strategy
-├── LAUNCH_GUIDE.md           # Launch steps
-└── LAUNCH_WALKTHROUGH.md     # Tutorial
+│   └── AFFILIATE_LINKS.md        # 📋 Creating now
+│
+├── 📁 images/                    # OG placeholder images
+├── TASKS.md                       # Task board
+├── FINANCIAL_MODEL.md             # Revenue projections
+├── BUSINESS_PLAN.md              # Strategy
+├── PROJECT_WORKFLOW.md           # This document
+└── LAUNCH_WALKTHROUGH.md        # Tutorial
 ```
-
----
-
-## 🔄 Current Tasks (In Progress)
-
-### Subagent Running: Site Improvements
-
-1. **Change "Learn More" → "Visit [Product]"**
-   - Homepage tools buttons
-   - Reviews page buttons
-
-2. **Add Sticky Header**
-   - CSS: `position: sticky; top: 0; z-index: 100`
-   - All pages
-
-3. **Add Comparison Tables**
-   - New comparison.html page
-   - Enhanced notion-vs-clickup.html
-
----
-
-## 📋 Pending Tasks
-
-### High Priority (This Week)
-| Task | Owner | Notes |
-|------|-------|-------|
-| Push changes to GitHub | User | Deploy live |
-| Verify site changes | User | Review live site |
-| Submit sitemap to Google | User | Search Console |
-| Apply to affiliate programs | User | Notion, ClickUp, etc. |
-| Update affiliate IDs | User | Replace placeholders |
-
-### Medium Priority (This Month)
-| Task | Notes |
-|------|-------|
-| Add comparison tables to articles | CTA buttons inside |
-| Newsletter signup integration | ConvertKit |
-| Add "Last Updated" dates | SEO + trust |
-| Internal linking strategy | Link articles together |
-
-### Low Priority (Month 2+)
-| Task | Notes |
-|------|-------|
-| Tool comparison calculator | Interactive feature |
-| User review integration | Social proof |
-| Video content | YouTube strategy |
 
 ---
 
@@ -147,51 +156,79 @@ ai-business-tools/
 
 ---
 
-## 💰 Revenue Setup
+## 💰 Affiliate Program Status
 
-### Affiliate Programs (Pending Approval)
-| Program | Commission | Status |
-|---------|------------|--------|
-| Notion | 50% first year | Pending |
-| ClickUp | 30% recurring | Pending |
-| Copy.ai | 30% recurring | Pending |
-| ConvertKit | 30% recurring | Pending |
-| Jasper | 30% recurring | Pending |
-| Descript | 30% recurring | Pending |
-| Make | 20-30% | Pending |
+| Program | Commission | Status | Action Needed |
+|---------|------------|--------|---------------|
+| Notion | 50% first year | 🔴 Pending | Apply |
+| ClickUp | 30% recurring | 🔴 Pending | Apply |
+| Copy.ai | 30% recurring | 🔴 Pending | Apply |
+| ConvertKit | 30% recurring | 🔴 Pending | Apply |
+| Jasper | 30% recurring | 🔴 Pending | Apply |
+| Descript | 30% recurring | 🔴 Pending | Apply |
+| Make | 20-30% | 🔴 Pending | Apply |
 
-### Tracking
-| Tool | Status |
-|------|--------|
-| Google Analytics | GA4 code added (placeholder) |
-| Google Search Console | Not yet submitted |
-| Sitemap | Submitted (pending) |
+**Current:** All use placeholder `?ref=aipreneurtools`
 
 ---
 
-## 🎯 Next Steps
+## 📊 What's Been Added
 
-### Immediate (Today)
-1. ⏳ Subagent finishes improvements
-2. ⏳ Review changes
-3. ⏳ Push to GitHub
-4. ⏳ Verify live site updates
+### Homepage (index.html)
+- ✅ 6 "Visit [Product] →" buttons
+- ✅ Sticky header
+- ✅ Working footer links
+- ✅ Navigation to Reviews, Guides
+
+### Comparison Page (comparison.html)
+- ✅ 4 comprehensive comparison tables
+- ✅ 18 CTA buttons
+- ✅ Sticky header
+- ✅ Responsive design
+
+### Articles (6 total)
+- ✅ All have at least 1 CTA
+- 🔄 Expanding to 2-4 CTAs each (in progress)
+- ✅ Working footer links
+- ✅ Breadcrumb navigation to Guides
+
+### Pages
+- ✅ All 8 pages load correctly (HTTP 200)
+- ✅ Meta tags present
+- ✅ OG tags present
+
+---
+
+## 🎯 Next Actions
+
+### Immediate (Right Now)
+
+1. ⏳ Wait for subagent to complete link/CTA fixes
+2. 🔄 Review changes when complete
+3. ⏬ Push to GitHub (auto-deploys)
+4. ✅ Verify live site
 
 ### This Week
-1. Submit sitemap to Google Search Console
-2. Apply to affiliate programs
-3. Update with real affiliate IDs
-4. Add newsletter signup
+
+| # | Action | Who |
+|---|--------|-----|
+| 1 | Submit sitemap to Google Search Console | You |
+| 2 | Apply to affiliate programs (Notion, ClickUp, Copy.ai) | You |
+| 3 | Replace GA4 placeholder with real ID | You |
+| 4 | Connect newsletter (ConvertKit) | You |
 
 ### This Month
-1. Create 3-5 more articles
-2. Add comparison tables to existing articles
-3. Build internal linking
-4. Optimize for conversions
+
+| # | Action |
+|---|--------|
+| 1 | Replace affiliate placeholders with real IDs |
+| 2 | Create 3-5 new articles |
+| 3 | Add internal links between articles |
+| 4 | Optimize for conversions |
 
 ---
 
-## 📊 Success Metrics
+## 📋 Success Metrics
 
 ### Traffic Goals
 | Period | Target |
@@ -215,6 +252,7 @@ ai-business-tools/
 **Last Site Review:** Feb 3, 2026
 **Review Template:** `SITE_REVIEW_TEMPLATE.md`
 **Research Doc:** `docs/AFFILIATE_SITE_RESEARCH.md`
+**Affiliate Links Doc:** `docs/AFFILIATE_LINKS.md` (being created)
 
 ---
 
