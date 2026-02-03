@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Guides & How-Tos | Learn to Use AI Tools | AI Business Tools</title>
+    <meta name="description" content="Step-by-step guides on using AI tools for your business. From beginner tutorials to advanced automation strategies.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --text: #eaeaea; --text-muted: #a0a0a0; --surface: #0f0f1a; }
+        body { font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text); line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--highlight); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        header { background: var(--secondary); padding: 20px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: var(--text); }
+        .logo span { color: var(--highlight); }
+        .logo a { color: inherit; }
+        nav a { color: var(--text); margin-left: 24px; font-weight: 500; }
+        nav a:hover { color: var(--highlight); }
+        .hero { padding: 80px 0; text-align: center; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+        .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .content { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2rem; margin-bottom: 10px; }
+        .section-title p { color: var(--text-muted); }
+        .guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .guide-card { background: var(--secondary); padding: 30px; border-radius: 16px; transition: transform 0.3s; }
+        .guide-card:hover { transform: translateY(-5px); }
+        .guide-card .category { display: inline-block; background: rgba(233, 69, 96, 0.2); color: var(--highlight); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 16px; }
+        .guide-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+        .guide-card p { color: var(--text-muted); margin-bottom: 16px; }
+        .guide-card .btn { display: inline-block; color: var(--highlight); font-weight: 500; }
+        .guide-card .meta { font-size: 0.85rem; color: var(--text-muted); margin-top: 16px; }
+        footer { background: var(--primary); padding: 40px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
+        footer a { color: var(--text-muted); margin: 0 12px; }
+        footer a:hover { color: var(--highlight); }
+        .footer-links { margin-top: 20px; }
+        .disclaimer { margin-top: 20px; font-size: 0.8rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">AI<span>Business</span>Tools</a>
+            <nav>
+                <a href="index.html#tools">Tools</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="guides.html">Guides</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>AI Guides & How-Tos</h1>
+            <p>Step-by-step tutorials to help you master AI tools and transform your business workflow.</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Getting Started</h2>
+                <p>New to AI? Start with these beginner-friendly guides.</p>
+            </div>
+            <div class="guides-grid">
+                <article class="guide-card">
+                    <span class="category">Beginner</span>
+                    <h3>How to Use AI for the First Time</h3>
+                    <p>A complete beginner's guide to getting started with AI tools. No technical experience required.</p>
+                    <a href="content/articles/solopreneur-ai-stack.html" class="btn">Read Guide →</a>
+                    <div class="meta">10 min read</div>
+                </article>
+                <article class="guide-card">
+                    <span class="category">Beginner</span>
+                    <h3>Building Your First AI Workflow</h3>
+                    <p>Learn how to set up your first automated workflow using AI tools.</p>
+                    <a href="content/articles/business-automation-guide.html" class="btn">Read Guide →</a>
+                    <div class="meta">8 min read</div>
+                </article>
+                <article class="guide-card">
+                    <span class="category">Beginner</span>
+                    <h3>AI Tools Pricing Explained</h3>
+                    <p>Understanding free vs paid AI tools and when to upgrade.</p>
+                    <a href="content/articles/ai-tools-pricing.html" class="btn">Read Guide →</a>
+                    <div class="meta">6 min read</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content" style="background: var(--primary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comparisons</h2>
+                <p>Head-to-head comparisons to help you choose the right tool.</p>
+            </div>
+            <div class="guides-grid">
+                <article class="guide-card">
+                    <span class="category">Comparison</span>
+                    <h3>Notion vs ClickUp: Which Wins?</h3>
+                    <p>Deep comparison of two popular productivity platforms with AI features.</p>
+                    <a href="content/articles/notion-vs-clickup.html" class="btn">Read Comparison →</a>
+                    <div class="meta">12 min read</div>
+                </article>
+                <article class="guide-card">
+                    <span class="category">Coming Soon</span>
+                    <h3>Jasper vs Copy.ai</h3>
+                    <p>Which AI writer is better for your business needs?</p>
+                    <a href="#" class="btn">Coming Soon →</a>
+                </article>
+                <article class="guide-card">
+                    <span class="category">Coming Soon</span>
+                    <h3>ChatGPT Alternatives</h3>
+                    <p>Best alternatives to ChatGPT for business use.</p>
+                    <a href="#" class="btn">Coming Soon →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="section-title">
+                <h2>For Specific Industries</h2>
+                <p>AI tools tailored to your specific profession or industry.</p>
+            </div>
+            <div class="guides-grid">
+                <article class="guide-card">
+                    <span class="category">Creative</span>
+                    <h3>AI Tools for Photographers</h3>
+                    <p>Best AI software for editing, organizing, and marketing your creative work.</p>
+                    <a href="content/articles/ai-tools-photographers.html" class="btn">Read Guide →</a>
+                    <div class="meta">9 min read</div>
+                </article>
+                <article class="guide-card">
+                    <span class="category">Coming Soon</span>
+                    <h3>AI Tools for Real Estate Agents</h3>
+                    <p>AI tools to streamline listings, client communication, and marketing.</p>
+                    <a href="#" class="btn">Coming Soon →</a>
+                </article>
+                <article class="guide-card">
+                    <span class="category">Coming Soon</span>
+                    <h3>AI Tools for Coaches & Consultants</h3>
+                    <p>AI tools to scale your coaching practice and serve more clients.</p>
+                    <a href="#" class="btn">Coming Soon →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>AI Business Tools — Helping small businesses leverage AI</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <p class="disclaimer">Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
+        </div>
+    </footer>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</body>
+</html>

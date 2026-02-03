@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools for Small Business | Best AI Software in 2026</title>
+    <meta name="description" content="Discover the best AI tools for small business owners. Comprehensive reviews, comparisons, and guides to help you automate and grow.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Tools for Small Business | Best AI Software in 2026">
+    <meta property="og:description" content="Discover the best AI tools for small business owners. Comprehensive reviews, comparisons, and guides to help you automate and grow.">
+    <meta property="og:image" content="https://aibusiness.tools/images/og-home.jpg">
+    <meta property="og:url" content="https://aibusiness.tools/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Tools for Small Business | Best AI Software in 2026">
+    <meta name="twitter:description" content="Discover the best AI tools for small business owners. Comprehensive reviews, comparisons, and guides to help you automate and grow.">
+    <meta name="twitter:image" content="https://aibusiness.tools/images/og-home.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --surface: #0f0f1a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--surface);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        a {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--secondary);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .logo span {
+            color: var(--highlight);
+        }
+
+        nav a {
+            color: var(--text);
+            margin-left: 32px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--highlight);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--highlight);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        /* Featured Section */
+        .featured {
+            padding: 80px 0;
+            background: var(--primary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-card {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .tool-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .tool-card .commission {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--highlight);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .tool-card .btn {
+            display: inline-block;
+            color: var(--highlight);
+            font-weight: 500;
+        }
+
+        /* Articles Section */
+        .articles {
+            padding: 80px 0;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-content {
+            padding: 24px;
+        }
+
+        .article-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .article-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .article-card .read-more {
+            display: inline-block;
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">AI<span>Business</span>Tools</a>
+            <nav>
+                <a href="#tools">Tools</a>
+                <a href="#articles">Guides</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>AI Tools for Small Business</h1>
+            <p>Discover the best artificial intelligence tools to automate your workflow, save time, and grow your business in 2026.</p>
+            <a href="#tools" class="hero-cta">Explore AI Tools →</a>
+        </div>
+    </section>
+
+    <section class="featured" id="tools">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Top AI Tools for Business</h2>
+                <p>Our handpicked selection of the best AI software for small business owners</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card fade-in">
+                    <h3>Notion</h3>
+                    <p>All-in-one workspace with AI-powered writing, summarization, databases, and collaboration. Perfect for organizing your entire business.</p>
+                    <a href="reviews.html#notion" class="btn">Learn More →</a>
+                </div>
+                <div class="tool-card fade-in">
+                    <h3>ClickUp</h3>
+                    <p>AI-powered project management with writing assistance, task automation, time tracking, and collaboration tools for teams.</p>
+                    <a href="reviews.html#clickup" class="btn">Learn More →</a>
+                </div>
+                <div class="tool-card fade-in">
+                    <h3>Jasper</h3>
+                    <p>Enterprise-grade AI writing assistant for marketing teams, blogs, social media, and content creation at scale.</p>
+                    <a href="reviews.html#jasper" class="btn">Learn More →</a>
+                </div>
+                <div class="tool-card fade-in">
+                    <h3>Descript</h3>
+                    <p>AI-powered video and podcast editing. Edit video by editing text, plus remove filler words automatically.</p>
+                    <a href="reviews.html#descript" class="btn">Learn More →</a>
+                </div>
+                <div class="tool-card fade-in">
+                    <h3>Copy.ai</h3>
+                    <p>AI copywriter for blogs, emails, social media, website copy, and marketing content in seconds.</p>
+                    <a href="reviews.html#copyai" class="btn">Learn More →</a>
+                </div>
+                <div class="tool-card fade-in">
+                    <h3>Make</h3>
+                    <p>Visual automation platform to connect your apps and automate repetitive workflows without coding.</p>
+                    <a href="reviews.html#make" class="btn">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="articles" id="articles">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Latest Guides & Reviews</h2>
+                <p>In-depth articles to help you choose and use AI tools effectively</p>
+            </div>
+            <div class="article-grid">
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>Best AI Writing Tools for Small Business (2026)</h3>
+                        <p>Compare Jasper, Copy.ai, Writesonic and find the perfect AI copywriter for your needs.</p>
+                        <a href="content/articles/best-ai-writing-tools.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>Notion vs ClickUp: Which AI Workspace Wins?</h3>
+                        <p>Deep comparison of two popular productivity platforms with AI features.</p>
+                        <a href="content/articles/notion-vs-clickup.html" class="read-more">Read Comparison →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>How to Automate Your Business with AI in 2026</h3>
+                        <p>Step-by-step guide to setting up AI automation for repetitive tasks.</p>
+                        <a href="content/articles/business-automation-guide.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>AI Tools for Photographers & Creatives</h3>
+                        <p>Best AI software for editing, organizing, and marketing your creative work.</p>
+                        <a href="content/articles/ai-tools-photographers.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>The Complete AI Stack for Solopreneurs</h3>
+                        <p>Essential AI tools that work together to run your entire business.</p>
+                        <a href="content/articles/solopreneur-ai-stack.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>AI Tools Pricing Comparison (2026)</h3>
+                        <p>Find the best value AI tools for your budget with our comprehensive comparison.</p>
+                        <a href="content/articles/ai-tools-pricing.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="about">
+        <div class="container">
+            <h2>Stay Updated on AI Tools</h2>
+            <p>Get weekly reviews, comparisons, and deals delivered to your inbox.</p>
+            <!-- Newsletter subscription link - Replace with your ConvertKit/Mailchimp signup URL -->
+            <a href="#newsletter" class="hero-cta" onclick="alert('Newsletter signup coming soon! In the meantime, email us at hello@aibusiness.tools'); return false;">Subscribe to Newsletter</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>AI Business Tools — Helping small businesses leverage AI</p>
+            <p class="disclaimer">Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
+            <div class="footer-links" style="margin-top: 24px; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;">
+                <div style="margin-right: 40px;">
+                    <strong style="display: block; margin-bottom: 12px; color: var(--text);">Browse</strong>
+                    <a href="index.html">Home</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="guides.html">Guides</a>
+                </div>
+                <div style="margin-right: 40px;">
+                    <strong style="display: block; margin-bottom: 12px; color: var(--text);">Popular</strong>
+                    <a href="content/articles/notion-vs-clickup.html">Notion vs ClickUp</a>
+                    <a href="content/articles/best-ai-writing-tools.html">AI Writing Tools</a>
+                    <a href="content/articles/solopreneur-ai-stack.html">AI Stack</a>
+                </div>
+                <div>
+                    <strong style="display: block; margin-bottom: 12px; color: var(--text);">Company</strong>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</body>
+</html>
