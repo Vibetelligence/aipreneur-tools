@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://aibusiness.tools/</loc>
+        <loc>https://aipreneurtools.com/</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/dashboard.html</loc>
-        <lastmod>2026-02-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://aibusiness.tools/about.html</loc>
+        <loc>https://aipreneurtools.com/about.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/contact.html</loc>
+        <loc>https://aipreneurtools.com/contact.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/privacy-policy.html</loc>
+        <loc>https://aipreneurtools.com/privacy-policy.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/terms.html</loc>
+        <loc>https://aipreneurtools.com/terms.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/reviews.html</loc>
+        <loc>https://aipreneurtools.com/reviews.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/guides.html</loc>
+        <loc>https://aipreneurtools.com/guides.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/content/articles/best-ai-writing-tools.html</loc>
+        <loc>https://aipreneurtools.com/comparison.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://aipreneurtools.com/content/articles/best-ai-writing-tools.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/content/articles/notion-vs-clickup.html</loc>
+        <loc>https://aipreneurtools.com/content/articles/notion-vs-clickup.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/content/articles/business-automation-guide.html</loc>
+        <loc>https://aipreneurtools.com/content/articles/business-automation-guide.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/content/articles/ai-tools-photographers.html</loc>
+        <loc>https://aipreneurtools.com/content/articles/ai-tools-photographers.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/content/articles/solopreneur-ai-stack.html</loc>
+        <loc>https://aipreneurtools.com/content/articles/solopreneur-ai-stack.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://aibusiness.tools/content/articles/ai-tools-pricing.html</loc>
+        <loc>https://aipreneurtools.com/content/articles/ai-tools-pricing.html</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
