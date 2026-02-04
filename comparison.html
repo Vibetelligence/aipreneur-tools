@@ -103,6 +103,103 @@
         .exit-popup .newsletter-form button { padding: 14px 28px; background: var(--highlight); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; }
         .exit-popup .disclaimer { font-size: 0.8rem; color: var(--text-muted); margin-top: 16px; }
         @media (max-width: 600px) { .newsletter-form-inline { flex-direction: column; } .exit-popup-content { margin: 20px; padding: 40px 24px; } }
+
+        /* ConvertKit Form Styling - Match Site Theme */
+        .formkit-form {
+            background: var(--secondary) !important;
+            border-radius: 16px !important;
+            padding: 40px !important;
+            max-width: 600px !important;
+            margin: 40px auto !important;
+            border: none !important;
+        }
+
+        .formkit-form[data-style="minimal"] {
+            padding: 40px !important;
+        }
+
+        .formkit-header h2 {
+            color: var(--highlight) !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 28px !important;
+            margin-bottom: 16px !important;
+        }
+
+        .formkit-subheader p {
+            color: var(--text) !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 18px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .formkit-input {
+            background: var(--surface) !important;
+            border: 2px solid var(--accent) !important;
+            border-radius: 8px !important;
+            color: var(--text) !important;
+            padding: 16px !important;
+            font-size: 16px !important;
+            width: 100% !important;
+            margin-bottom: 16px !important;
+        }
+
+        .formkit-input::placeholder {
+            color: var(--text-muted) !important;
+        }
+
+        .formkit-input:focus {
+            outline: none !important;
+            border-color: var(--highlight) !important;
+        }
+
+        .formkit-submit {
+            background: var(--highlight) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 16px 40px !important;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            width: 100% !important;
+            cursor: pointer !important;
+            transition: transform 0.2s !important;
+        }
+
+        .formkit-submit:hover {
+            transform: scale(1.02) !important;
+        }
+
+        .formkit-guarantee {
+            color: var(--text-muted) !important;
+            font-size: 14px !important;
+            margin-top: 16px !important;
+        }
+
+        .formkit-powered-by {
+            display: none !important;
+        }
+
+        /* Remove default form styling conflicts */
+        .formkit-form .formkit-background {
+            display: none !important;
+        }
+
+        .formkit-form .formkit-fields {
+            margin-top: 24px !important;
+        }
+
+        .seva-fields.formkit-fields {
+            flex-direction: column !important;
+        }
+
+        .formkit-field {
+            margin-bottom: 0 !important;
+            min-width: auto !important;
+        }
+
+        .formkit-submit {
+            margin-top: 0 !important;
+        }
     </style>
 </head>
 <body>
