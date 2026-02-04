@@ -145,6 +145,64 @@
             text-decoration: none;
         }
 
+        /* Top Picks Section Styles */
+        .top-picks-section {
+            padding: 60px 20px;
+            background: var(--secondary);
+        }
+
+        .top-picks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .top-pick-card {
+            background: var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            border: 1px solid var(--accent);
+        }
+
+        .pick-badge {
+            background: var(--highlight);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .pick-tagline {
+            color: var(--text-muted);
+            margin: 12px 0;
+        }
+
+        .pick-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .pick-features li {
+            padding: 8px 0;
+            color: var(--text);
+        }
+
+        .pick-note {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+        }
+
+        .pick-note a {
+            color: var(--highlight);
+        }
+
         /* Mobile-friendly adjustments */
         @media (max-width: 768px) {
             .dropdown-content {
@@ -842,10 +900,10 @@
         <div class="container header-inner">
             <a href="index.html" class="logo">AI<span>Business</span>Tools</a>
             <nav>
-                <a href="#tools" class="nav-link">Tools</a>
                 <div class="nav-dropdown">
                     <a href="tools.html" class="nav-link">Tools ▾</a>
                     <div class="dropdown-content">
+                        <a href="#top-picks">🏆 Top Picks</a>
                         <a href="tools.html#writing">✍️ Writing</a>
                         <a href="tools.html#project-management">📋 Project Management</a>
                         <a href="tools.html#automation">⚡ Automation</a>
@@ -877,49 +935,66 @@
         </div>
     </section>
 
-    <section class="featured" id="tools">
+    <section id="top-picks" class="top-picks-section">
         <div class="container">
-            <div class="section-title fade-in">
-                <h2>Top AI Tools for Business</h2>
-                <p>Our handpicked selection of the best AI software for small business owners</p>
-            </div>
-            <div class="tools-grid">
-                <div class="tool-card fade-in">
+            <h2>🏆 Our Top Picks</h2>
+            <p class="section-subtitle">Hand-selected tools that actually convert for solopreneurs</p>
+            
+            <div class="top-picks-grid">
+                <!-- Top Pick 1 -->
+                <div class="top-pick-card">
+                    <div class="pick-badge">Best Overall</div>
                     <h3>Notion</h3>
-                    <p>All-in-one workspace with AI-powered writing, summarization, databases, and collaboration. Perfect for organizing your entire business.</p>
-                    <a href="https://notion.so?ref=aipreneurtools" class="btn" target="_blank" rel="noopener">Visit Notion →</a>
+                    <p class="pick-tagline">All-in-one workspace for notes, docs, and projects</p>
+                    <ul class="pick-features">
+                        <li>✅ 50% affiliate commission</li>
+                        <li>✅ Free personal plan</li>
+                        <li>✅ Easy onboarding</li>
+                    </ul>
+                    <a href="https://notion.so" class="cta-btn" target="_blank" rel="nofollow">Visit Notion →</a>
                 </div>
-                <div class="tool-card fade-in">
-                    <h3>ClickUp</h3>
-                    <p>AI-powered project management with writing assistance, task automation, time tracking, and collaboration tools for teams.</p>
-                    <a href="https://clickup.com?ref=aipreneurtools" class="btn" target="_blank" rel="noopener">Visit ClickUp →</a>
-                </div>
-                <div class="tool-card fade-in">
-                    <h3>Todoist</h3>
-                    <p>AI-powered task management for personal productivity. Organize work and life with smart suggestions.</p>
-                    <a href="https://todoist.com?ref=aipreneurtools" class="btn" target="_blank" rel="noopener">Visit Todoist →</a>
-                </div>
-                <div class="tool-card fade-in">
-                    <h3>Jasper</h3>
-                    <p>Enterprise-grade AI writing assistant for marketing teams, blogs, social media, and content creation at scale.</p>
-                    <a href="https://jasper.ai?ref=aipreneurtools" class="btn" target="_blank" rel="noopener">Visit Jasper →</a>
-                </div>
-                <div class="tool-card fade-in">
-                    <h3>Descript</h3>
-                    <p>AI-powered video and podcast editing. Edit video by editing text, plus remove filler words automatically.</p>
-                    <a href="https://descript.com?ref=aipreneurtools" class="btn" target="_blank" rel="noopener">Visit Descript →</a>
-                </div>
-                <div class="tool-card fade-in">
-                    <h3>Copy.ai</h3>
-                    <p>AI copywriter for blogs, emails, social media, website copy, and marketing content in seconds.</p>
-                    <a href="https://copy.ai?ref=aipreneurtools" class="btn" target="_blank" rel="noopener">Visit Copy.ai →</a>
-                </div>
-                <div class="tool-card fade-in">
+                
+                <!-- Top Pick 2 -->
+                <div class="top-pick-card">
+                    <div class="pick-badge">Best for Automation</div>
                     <h3>Make</h3>
-                    <p>Visual automation platform to connect your apps and automate repetitive workflows without coding.</p>
-                    <a href="https://www.make.com/en/register?pc=aipreneurtools" class="btn" target="_blank" rel="noopener">Visit Make →</a>
+                    <p class="pick-tagline">Visual automation platform for business workflows</p>
+                    <ul class="pick-features">
+                        <li>✅ 20-30% recurring commission</li>
+                        <li>✅ Generous free tier</li>
+                        <li>✅ Visual workflow builder</li>
+                    </ul>
+                    <a href="https://make.com" class="cta-btn" target="_blank" rel="nofollow">Visit Make →</a>
+                </div>
+                
+                <!-- Top Pick 3 -->
+                <div class="top-pick-card">
+                    <div class="pick-badge">Best Value</div>
+                    <h3>ClickUp</h3>
+                    <p class="pick-tagline">Project management and team collaboration</p>
+                    <ul class="pick-features">
+                        <li>✅ 30% recurring commission</li>
+                        <li>✅ Free forever plan</li>
+                        <li>✅ All-in-one solution</li>
+                    </ul>
+                    <a href="https://clickup.com" class="cta-btn" target="_blank" rel="nofollow">Visit ClickUp →</a>
+                </div>
+                
+                <!-- Top Pick 4 -->
+                <div class="top-pick-card">
+                    <div class="pick-badge">Best for Writing</div>
+                    <h3>Writesonic</h3>
+                    <p class="pick-tagline">AI writing assistant for blogs, ads, and emails</p>
+                    <ul class="pick-features">
+                        <li>✅ Generous free trial</li>
+                        <li>✅ SEO-optimized content</li>
+                        <li>✅ Multiple templates</li>
+                    </ul>
+                    <a href="https://writesonic.com" class="cta-btn" target="_blank" rel="nofollow">Visit Writesonic →</a>
                 </div>
             </div>
+            
+            <p class="pick-note">👉 <a href="tools.html">View all 32 tools →</a></p>
         </div>
     </section>
 
