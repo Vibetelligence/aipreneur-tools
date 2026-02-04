@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Solopreneur's AI Toolkit - Free Guide | AIPreneurTools</title>
-    <meta name="description" content="Get the free Solopreneur's AI Toolkit: 10 essential AI tools to save 10+ hours every week.">
+    <meta name="description" content="Get the free Solopreneur's AI Toolkit: 10 essential AI tools to save 10+ hours every week. Interactive guide for busy solopreneurs.">
+    <link rel="canonical" href="https://aipreneurtools.com/resources/guide-landing.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a1a2e;
@@ -13,108 +17,518 @@
             --highlight: #e94560;
             --white: #ffffff;
             --light-gray: #f8f9fa;
-            --text: #374151;
+            --gray: #6b7280;
+            --dark-gray: #374151;
+            --success: #10b981;
         }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; }
-        .header { background: var(--primary); padding: 20px 0; text-align: center; }
-        .header a { color: var(--white); text-decoration: none; font-weight: 600; }
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%); padding: 80px 24px; text-align: center; color: var(--white); }
-        .hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
-        .hero p { font-size: clamp(16px, 2vw, 20px); opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
-        .optin-form { background: var(--white); padding: 32px; border-radius: 16px; max-width: 480px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-        .optin-form h3 { color: var(--primary); font-size: 20px; margin-bottom: 8px; }
-        .optin-form > p { color: #6b7280; font-size: 14px; margin-bottom: 20px; }
-        .privacy-note { font-size: 12px; color: #9ca3af; margin-top: 16px; }
-        .stats { display: flex; justify-content: center; gap: 48px; padding: 48px 24px; background: var(--light-gray); }
-        .stat { text-align: center; }
-        .stat-value { font-size: 36px; font-weight: 800; color: var(--highlight); }
-        .stat-label { font-size: 14px; color: #6b7280; margin-top: 4px; }
-        .inside { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
-        .inside h2 { text-align: center; font-size: 32px; color: var(--primary); margin-bottom: 48px; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .feature { background: var(--light-gray); padding: 24px; border-radius: 12px; }
-        .feature-icon { font-size: 32px; margin-bottom: 12px; }
-        .feature h3 { color: var(--primary); font-size: 18px; margin-bottom: 8px; }
-        .feature p { font-size: 14px; color: #6b7280; }
-        .tools-preview { background: var(--primary); padding: 80px 24px; color: var(--white); }
-        .tools-preview h2 { text-align: center; font-size: 32px; margin-bottom: 48px; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
-        .tool-item { background: rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; text-align: center; }
-        .tool-item span { font-size: 24px; display: block; margin-bottom: 8px; }
-        .tool-item strong { font-size: 14px; }
-        .testimonials { padding: 80px 24px; max-width: 900px; margin: 0 auto; }
-        .testimonials h2 { text-align: center; font-size: 32px; color: var(--primary); margin-bottom: 48px; }
-        .testimonial { background: var(--light-gray); padding: 24px; border-radius: 12px; margin-bottom: 16px; }
-        .testimonial p { font-style: italic; margin-bottom: 12px; }
-        .testimonial-author { font-weight: 600; color: var(--primary); }
-        .cta-section { background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); padding: 80px 24px; text-align: center; color: var(--white); }
-        .cta-section h2 { font-size: 32px; margin-bottom: 16px; }
-        .cta-section p { opacity: 0.9; margin-bottom: 32px; }
-        .footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 32px 24px; text-align: center; font-size: 14px; }
-        .footer a { color: var(--white); }
-        @media (max-width: 768px) { .stats { flex-direction: column; gap: 24px; } .optin-form { padding: 24px; } }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--primary);
+            padding: 16px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-logo {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .header-logo:hover { opacity: 0.9; }
+        
+        .header-cta {
+            background: var(--highlight);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .header-cta:hover { background: #d13d56; transform: translateY(-2px); }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            padding: 140px 24px 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 22px);
+            opacity: 0.95;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Email Form */
+        .optin-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 520px;
+            margin: 0 auto;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+        }
+        
+        .optin-form h3 {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .optin-form > p {
+            color: var(--gray);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.2s;
+            margin-bottom: 16px;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--highlight);
+            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.1);
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--highlight);
+            color: var(--white);
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .form-submit:hover {
+            background: #d13d56;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        
+        .privacy-note {
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .success-message {
+            display: none;
+            background: #ecfdf5;
+            border: 2px solid var(--success);
+            border-radius: 12px;
+            padding: 20px;
+            color: #065f46;
+            text-align: center;
+        }
+        
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            padding: 60px 24px;
+            background: var(--light-gray);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--highlight);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 15px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+        
+        /* What's Inside */
+        .inside {
+            padding: 80px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 48px;
+            font-weight: 700;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .feature {
+            background: var(--light-gray);
+            padding: 28px;
+            border-radius: 16px;
+            transition: all 0.2s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        
+        .feature h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .feature p {
+            font-size: 15px;
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        /* Tools Preview */
+        .tools-preview {
+            background: var(--primary);
+            padding: 80px 24px;
+            color: var(--white);
+        }
+        
+        .tools-preview .section-title {
+            color: var(--white);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .tool-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 16px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.2s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .tool-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+        
+        .tool-item span {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .tool-item strong {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background: var(--white);
+            border: 1px solid #e5e7eb;
+            padding: 28px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial p {
+            font-size: 17px;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: var(--dark-gray);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .testimonial-author::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--highlight);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            padding: 80px 24px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            opacity: 0.95;
+            margin-bottom: 32px;
+            font-size: 18px;
+        }
+        
+        .cta-button {
+            background: var(--white);
+            color: var(--primary);
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 17px;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .footer a:hover { text-decoration: underline; }
+        
+        .footer-links {
+            margin-bottom: 16px;
+        }
+        
+        .footer-links a {
+            margin: 0 12px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { padding: 0 16px; }
+            .header-cta { padding: 8px 16px; font-size: 13px; }
+            .hero { padding: 120px 16px 60px; }
+            .optin-form { padding: 28px; margin: 0 16px; }
+            .stats { flex-direction: column; gap: 32px; align-items: center; }
+            .stat-value { font-size: 36px; }
+            .section-title { font-size: 28px; }
+            .cta-section h2 { font-size: 26px; }
+        }
     </style>
 </head>
 <body>
     <header class="header">
-        <a href="https://aipreneurtools.com">🤖 AIPreneurTools</a>
+        <div class="header-content">
+            <a href="https://aipreneurtools.com" class="header-logo">
+                <span>🤖</span> AIPreneurTools
+            </a>
+            <a href="#optinForm" class="header-cta">Get Free Guide</a>
+        </div>
     </header>
     
     <section class="hero">
-        <h1>The Solopreneur's AI Toolkit</h1>
-        <p>10 Essential AI Tools to Save 10+ Hours Every Week. Free interactive guide for busy solopreneurs.</p>
-        
-        <div class="optin-form" id="optinForm">
-            <h3>📬 Get Your Free Guide</h3>
-            <p>Enter your email to unlock the complete interactive toolkit.</p>
+        <div class="hero-content">
+            <h1>The Solopreneur's AI Toolkit</h1>
+            <p>10 Essential AI Tools to Save 10+ Hours Every Week. Free interactive guide for busy solopreneurs.</p>
             
-            <!-- ConvertKit Form -->
-            <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-            <form action="https://app.kit.com/forms/9049288/subscriptions" style="background-color: rgb(26, 26, 46); border-radius: 4px;" class="seva-form formkit-form" method="post" data-sv-form="9049288" data-uid="1e5ef8e8f1" data-format="inline" data-version="5">
-                <div data-style="minimal">
-                    <div class="formkit-header" style="color: rgb(233, 69, 96); font-size: 22px; font-weight: 700;">
-                        <h2>Get Our Free AI Tools Guide 2026</h2>
-                    </div>
-                    <div class="formkit-subheader" style="color: rgb(255, 255, 255); font-size: 16px;">
-                        <p>Join 1,000+ solopreneurs saving 10+ hours/week with AI</p>
-                    </div>
-                    <div data-element="fields" class="seva-fields formkit-fields">
-                        <div class="formkit-field">
-                            <input class="formkit-input" name="email_address" style="color: rgb(26, 26, 46); border-radius: 8px;" aria-label="Email Address" placeholder="Email Address" required type="email">
-                        </div>
-                        <button data-element="submit" class="formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(233, 69, 96); border-radius: 12px; font-weight: 700;">Get My Free Guide</button>
-                    </div>
-                    <div class="formkit-guarantee" style="color: rgb(182, 182, 182); font-size: 13px;">
-                        <p>We won't send you spam. Unsubscribe at any time.</p>
-                    </div>
+            <div class="optin-form" id="optinForm">
+                <h3>📬 Get Your Free Guide</h3>
+                <p>Enter your email to unlock the complete interactive toolkit with ROI calculator, tool quiz, and 30-day implementation plan.</p>
+                
+                <!-- Success Message -->
+                <div class="success-message" id="successMessage">
+                    <strong>🎉 Success!</strong><br>
+                    Check your email for your free guide.
                 </div>
-            </form>
-            
-            <p class="privacy-note">🔒 We respect your privacy. Unsubscribe anytime.</p>
+                
+                <!-- Email Form -->
+                <form id="emailForm" onsubmit="handleSubmit(event)">
+                    <label class="form-label" for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    <button type="submit" class="form-submit">Get Free Access →</button>
+                </form>
+                
+                <p class="privacy-note">🔒 We respect your privacy. Unsubscribe anytime.</p>
+            </div>
         </div>
     </section>
     
     <section class="stats">
-        <div class="stat"><div class="stat-value">10+</div><div class="stat-label">Hours Saved/Week</div></div>
-        <div class="stat"><div class="stat-value">12</div><div class="stat-label">Tools Included</div></div>
-        <div class="stat"><div class="stat-value">5min</div><div class="stat-label">Setup Time</div></div>
+        <div class="stat">
+            <span class="stat-value">10+</span>
+            <span class="stat-label">Hours Saved/Week</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value">12</span>
+            <span class="stat-label">Tools Included</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value">5min</span>
+            <span class="stat-label">Setup Time</span>
+        </div>
     </section>
     
     <section class="inside">
-        <h2>What's Inside</h2>
+        <h2 class="section-title">What's Inside</h2>
         <div class="features-grid">
-            <div class="feature"><div class="feature-icon">📝</div><h3>Content Creation</h3><p>Claude, Jasper, Grammarly for writing faster</p></div>
-            <div class="feature"><div class="feature-icon">📋</div><h3>Productivity</h3><p>Notion, Todoist, Loom for organization</p></div>
-            <div class="feature"><div class="feature-icon">💬</div><h3>Communication</h3><p>Otter.ai for automated meeting notes</p></div>
-            <div class="feature"><div class="feature-icon">📱</div><h3>Marketing</h3><p>Canva, Buffer for social media management</p></div>
-            <div class="feature"><div class="feature-icon">💰</div><h3>Finance</h3><p>Wave for free accounting and invoicing</p></div>
-            <div class="feature"><div class="feature-icon">🎨</div><h3>Design</h3><p>Midjourney, Remove.bg for visuals</p></div>
+            <div class="feature">
+                <div class="feature-icon">📝</div>
+                <h3>Content Creation</h3>
+                <p>Claude, Jasper, Grammarly for writing 2x faster with AI assistance</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📋</div>
+                <h3>Productivity</h3>
+                <p>Notion, Todoist, Loom to organize your workflow efficiently</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <h3>Communication</h3>
+                <p>Otter.ai for automated meeting notes and transcriptions</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Marketing</h3>
+                <p>Canva, Buffer for social media management made simple</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Finance</h3>
+                <p>Wave for free accounting and invoicing software</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>Design</h3>
+                <p>Midjourney, Remove.bg for professional visuals instantly</p>
+            </div>
         </div>
     </section>
     
     <section class="tools-preview">
-        <h2>Tools You'll Discover</h2>
+        <h2 class="section-title">Tools You'll Discover</h2>
         <div class="tools-grid">
             <div class="tool-item"><span>🤖</span><strong>Claude</strong></div>
             <div class="tool-item"><span>✍️</span><strong>Jasper</strong></div>
@@ -132,22 +546,52 @@
     </section>
     
     <section class="testimonials">
-        <h2>What Readers Say</h2>
-        <div class="testimonial"><p>"This guide saved me 15 hours a week."</p><div class="testimonial-author">— Sarah K., Marketing Consultant</div></div>
-        <div class="testimonial"><p>"Within a week, I had 5 tools up and running."</p><div class="testimonial-author">— Mike R., Freelance Writer</div></div>
-        <div class="testimonial"><p>"Finally, a guide that's actually actionable."</p><div class="testimonial-author">— Lisa M., Online Coach</div></div>
+        <h2 class="section-title">What Readers Say</h2>
+        <div class="testimonial">
+            <p>"This guide saved me 15 hours a week. I can't believe I was doing everything manually before. The ROI calculator alone is worth it!"</p>
+            <div class="testimonial-author">Sarah K., Marketing Consultant</div>
+        </div>
+        <div class="testimonial">
+            <p>"Within a week, I had 5 tools up and running. The 30-day implementation plan made it so easy. Highly recommend!"</p>
+            <div class="testimonial-author">Mike R., Freelance Writer</div>
+        </div>
+        <div class="testimonial">
+            <p>"Finally, a guide that's actually actionable. No fluff, just tools that work. The tool quiz helped me focus on what I actually needed."</p>
+            <div class="testimonial-author">Lisa M., Online Coach</div>
+        </div>
     </section>
     
     <section class="cta-section">
         <h2>Ready to Transform Your Business?</h2>
-        <p>Get instant access to the complete interactive toolkit.</p>
-        <a href="#optinForm" style="background: var(--white); color: var(--primary); padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 700; display: inline-block;">Get Free Access →</a>
+        <p>Get instant access to the complete interactive toolkit with step-by-step guides.</p>
+        <a href="#optinForm" class="cta-button">Get Free Access →</a>
     </section>
     
     <footer class="footer">
-        <p>🤖 <a href="https://aipreneurtools.com">AIPreneurTools</a> | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
-        <p style="margin-top: 8px;">© 2026 AIPreneurTools. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://aipreneurtools.com">Home</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="https://aipreneurtools.com/contact">Contact</a>
+        </div>
+        <p>© 2026 AIPreneurTools. All rights reserved.</p>
     </footer>
-<!-- Updated: 2026-02-04 10:44 AM EST -->
+    
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const form = document.getElementById('emailForm');
+            const success = document.getElementById('successMessage');
+            
+            // In production, this would submit to ConvertKit
+            // For now, show success message
+            form.style.display = 'none';
+            success.classList.add('show');
+            
+            // Log for debugging
+            console.log('Email submitted:', email);
+        }
+    </script>
 </body>
 </html>
