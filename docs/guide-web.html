@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Solopreneur's AI Toolkit - Interactive Guide</title>
+    <meta name="description" content="10 Essential AI Tools to Save 10+ Hours Every Week.">
+    <link rel="canonical" href="https://aipreneurtools.com/resources/guide-web.html">
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --white: #ffffff; --light-gray: #f8f9fa; --border: #e5e7eb; --success: #10b981; --warning: #f59e0b; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: #1f2937; line-height: 1.7; font-size: 16px; }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--highlight); z-index: 1001; transition: width 0.3s ease; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; background: var(--white); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+        .nav-logo { font-weight: 700; font-size: 18px; color: var(--primary); }
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { color: var(--secondary); text-decoration: none; font-weight: 500; font-size: 14px; }
+        .nav-links a:hover { color: var(--highlight); }
+        .nav-cta { background: var(--highlight); color: var(--white); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .sidebar { position: fixed; left: 0; top: 70px; bottom: 0; width: 280px; background: var(--light-gray); padding: 24px; overflow-y: auto; z-index: 100; border-right: 1px solid var(--border); }
+        .toc-title { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+        .toc-list { list-style: none; }
+        .toc-list li { margin-bottom: 8px; }
+        .toc-list a { display: block; padding: 8px 12px; color: var(--secondary); text-decoration: none; font-size: 14px; border-radius: 6px; }
+        .toc-list a:hover { background: var(--white); color: var(--highlight); }
+        .toc-list .sub { padding-left: 24px; font-size: 13px; }
+        .main { margin-left: 280px; padding: 100px 48px 48px; max-width: 800px; }
+        h1 { font-size: 42px; font-weight: 800; color: var(--primary); line-height: 1.2; margin-bottom: 16px; }
+        h2 { font-size: 32px; font-weight: 700; color: var(--primary); margin: 48px 0 24px; padding-top: 24px; border-top: 3px solid var(--highlight); }
+        h3 { font-size: 24px; font-weight: 600; color: var(--secondary); margin: 32px 0 16px; }
+        h4 { font-size: 18px; font-weight: 600; color: var(--accent); margin: 24px 0 12pt; }
+        p { margin-bottom: 16px; color: #4b5563; }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%); padding: 80px 48px; border-radius: 16px; margin-bottom: 48px; text-align: center; color: var(--white); }
+        .hero h1 { color: var(--white); font-size: 48px; }
+        .hero p { color: rgba(255,255,255,0.9); font-size: 20px; }
+        .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 32px; }
+        .hero-stat-value { font-size: 36px; font-weight: 800; color: var(--highlight); }
+        .tool-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin: 32px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .tool-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+        .tool-number { background: var(--primary); color: var(--white); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
+        .tool-title h3 { margin: 0; font-size: 24px; color: var(--primary); }
+        .tool-tagline { color: var(--highlight); font-size: 14px; margin-top: 4px; }
+        .btn { display: inline-block; background: var(--highlight); color: var(--white); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; }
+        .btn:hover { background: #d13d56; }
+        .callout { padding: 20px 24px; border-radius: 10px; margin: 24px 0; border-left: 4px solid; }
+        .callout.info { background: #eff6ff; border-color: #3b82f6; }
+        .callout.success { background: #ecfdf5; border-color: var(--success); }
+        .callout.warning { background: #fffbeb; border-color: var(--warning); }
+        .callout-title { font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+        .pro-tip { background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); color: var(--white); padding: 20px 24px; border-radius: 10px; margin: 24px 0; }
+        .pro-tip-title { font-weight: 700; font-size: 14px; margin-bottom: 8px; color: var(--highlight); }
+        .pricing-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 10px; padding: 20px; margin: 20px 0; }
+        .pricing-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #bae6fd; }
+        .pricing-row:last-child { border-bottom: none; }
+        .pricing-label { font-weight: 600; color: var(--secondary); }
+        .pricing-value { color: var(--primary); font-weight: 600; }
+        .pricing-highlight { background: var(--highlight); color: var(--white); padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+        .mistake-card { background: #fef3c7; border-left: 4px solid var(--warning); padding: 16px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .mistake-title { font-weight: 700; color: #92400e; font-size: 14px; margin-bottom: 8px; }
+        .mistake-solution { color: #78350f; }
+        .metrics-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+        .metric-box { background: var(--white); border: 2px solid var(--primary); border-radius: 12px; padding: 24px; text-align: center; }
+        .metric-value { font-size: 36px; font-weight: 800; color: var(--highlight); }
+        .metric-label { font-size: 14px; color: var(--secondary); margin-top: 8px; }
+        .decision-tree { background: var(--light-gray); padding: 32px; border-radius: 12px; margin: 32px 0; }
+        .decision-item { display: flex; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .decision-item:last-child { border-bottom: none; }
+        .decision-label { font-weight: 600; color: var(--primary); min-width: 180px; }
+        .decision-arrow { color: var(--highlight); margin: 0 16px; }
+        .decision-target { color: var(--accent); font-weight: 500; }
+        table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        thead { background: var(--primary); color: var(--white); }
+        th { padding: 16px; text-align: left; font-weight: 600; }
+        td { padding: 16px; border-bottom: 1px solid var(--border); }
+        tbody tr:nth-child(even) { background: var(--light-gray); }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin: 12px 0; overflow: hidden; }
+        .faq-question { padding: 20px 24px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; background: var(--white); }
+        .faq-question::after { content: '+'; font-size: 24px; color: var(--highlight); }
+        .faq-item.open .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; background: var(--light-gray); transition: all 0.3s ease; }
+        .faq-item.open .faq-answer { padding: 20px 24px; max-height: 500px; }
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 48px; border-radius: 16px; margin: 48px 0; text-align: center; color: var(--white); }
+        .cta-section h2 { color: var(--white); border: none; margin-top: 0; }
+        .price-current { font-size: 56px; font-weight: 800; color: var(--highlight); }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0; padding-left: 40px; position: relative; border-bottom: 1px solid var(--border); cursor: pointer; }
+        .checklist li::before { content: '☐'; position: absolute; left: 0; font-size: 20px; }
+        .checklist li.checked::before { content: '☑'; color: var(--success); }
+        .checklist li.checked { opacity: 0.6; text-decoration: line-through; }
+        .quiz-container { background: var(--light-gray); padding: 32px; border-radius: 12px; margin: 32px 0; }
+        .quiz-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .quiz-option { padding: 16px; background: var(--white); border: 2px solid var(--border); border-radius: 8px; text-align: center; cursor: pointer; }
+        .quiz-option:hover { border-color: var(--highlight); }
+        .quiz-option.selected { border-color: var(--highlight); background: #fef2f2; }
+        .calculator { background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); padding: 32px; border-radius: 12px; margin: 32px 0; color: var(--white); }
+        .calc-result { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
+        .calc-result-value { font-size: 48px; font-weight: 800; color: var(--highlight); }
+        .footer { background: var(--primary); color: var(--white); padding: 48px; margin-top: 48px; text-align: center; }
+        @media (max-width: 1024px) { .sidebar { display: none; } .main { margin-left: 0; } .metrics-row { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero { padding: 48px 24px; } .hero h1 { font-size: 32px; } .main { padding: 80px 24px 24px; } .metrics-row { grid-template-columns: 1fr 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <nav class="nav">
+        <div class="nav-logo">AIPreneurTools</div>
+        <ul class="nav-links">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#quickstart">Quick Start</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#implementation">Plan</a></li>
+            <li><a href="#upgrade">Master Class</a></li>
+        </ul>
+        <a href="#upgrade" class="nav-cta">Get Master Class</a>
+    </nav>
+    <aside class="sidebar">
+        <div class="toc-title">Table of Contents</div>
+        <ul class="toc-list">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#problem">The Problem</a></li>
+            <li><a href="#solution">The Solution</a></li>
+            <li><a href="#quickstart">Quick Start</a></li>
+            <li><a href="#quiz">Tool Quiz</a></li>
+            <li><a href="#tools">Content Tools</a>
+                <ul class="toc-list sub"><li><a href="#claude">Claude</a></li><li><a href="#jasper">Jasper</a></li><li><a href="#grammarly">Grammarly</a></li></ul>
+            </li>
+            <li><a href="#productivity">Productivity</a>
+                <ul class="toc-list sub"><li><a href="#notion">Notion</a></li><li><a href="#todoist">Todoist</a></li><li><a href="#loom">Loom</a></li></ul>
+            </li>
+            <li><a href="#communication">Communication</a>
+                <ul class="toc-list sub"><li><a href="#otter">Otter.ai</a></li></ul>
+            </li>
+            <li><a href="#marketing">Marketing</a>
+                <ul class="toc-list sub"><li><a href="#canva">Canva</a></li><li><a href="#buffer">Buffer</a></li></ul>
+            </li>
+            <li><a href="#finance">Finance</a>
+                <ul class="toc-list sub"><li><a href="#wave">Wave</a></li></ul>
+            </li>
+            <li><a href="#design">Design</a>
+                <ul class="toc-list sub"><li><a href="#midjourney">Midjourney</a></li><li><a href="#removebg">Remove.bg</a></li></ul>
+            </li>
+            <li><a href="#comparison">Comparison</a></li>
+            <li><a href="#mistakes">Mistakes</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#calculator">ROI Calculator</a></li>
+            <li><a href="#implementation">30-Day Plan</a></li>
+            <li><a href="#upgrade">Upgrade</a></li>
+        </ul>
+    </aside>
+    <main class="main">
+        <div class="hero" id="intro">
+            <h1>The Solopreneur's AI Toolkit</h1>
+            <p>10 Essential AI Tools to Save 10+ Hours Every Week</p>
+            <div class="hero-stats">
+                <div><div class="hero-stat-value">10+</div><div>Hours Saved/Week</div></div>
+                <div><div class="hero-stat-value">12</div><div>Tools Included</div></div>
+                <div><div class="hero-stat-value">5min</div><div>Setup Time</div></div>
+            </div>
+            <div style="margin-top: 32px;"><a href="#quiz" class="btn">Find Your Tools</a></div>
+        </div>
+        <section id="problem">
+            <h2>The Problem: You're Working Too Hard</h2>
+            <div class="callout warning">
+                <div class="callout-title">The Uncomfortable Truth</div>
+                <p>You're working 60+ hours a week. The average solopreneur spends 60% of their time on tasks that could be automated.</p>
+            </div>
+            <h3>Your Time Drains</h3>
+            <div class="metrics-row">
+                <div class="metric-box"><div class="metric-value">-50%</div><div class="metric-label">Writing Time</div></div>
+                <div class="metric-box"><div class="metric-value">-60%</div><div class="metric-label">Social Media</div></div>
+                <div class="metric-box"><div class="metric-value">-70%</div><div class="metric-label">Meeting Prep</div></div>
+                <div class="metric-box"><div class="metric-value">-55%</div><div class="metric-label">Admin Tasks</div></div>
+            </div>
+        </section>
+        <section id="solution">
+            <h2>The Solution: AI-Powered Efficiency</h2>
+            <p>This guide introduces 10 AI-powered tools that top-performing solopreneurs use to reclaim their time.</p>
+        </section>
+        <section id="quickstart">
+            <h2>Quick-Start Framework</h2>
+            <div class="decision-tree">
+                <h3 style="text-align: center; margin-top: 0;">Which Tool Should You Start With?</h3>
+                <div class="decision-item"><span class="decision-label">Writing/Content</span><span class="decision-arrow"></span><span class="decision-target"><a href="#claude">Go to Claude</a></span></div>
+                <div class="decision-item"><span class="decision-label">Social Media</span><span class="decision-arrow"></span><span class="decision-target"><a href="#canva">Go to Canva</a></span></div>
+                <div class="decision-item"><span class="decision-label">Tasks/Projects</span><span class="decision-arrow"></span><span class="decision-target"><a href="#notion">Go to Notion</a></span></div>
+                <div class="decision-item"><span class="decision-label">Client Calls</span><span class="decision-arrow"></span><span class="decision-target"><a href="#otter">Go to Otter.ai</a></span></div>
+                <div class="decision-item"><span class="decision-label">Finance</span><span class="decision-arrow"></span><span class="decision-target"><a href="#wave">Go to Wave</a></span></div>
+                <div class="decision-item"><span class="decision-label">Graphics</span><span class="decision-arrow"></span><span class="decision-target"><a href="#midjourney">Go to Midjourney</a></span></div>
+            </div>
+        </section>
+        <section id="quiz">
+            <div class="quiz-container">
+                <h3 style="margin-top: 0;">Find Your Perfect Tool Match</h3>
+                <p>Answer 3 questions to get personalized recommendations.</p>
+                <div class="quiz-option" data-value="writing">Writing Content</div>
+                <div class="quiz-option" data-value="social">Social Media</div>
+                <div class="quiz-option" data-value="tasks">Organization</div>
+                <button class="btn" onclick="calculateRecommendation()">Get My Recommendations</button>
+            </div>
+        </section>
+        <section id="tools">
+            <h2>Content Creation Tools</h2>
+            <div class="tool-card" id="claude">
+                <div class="tool-header"><div class="tool-number">3.1</div><div class="tool-title"><h3>Claude</h3><p class="tool-tagline">The AI Assistant That Thinks Deeply</p></div></div>
+                <p>Claude excels at complex writing, analysis, and creative work.</p>
+                <div class="pricing-box">
+                    <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Limited</span></div>
+                    <div class="pricing-row"><span class="pricing-label">Pro</span><span class="pricing-value">$20/mo</span></div>
+                </div>
+                <a href="https://claude.ai" target="_blank" class="btn">Try Claude Free</a>
+            </div>
+            <div class="tool-card" id="jasper">
+                <div class="tool-header"><div class="tool-number">3.2</div><div class="tool-title"><h3>Jasper</h3><p class="tool-tagline">Marketing Copy That Converts</p></div></div>
+                <p>Marketing copy templates trained on proven frameworks.</p>
+                <div class="pricing-box">
+                    <div class="pricing-row"><span class="pricing-label">Trial</span><span class="pricing-value">7-day free</span></div>
+                    <div class="pricing-row"><span class="pricing-label">Creator</span><span class="pricing-value">$39/mo</span></div>
+                </div>
+                <a href="https://jasper.ai" target="_blank" class="btn">Start Free Trial</a>
+            </div>
+            <div class="tool-card" id="grammarly">
+                <div class="tool-header"><div class="tool-number">3.3</div><div class="tool-title"><h3>Grammarly</h3><p class="tool-tagline">Write with Confidence</p></div></div>
+                <p>Catches errors and suggests improvements.</p>
+                <div class="pricing-box">
+                    <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Basic</span></div>
+                    <div class="pricing-row"><span class="pricing-label">Premium</span><span class="pricing-value">$12/mo</span></div>
+                </div>
+                <a href="https://grammarly.com" target="_blank" class="btn">Install Grammarly</a>
+            </div>
+        </section>
+        <section id="productivity">
+            <h2>Productivity and Organization</h2>
+            <div class="tool-card" id="notion">
+                <div class="tool-header"><div class="tool-number">4.1</div><div class="tool-title"><h3>Notion</h3><p class="tool-tagline">Your All-in-One Workspace</p></div></div>
+                <p>Notes, databases, documents in one platform.</p>
+                <a href="https://notion.so" target="_blank" class="btn">Try Notion Free</a>
+            </div>
+            <div class="tool-card" id="todoist">
+                <div class="tool-header"><div class="tool-number">4.2</div><div class="tool-title"><h3>Todoist</h3><p class="tool-tagline">Organize Your Work, Live Better</p></div></div>
+                <p>Natural language task entry and management.</p>
+                <a href="https://todoist.com" target="_blank" class="btn">Download Todoist</a>
+            </div>
+            <div class="tool-card" id="loom">
+                <div class="tool-header"><div class="tool-number">4.3</div><div class="tool-title"><h3>Loom</h3><p class="tool-tagline">Asynchronous Video Messaging</p></div></div>
+                <p>Quick screen/camera recordings for communication.</p>
+                <a href="https://loom.com" target="_blank" class="btn">Record Your First Video</a>
+            </div>
+        </section>
+        <section id="communication">
+            <h2>Communication Tools</h2>
+            <div class="tool-card" id="otter">
+                <div class="tool-header"><div class="tool-number">5.1</div><div class="tool-title"><h3>Otter.ai</h3><p class="tool-tagline">Meeting Notes That Write Themselves</p></div></div>
+                <p>Real-time transcription for meetings and calls.</p>
+                <a href="https://otter.ai" target="_blank" class="btn">Try Otter Free</a>
+            </div>
+        </section>
+        <section id="marketing">
+            <h2>Marketing and Social Media</h2>
+            <div class="tool-card" id="canva">
+                <div class="tool-header"><div class="tool-number">6.1</div><div class="tool-title"><h3>Canva</h3><p class="tool-tagline">Design for Everyone</p></div></div>
+                <p>Drag-and-drop design with templates.</p>
+                <a href="https://canva.com" target="_blank" class="btn">Start Designing</a>
+            </div>
+            <div class="tool-card" id="buffer">
+                <div class="tool-header"><div class="tool-number">6.2</div><div class="tool-title"><h3>Buffer</h3><p class="tool-tagline">Social Media Made Simple</p></div></div>
+                <p>Scheduling and analytics for social media.</p>
+                <a href="https://buffer.com" target="_blank" class="btn">Schedule Your First Post</a>
+            </div>
+        </section>
+        <section id="finance">
+            <h2>Finance and Operations</h2>
+            <div class="tool-card" id="wave">
+                <div class="tool-header"><div class="tool-number">7.1</div><div class="tool-title"><h3>Wave</h3><p class="tool-tagline">Free Accounting Software</p></div></div>
+                <p>Invoicing and financial reports—completely free.</p>
+                <a href="https://waveapps.com" target="_blank" class="btn">Start Invoicing Free</a>
+            </div>
+        </section>
+        <section id="design">
+            <h2>Design and Visual Tools</h2>
+            <div class="tool-card" id="midjourney">
+                <div class="tool-header"><div class="tool-number">8.1</div><div class="tool-title"><h3>Midjourney</h3><p class="tool-tagline">Generate Stunning Images from Text</p></div></div>
+                <p>Creates unique images from text descriptions.</p>
+                <a href="https://midjourney.com" target="_blank" class="btn">Generate Your First Image</a>
+            </div>
+            <div class="tool-card" id="removebg">
+                <div class="tool-header"><div class="tool-number">8.2</div><div class="tool-title"><h3>Remove.bg</h3><p class="tool-tagline">One-Click Background Removal</p></div></div>
+                <p>Automatically removes backgrounds from images.</p>
+                <a href="https://remove.bg" target="_blank" class="btn">Remove Background Free</a>
+            </div>
+        </section>
+        <section id="comparison">
+            <h2>Tool Comparison Matrix</h2>
+            <table>
+                <thead><tr><th>Tool</th><th>Best For</th><th>Free Tier</th><th>Paid</th></tr></thead>
+                <tbody>
+                    <tr><td>Claude</td><td>Writing, analysis</td><td>Limited</td><td>$20/mo</td></tr>
+                    <tr><td>Jasper</td><td>Marketing copy</td><td>7-day trial</td><td>$39/mo</td></tr>
+                    <tr><td>Grammarly</td><td>Editing</td><td>Basic</td><td>$12/mo</td></tr>
+                    <tr><td>Notion</td><td>Workspace</td><td>Personal</td><td>$10/mo</td></tr>
+                    <tr><td>Todoist</td><td>Task management</td><td>Basic</td><td>$5/mo</td></tr>
+                    <tr><td>Loom</td><td>Video messaging</td><td>Limited</td><td>$12/mo</td></tr>
+                    <tr><td>Otter.ai</td><td>Transcription</td><td>300 min/mo</td><td>$17/mo</td></tr>
+                    <tr><td>Canva</td><td>Design</td><td>Basic</td><td>$13/mo</td></tr>
+                    <tr><td>Buffer</td><td>Social scheduling</td><td>Limited</td><td>$6/mo</td></tr>
+                    <tr><td>Wave</td><td>Accounting</td><td>Full</td><td>Add-ons</td></tr>
+                    <tr><td>Midjourney</td><td>Image generation</td><td>Trial</td><td>$10/mo</td></tr>
+                    <tr><td>Remove.bg</td><td>Background removal</td><td>Low-res</td><td>$10/mo</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="mistakes">
+            <h2>7 Mistakes to Avoid</h2>
+            <div class="mistake-card">
+                <div class="mistake-title">Mistake #1: Trying Everything at Once</div>
+                <p class="mistake-solution">Solution: Start with 1-2 tools that address your biggest pain point.</p>
+            </div>
+            <div class="mistake-card">
+                <div class="mistake-title">Mistake #2: Not Leveraging Free Tiers</div>
+                <p class="mistake-solution">Solution: Maximize free value before paying.</p>
+            </div>
+            <div class="mistake-card">
+                <div class="mistake-title">Mistake #3: Abandoning Tools Too Quickly</div>
+                <p class="mistake-solution">Solution: Give each tool at least 2 weeks.</p>
+            </div>
+        </section>
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="faq-question">Q: Do I really need all 10 tools?</div><div class="faq-answer">A: No. Start with 1-2 tools that address your biggest time drain.</div></div>
+            <div class="faq-item"><div class="faq-question">Q: How much do these tools cost total?</div><div class="faq-answer">A: Free tiers: $0. Paid tiers: $30-80/month total.</div></div>
+            <div class="faq-item"><div class="faq-question">Q: How long until I see results?</div><div class="faq-answer">A: Most users save 2-4 hours in the first week.</div></div>
+        </section>
+        <section id="calculator">
+            <div class="calculator">
+                <h3>Calculate Your Time Savings</h3>
+                <p>Enter your current hours spent and estimated savings:</p>
+                <button class="btn" onclick="calculateSavings()">Calculate</button>
+                <div class="calc-result"><div class="calc-result-value" id="savingsResult">10 hours/week</div><div>Time saved per week</div></div>
+            </div>
+        </section>
+        <section id="implementation">
+            <h2>Your 30-Day Implementation Plan</h2>
+            <div class="decision-tree">
+                <h3 style="margin-top: 0;">Week 1: Foundation</h3>
+                <ul class="checklist">
+                    <li>Identify your top 3 business challenges</li>
+                    <li>Sign up for 2-3 tools from this guide</li>
+                    <li>Complete onboarding for each tool</li>
+                </ul>
+            </div>
+            <div class="decision-tree">
+                <h3 style="margin-top: 0;">Week 2: Integration</h3>
+                <ul class="checklist">
+                    <li>Connect tools to your existing workflows</li>
+                    <li>Create templates for recurring tasks</li>
+                </ul>
+            </div>
+        </section>
+        <section id="upgrade">
+            <div class="cta-section">
+                <h2>Ready to Transform Your Business Completely?</h2>
+                <p>If you found value in these 10 tools, you'll love the Master Class AI Tools Guide.</p>
+                <div style="margin-top: 24px;"><span class="price-current">$37</span><br><span>(launch price)</span></div>
+                <a href="#" class="btn" style="margin-top: 24px;">Get the Complete Toolkit</a>
+                <p style="margin-top: 16px;">100% Money-Back Guarantee.</p>
+            </div>
+        </section>
+        <footer class="footer">
+            <p><strong>The Solopreneur's AI Toolkit</strong></p>
+            <p>© 2026 AIPreneurTools | <a href="https://aipreneurtools.com" style="color: var(--white);">Home</a></p>
+        </footer>
+    </main>
+    <script>
+        window.onscroll = function() { let winScroll = document.body.scrollTop || document.documentElement.scrollTop; let height = document.documentElement.scrollHeight - document.documentElement.clientHeight; let scrolled = (winScroll / height) * 100; document.getElementById("progressBar").style.width = scrolled + "%"; };
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', function() { this.parentElement.classList.toggle('open'); }));
+        document.querySelectorAll('.checklist li').forEach(li => li.addEventListener('click', function() { this.classList.toggle('checked'); }));
+        function calculateSavings() { const hours = parseFloat(document.getElementById('hoursSpent')?.value) || 20; const savings = parseFloat(document.getElementById('timeSavings')?.value) || 50; const result = (hours * savings / 100).toFixed(1); document        document.getElementById('savingsResult').textContent = result + ' hours/week'; }
+        function calculateRecommendation() { document.getElementById('quizResult').style.display = 'block'; document.getElementById('recommendationText').textContent = 'Based on your answers, we recommend starting with Claude and Notion.'; }
+    </script>
+</body>
+</html>
