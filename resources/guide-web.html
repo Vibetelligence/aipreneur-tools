@@ -182,8 +182,75 @@
         
         @media (max-width: 1200px) { .metrics-row { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 1024px) { .sidebar { display: none; } .main { margin-left: 0; padding: 80px 24px 40px; } .quiz-options { grid-template-columns: 1fr; } .calc-inputs { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .nav-links { display: none; } .hero { padding: 40px 24px; } .hero h1 { font-size: 32px; } .hero-stats { gap: 24px; } .hero-stat-value { font-size: 32px; } .main { padding: 80px 16px 40px; } h1 { font-size: 32px; } h2 { font-size: 26px; } .metrics-row { grid-template-columns: 1fr 1fr; gap: 12px; } .tool-card { padding: 24px; } .cta-section { padding: 40px 24px; } .cta-section h2 { font-size: 28px; } .price-current { font-size: 48px; } }
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+            .hero { padding: 40px 24px; } 
+            .hero h1 { font-size: 32px; } 
+            .hero-stats { gap: 24px; } 
+            .hero-stat-value { font-size: 32px; } 
+            .main { padding: 80px 16px 40px; } 
+            h1 { font-size: 32px; } 
+            h2 { font-size: 26px; } 
+            .metrics-row { grid-template-columns: 1fr 1fr; gap: 12px; } 
+            .tool-card { padding: 24px; } 
+            .cta-section { padding: 40px 24px; } 
+            .cta-section h2 { font-size: 28px; } 
+            .price-current { font-size: 48px; } 
+        }
         @media (max-width: 480px) { .metrics-row { grid-template-columns: 1fr; } }
+        
+        /* Mobile Hamburger Menu */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        
+        .hamburger-line {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        
+        .mobile-menu.show {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 16px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 1024px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+        }
         
         /* Fullscreen Mode */
         .fullscreen-mode .nav { display: none !important; }
@@ -206,7 +273,23 @@
             <li><a href="#implementation">Plan</a></li>
         </ul>
         <a href="#upgrade" class="nav-cta">Get Master Class</a>
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#intro" onclick="toggleMobileMenu()">Introduction</a>
+        <a href="#quickstart" onclick="toggleMobileMenu()">Quick Start</a>
+        <a href="#quiz" onclick="toggleMobileMenu()">Tool Quiz</a>
+        <a href="#tools" onclick="toggleMobileMenu()">Tools</a>
+        <a href="#calculator" onclick="toggleMobileMenu()">ROI Calculator</a>
+        <a href="#implementation" onclick="toggleMobileMenu()">30-Day Plan</a>
+        <a href="#upgrade" onclick="toggleMobileMenu()">Get Master Class</a>
+    </div>
     
     <aside class="sidebar">
         <div class="toc-title">Table of Contents</div>
@@ -300,6 +383,12 @@
         <section id="quiz">
             <h2>Tool Quiz: Find Your Perfect Match</h2>
             <p>Answer 3 quick questions to get personalized recommendations.</p>
+            
+            <!-- Quiz Progress Bar -->
+            <div style="background: var(--border); border-radius: 10px; height: 8px; margin-bottom: 24px; overflow: hidden;">
+                <div id="quizProgressBar" style="background: linear-gradient(90deg, var(--highlight), #ff6b8a); height: 100%; width: 0%; transition: width 0.3s ease; border-radius: 10px;"></div>
+            </div>
+            
             <div class="quiz-container">
                 <h3>Question 1: What's your biggest time drain?</h3>
                 <div class="quiz-options" id="quizOptions1">
@@ -547,6 +636,20 @@
             </div>
         </section>
         
+        <!-- Conclusion Summary -->
+        <section id="conclusion" style="background: var(--light-gray); padding: 48px; border-radius: 20px; margin: 48px 0;">
+            <h2 style="margin-top: 0;">You're Ready to Transform Your Business</h2>
+            <p style="font-size: 18px; line-height: 1.8;">This guide has given you everything you need to save 10+ hours every week using AI tools. From the quiz that helped you find your perfect tools, to the ROI calculator that showed your potential savings, to the 30-day implementation plan that will keep you on track.</p>
+            <p style="font-size: 18px; line-height: 1.8;"><strong>Your Next Steps:</strong></p>
+            <ul style="margin: 24px 0; padding-left: 24px; line-height: 2;">
+                <li>Start with 1-2 tools that address your biggest pain point</li>
+                <li>Complete the Week 1 checklist items</li>
+                <li>Track your time savings using the calculator</li>
+                <li>Add more tools as you become comfortable</li>
+            </ul>
+            <p style="font-size: 18px; line-height: 1.8; margin-top: 24px; padding: 24px; background: var(--white); border-radius: 12px; border-left: 4px solid var(--highlight);">💡 <strong>Remember:</strong> The best tool is the one you'll actually use. Start small, stay consistent, and watch your productivity soar.</p>
+        </section>
+        
         <footer class="footer">
             <p><strong>The Solopreneur's AI Toolkit</strong></p>
             <p style="margin-top: 8px;">© 2026 AIPreneurTools | <a href="https://aipreneurtools.com">Home</a></p>
@@ -570,18 +673,48 @@
             });
         });
         
-        // Checklist toggle
+        // Checklist toggle with localStorage persistence
         function toggleCheck(li) {
             li.classList.toggle('checked');
+            saveChecklistProgress();
         }
         
-        // Quiz selections
+        function saveChecklistProgress() {
+            const checkboxes = document.querySelectorAll('.checklist li');
+            const progress = Array.from(checkboxes).map(li => li.classList.contains('checked'));
+            localStorage.setItem('guideChecklist', JSON.stringify(progress));
+        }
+        
+        function loadChecklistProgress() {
+            const saved = localStorage.getItem('guideChecklist');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checklist li');
+                checkboxes.forEach((li, i) => {
+                    if (progress[i]) li.classList.add('checked');
+                });
+            }
+        }
+        
+        // Quiz selections with progress indicator
         const quizSelections = {};
+        const quizProgress = { 1: false, 2: false, 3: false };
+        
         function selectOption(element, questionNum) {
             const container = document.getElementById('quizOptions' + questionNum);
             container.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
             element.classList.add('selected');
             quizSelections[questionNum] = element.dataset.value;
+            quizProgress[questionNum] = true;
+            updateQuizProgress();
+        }
+        
+        function updateQuizProgress() {
+            const answered = Object.values(quizProgress).filter(Boolean).length;
+            const progressBar = document.getElementById('quizProgressBar');
+            if (progressBar) {
+                progressBar.style.width = (answered / 3 * 100) + '%';
+            }
         }
         
         function calculateQuizResult() {
@@ -631,6 +764,14 @@
                 sidebar.style.display = 'none';
                 footer.style.display = 'none';
             }
+        }
+        
+        // Initialize checklist progress on load
+        document.addEventListener('DOMContentLoaded', loadChecklistProgress);
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('show');
         }
     </script>
 </body>
