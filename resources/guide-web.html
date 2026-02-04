@@ -6,6 +6,16 @@
     <title>The Solopreneur's AI Toolkit - Interactive Guide</title>
     <meta name="description" content="10 Essential AI Tools to Save 10+ Hours Every Week. Interactive guide with ROI calculator, tool quiz, and 30-day implementation plan.">
     <link rel="canonical" href="https://aipreneurtools.com/resources/guide-web.html">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="The Solopreneur's AI Toolkit - Interactive Guide">
+    <meta property="og:description" content="10 Essential AI Tools to Save 10+ Hours Every Week. Interactive guide with ROI calculator, tool quiz, and 30-day implementation plan.">
+    <meta property="og:url" content="https://aipreneurtools.com/resources/guide-web.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Solopreneur's AI Toolkit">
+    <meta name="twitter:description" content="10 Essential AI Tools to Save 10+ Hours Every Week. Interactive guide!">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -27,6 +37,12 @@
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        
+        /* Accessibility Focus States */
+        *:focus { outline: 2px solid var(--highlight); outline-offset: 2px; }
+        *:focus:not(:focus-visible) { outline: none; }
+        *:focus-visible { outline: 2px solid var(--highlight); outline-offset: 2px; }
+        
         body { font-family: 'Inter', -apple-system, sans-serif; background: var(--white); color: var(--text); line-height: 1.7; font-size: 16px; }
         
         .progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--highlight), #ff6b8a); z-index: 1001; transition: width 0.1s ease; }
@@ -169,6 +185,12 @@
         @media (max-width: 768px) { .nav-links { display: none; } .hero { padding: 40px 24px; } .hero h1 { font-size: 32px; } .hero-stats { gap: 24px; } .hero-stat-value { font-size: 32px; } .main { padding: 80px 16px 40px; } h1 { font-size: 32px; } h2 { font-size: 26px; } .metrics-row { grid-template-columns: 1fr 1fr; gap: 12px; } .tool-card { padding: 24px; } .cta-section { padding: 40px 24px; } .cta-section h2 { font-size: 28px; } .price-current { font-size: 48px; } }
         @media (max-width: 480px) { .metrics-row { grid-template-columns: 1fr; } }
         
+        /* Fullscreen Mode */
+        .fullscreen-mode .nav { display: none !important; }
+        .fullscreen-mode .sidebar { display: none !important; }
+        .fullscreen-mode .footer { display: none !important; }
+        .fullscreen-mode .main { margin-left: 0; max-width: 100%; padding-top: 60px; padding-left: 24px; padding-right: 24px; }
+        
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
@@ -233,6 +255,7 @@
             <div class="hero-buttons">
                 <a href="#quiz" class="btn">🎯 Find Your Tools</a>
                 <a href="#calculator" class="btn btn-outline">🧮 Calculate Savings</a>
+                <button class="btn" onclick="toggleFullscreen()" style="margin-left: 10px;">📖 Fullscreen</button>
             </div>
         </div>
         
@@ -389,6 +412,10 @@
             <div class="tool-card" id="wave">
                 <div class="tool-header"><div class="tool-number">7.1</div><div class="tool-title"><h3>Wave</h3><p class="tool-tagline">Free Accounting Software</p></div></div>
                 <p>Invoicing, accounting, and financial reports—completely free for solopreneurs.</p>
+                <div class="pricing-box">
+                    <div class="pricing-row"><span class="pricing-label">Core Features</span><span class="pricing-value">Free</span></div>
+                    <div class="pricing-row"><span class="pricing-label">Paid Add-ons</span><span class="pricing-value">Optional</span></div>
+                </div>
                 <a href="https://waveapps.com" target="_blank" class="btn">Start Invoicing Free</a>
             </div>
         </section>
@@ -398,6 +425,10 @@
             <div class="tool-card" id="midjourney">
                 <div class="tool-header"><div class="tool-number">8.1</div><div class="tool-title"><h3>Midjourney</h3><p class="tool-tagline">Generate Stunning Images from Text</p></div></div>
                 <p>Creates unique images from text descriptions using AI. Perfect for marketing visuals.</p>
+                <div class="pricing-box">
+                    <div class="pricing-row"><span class="pricing-label">Trial</span><span class="pricing-value">25 free images</span></div>
+                    <div class="pricing-row"><span class="pricing-label">Basic</span><span class="pricing-value">$10/mo</span></div>
+                </div>
                 <a href="https://midjourney.com" target="_blank" class="btn">Generate Your First Image</a>
             </div>
             
@@ -511,7 +542,7 @@
                     <span class="price-current">$37</span>
                     <span class="price-label">(launch price - save $30)</span>
                 </div>
-                <a href="#" class="btn" style="margin-top: 16px;">Get the Complete Toolkit →</a>
+                <a href="https://aipreneurtools.com/master-class" class="btn" style="margin-top: 16px;">Get the Complete Toolkit →</a>
                 <p style="margin-top: 20px; opacity: 0.8;">100% Money-Back Guarantee • Instant Access</p>
             </div>
         </section>
@@ -519,6 +550,7 @@
         <footer class="footer">
             <p><strong>The Solopreneur's AI Toolkit</strong></p>
             <p style="margin-top: 8px;">© 2026 AIPreneurTools | <a href="https://aipreneurtools.com">Home</a></p>
+            <p style="margin-top: 8px; font-size: 12px; opacity: 0.7;">Published February 2026 • Last updated February 4, 2026</p>
         </footer>
     </main>
     
@@ -581,6 +613,24 @@
             const savings = parseFloat(document.getElementById('timeSavings').value) || 50;
             const result = (hours * savings / 100).toFixed(1);
             document.getElementById('savingsResult').textContent = result + ' hours/week';
+        }
+        
+        // Fullscreen Mode Toggle
+        function toggleFullscreen() {
+            document.body.classList.toggle('fullscreen-mode');
+            const nav = document.querySelector('.nav');
+            const sidebar = document.querySelector('.sidebar');
+            const footer = document.querySelector('.footer');
+            
+            if (nav.style.display === 'none') {
+                nav.style.display = 'flex';
+                if (window.innerWidth > 1024) sidebar.style.display = 'block';
+                footer.style.display = 'block';
+            } else {
+                nav.style.display = 'none';
+                sidebar.style.display = 'none';
+                footer.style.display = 'none';
+            }
         }
     </script>
 </body>
