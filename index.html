@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools for Small Business | Best AI Software in 2026</title>
+    <meta name="description" content="Discover the best AI tools for small business owners. Comprehensive reviews, comparisons, and guides to help you automate and grow.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Tools for Small Business | Best AI Software in 2026">
+    <meta property="og:description" content="Discover the best AI tools for small business owners. Comprehensive reviews, comparisons, and guides to help you automate and grow.">
+    <meta property="og:image" content="https://aibusiness.tools/images/og-home.jpg">
+    <meta property="og:url" content="https://aibusiness.tools/">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Tools for Small Business | Best AI Software in 2026">
+    <meta name="twitter:description" content="Discover the best AI tools for small business owners. Comprehensive reviews, comparisons, and guides to help you automate and grow.">
+    <meta name="twitter:image" content="https://aibusiness.tools/images/og-home.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --surface: #0f0f1a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--surface);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        a {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--secondary);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .logo span {
+            color: var(--highlight);
+        }
+
+        nav a {
+            color: var(--text);
+            margin-left: 32px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--highlight);
+        }
+
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--secondary);
+            min-width: 220px;
+            border-radius: 8px;
+            padding: 12px 0;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text);
+            margin: 0;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary);
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        /* Top Picks Section Styles */
+        .top-picks-section {
+            padding: 60px 20px;
+            background: var(--secondary);
+        }
+
+        .top-picks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .top-pick-card {
+            background: var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            border: 1px solid var(--accent);
+        }
+
+        .pick-badge {
+            background: var(--highlight);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .pick-tagline {
+            color: var(--text-muted);
+            margin: 12px 0;
+        }
+
+        .pick-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .pick-features li {
+            padding: 8px 0;
+            color: var(--text);
+        }
+
+        .pick-note {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+        }
+
+        .pick-note a {
+            color: var(--highlight);
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 20px;
+                background: transparent;
+            }
+
+            .nav-dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--highlight);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        /* Featured Section */
+        .featured {
+            padding: 80px 0;
+            background: var(--primary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-card {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .tool-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .tool-card .commission {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--highlight);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .tool-card .btn {
+            display: inline-block;
+            color: var(--highlight);
+            font-weight: 500;
+        }
+
+        /* Articles Section */
+        .articles {
+            padding: 80px 0;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-content {
+            padding: 24px;
+        }
+
+        .article-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .article-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .article-card .read-more {
+            display: inline-block;
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Newsletter Styles */
+        .newsletter-signup {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-content p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input[type="email"] {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            background: var(--surface);
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .newsletter-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--highlight);
+        }
+
+        .newsletter-form button {
+            padding: 14px 28px;
+            background: var(--highlight);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        /* Newsletter CTA (Article pages) */
+        .newsletter-cta {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .newsletter-cta h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-cta p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .newsletter-form-inline {
+            display: flex;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form-inline input[type="email"] {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form-inline input[type="email"]:focus {
+            outline: none;
+            border-color: var(--highlight);
+        }
+
+        .newsletter-form-inline button {
+            padding: 12px 24px;
+            background: var(--highlight);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .newsletter-form-inline button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Exit Intent Popup */
+        .exit-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .exit-popup-content {
+            background: var(--secondary);
+            padding: 50px 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .exit-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 32px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .exit-close:hover {
+            color: var(--text);
+        }
+
+        .exit-popup-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .exit-popup-content > p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        .exit-popup .newsletter-form input[type="email"] {
+            margin-bottom: 12px;
+        }
+
+        .exit-popup .disclaimer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .newsletter-form, .newsletter-form-inline {
+                flex-direction: column;
+            }
+            .exit-popup-content {
+                margin: 20px;
+                padding: 40px 24px;
+            }
+        }
+
+        /* ConvertKit Form Styling - Match Site Theme */
+        .formkit-form {
+            background: var(--secondary) !important;
+            border-radius: 16px !important;
+            padding: 40px !important;
+            max-width: 600px !important;
+            margin: 40px auto !important;
+            border: none !important;
+        }
+
+        .formkit-form[data-style="minimal"] {
+            padding: 40px !important;
+        }
+
+        .formkit-header h2 {
+            color: var(--highlight) !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 28px !important;
+            margin-bottom: 16px !important;
+        }
+
+        .formkit-subheader p {
+            color: var(--text) !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 18px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .formkit-input {
+            background: var(--surface) !important;
+            border: 2px solid var(--accent) !important;
+            border-radius: 8px !important;
+            color: var(--text) !important;
+            padding: 16px !important;
+            font-size: 16px !important;
+            width: 100% !important;
+            margin-bottom: 16px !important;
+        }
+
+        .formkit-input::placeholder {
+            color: var(--text-muted) !important;
+        }
+
+        .formkit-input:focus {
+            outline: none !important;
+            border-color: var(--highlight) !important;
+        }
+
+        .formkit-submit {
+            background: var(--highlight) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 16px 40px !important;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            width: 100% !important;
+            cursor: pointer !important;
+            transition: transform 0.2s !important;
+        }
+
+        .formkit-submit:hover {
+            transform: scale(1.02) !important;
+        }
+
+        .formkit-guarantee {
+            color: var(--text-muted) !important;
+            font-size: 14px !important;
+            margin-top: 16px !important;
+        }
+
+        .formkit-powered-by {
+            display: none !important;
+        }
+
+        /* Remove default form styling conflicts */
+        .formkit-form .formkit-background {
+            display: none !important;
+        }
+
+        .formkit-form .formkit-fields {
+            margin-top: 24px !important;
+        }
+
+        .seva-fields.formkit-fields {
+            flex-direction: column !important;
+        }
+
+        .formkit-field {
+            margin-bottom: 0 !important;
+            min-width: auto !important;
+        }
+
+        .formkit-submit {
+            margin-top: 0 !important;
+        }
+
+        /* Search Styles */
+        .search-container {
+            position: relative;
+            margin-left: 24px;
+        }
+
+        #site-search {
+            width: 220px;
+            padding: 10px 16px;
+            padding-left: 40px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        #site-search::placeholder {
+            color: var(--text-muted);
+        }
+
+        #site-search:focus {
+            outline: none;
+            border-color: var(--highlight);
+            background: rgba(255,255,255,0.08);
+            width: 280px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        .search-results {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 320px;
+            background: var(--secondary);
+            border-radius: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            display: none;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .search-result {
+            display: flex;
+            align-items: flex-start;
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            transition: background 0.2s ease;
+            text-decoration: none !important;
+        }
+
+        .search-result:hover,
+        .search-result.active {
+            background: rgba(233, 69, 96, 0.15);
+        }
+
+        .search-result:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-type {
+            font-size: 1.1rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .search-result-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .search-result-name {
+            font-weight: 500;
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .search-result-keywords {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .search-result mark {
+            background: rgba(233, 69, 96, 0.3);
+            color: var(--highlight);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .search-no-results {
+            padding: 24px 16px;
+            text-align: center;
+        }
+
+        .search-no-results p {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .search-hint {
+            font-size: 0.8rem !important;
+            color: var(--text-muted) !important;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 900px) {
+            .search-container {
+                margin-left: 16px;
+            }
+
+            #site-search {
+                width: 160px;
+                padding: 8px 14px;
+                padding-left: 36px;
+                font-size: 0.85rem;
+            }
+
+            #site-search:focus {
+                width: 200px;
+            }
+
+            .search-icon {
+                left: 12px;
+                font-size: 0.85rem;
+            }
+
+            .search-results {
+                width: 280px;
+                right: 0;
+                left: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                margin-left: 12px;
+            }
+
+            #site-search {
+                width: 40px;
+                padding: 8px;
+                padding-left: 8px;
+                background: transparent;
+                border-color: transparent;
+            }
+
+            #site-search::placeholder {
+                color: transparent;
+            }
+
+            #site-search:focus {
+                width: 200px;
+                padding-left: 36px;
+                background: var(--surface);
+                border-color: rgba(255,255,255,0.1);
+            }
+
+            .search-icon {
+                left: 16px;
+            }
+
+            .search-results {
+                width: calc(100vw - 48px);
+                max-width: 320px;
+                right: -60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">AI<span>Business</span>Tools</a>
+            <nav>
+                <div class="nav-dropdown">
+                    <a href="tools.html" class="nav-link">Tools ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#top-picks">🏆 Top Picks</a>
+                        <a href="tools.html#writing">✍️ Writing</a>
+                        <a href="tools.html#project-management">📋 Project Management</a>
+                        <a href="tools.html#automation">⚡ Automation</a>
+                        <a href="tools.html#video-audio">🎬 Video & Audio</a>
+                        <a href="tools.html#crm-marketing">📈 CRM & Marketing</a>
+                        <a href="tools.html#productivity">🚀 Productivity</a>
+                        <a href="tools.html#communication">💬 Communication</a>
+                        <a href="tools.html#finance">💰 Finance</a>
+                        <a href="tools.html#design">🎨 Design & Creative</a>
+                    </div>
+                </div>
+                <a href="comparison.html" class="nav-link">Reviews</a>
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="site-search" placeholder="Search tools...">
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>AI Tools for Small Business</h1>
+            <p>Discover the best artificial intelligence tools to automate your workflow, save time, and grow your business in 2026.</p>
+            <a href="#tools" class="hero-cta">Explore AI Tools →</a>
+        </div>
+    </section>
+
+    <section id="top-picks" class="top-picks-section">
+        <div class="container">
+            <h2>🏆 Our Top Picks</h2>
+            <p class="section-subtitle">Hand-selected tools that actually convert for solopreneurs</p>
+            
+            <div class="top-picks-grid">
+                <!-- Top Pick 1 -->
+                <div class="top-pick-card">
+                    <div class="pick-badge">Best Overall</div>
+                    <h3>Notion</h3>
+                    <p class="pick-tagline">All-in-one workspace for notes, docs, and projects</p>
+                    <ul class="pick-features">
+                        <li>✅ Free personal plan available</li>
+                        <li>✅ Free personal plan</li>
+                        <li>✅ Easy onboarding</li>
+                    </ul>
+                    <a href="https://notion.so" class="cta-btn" target="_blank" rel="nofollow">Visit Notion →</a>
+                </div>
+                
+                <!-- Top Pick 2 -->
+                <div class="top-pick-card">
+                    <div class="pick-badge">Best for Automation</div>
+                    <h3>Make</h3>
+                    <p class="pick-tagline">Visual automation platform for business workflows</p>
+                    <ul class="pick-features">
+                        <li>✅ Generous free tier</li>
+                        <li>✅ Generous free tier</li>
+                        <li>✅ Visual workflow builder</li>
+                    </ul>
+                    <a href="https://make.com" class="cta-btn" target="_blank" rel="nofollow">Visit Make →</a>
+                </div>
+                
+                <!-- Top Pick 3 -->
+                <div class="top-pick-card">
+                    <div class="pick-badge">Best Value</div>
+                    <h3>ClickUp</h3>
+                    <p class="pick-tagline">Project management and team collaboration</p>
+                    <ul class="pick-features">
+                        <li>✅ Free forever plan</li>
+                        <li>✅ Free forever plan</li>
+                        <li>✅ All-in-one solution</li>
+                    </ul>
+                    <a href="https://clickup.com" class="cta-btn" target="_blank" rel="nofollow">Visit ClickUp →</a>
+                </div>
+                
+                <!-- Top Pick 4 -->
+                <div class="top-pick-card">
+                    <div class="pick-badge">Best for Writing</div>
+                    <h3>Writesonic</h3>
+                    <p class="pick-tagline">AI writing assistant for blogs, ads, and emails</p>
+                    <ul class="pick-features">
+                        <li>✅ Generous free trial</li>
+                        <li>✅ SEO-optimized content</li>
+                        <li>✅ Multiple templates</li>
+                    </ul>
+                    <a href="https://writesonic.com" class="cta-btn" target="_blank" rel="nofollow">Visit Writesonic →</a>
+                </div>
+            </div>
+            
+            <p class="pick-note">👉 <a href="tools.html">View all 32 tools →</a></p>
+        </div>
+    </section>
+
+    <section class="articles" id="articles">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Latest Guides & Reviews</h2>
+                <p>In-depth articles to help you choose and use AI tools effectively</p>
+            </div>
+            <div class="article-grid">
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>Best AI Writing Tools for Small Business (2026)</h3>
+                        <p>Compare Jasper, Copy.ai, Writesonic and find the perfect AI copywriter for your needs.</p>
+                        <a href="content/articles/best-ai-writing-tools.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>Notion vs ClickUp: Which AI Workspace Wins?</h3>
+                        <p>Deep comparison of two popular productivity platforms with AI features.</p>
+                        <a href="content/articles/notion-vs-clickup.html" class="read-more">Read Comparison →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>How to Automate Your Business with AI in 2026</h3>
+                        <p>Step-by-step guide to setting up AI automation for repetitive tasks.</p>
+                        <a href="content/articles/business-automation-guide.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>AI Tools for Photographers & Creatives</h3>
+                        <p>Best AI software for editing, organizing, and marketing your creative work.</p>
+                        <a href="content/articles/ai-tools-photographers.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>The Complete AI Stack for Solopreneurs</h3>
+                        <p>Essential AI tools that work together to run your entire business.</p>
+                        <a href="content/articles/solopreneur-ai-stack.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+                <article class="article-card fade-in">
+                    <div class="article-content">
+                        <h3>AI Tools Pricing Comparison (2026)</h3>
+                        <p>Find the best value AI tools for your budget with our comprehensive comparison.</p>
+                        <a href="content/articles/ai-tools-pricing.html" class="read-more">Read Guide →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter-signup" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+
+<form action="https://app.kit.com/forms/9049288/subscriptions" style="background-color: rgb(26, 26, 46); border-radius: 4px;" class="seva-form formkit-form" method="post" data-sv-form="9049288" data-uid="1e5ef8e8f1" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;amp;ut Content&quot;:&quot;&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div style="opacity: 0.2;" class="formkit-background"></div><div data-style="minimal"><div class="formkit-header" style="color: rgb(233, 69, 96); font-size: 22px; font-weight: 700;" data-element="header"><h2>Get Our Free AI Tools Guide 2026</h2></div><div class="formkit-subheader" style="color: rgb(255, 255, 255); font-size: 16px;" data-element="subheader"><p>Join 1,000+ solopreneurs saving 10+ hours/week with AI</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(26, 26, 46); border-color: rgb(26, 26, 46); border-radius: 8px; font-weight: 400;" aria-label="Email Address" placeholder="Email Address" required="" type="email"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(233, 69, 96); border-radius: 12px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Get My Free Guide</span></button></div><div class="formkit-guarantee" style="color: rgb(182, 182, 182); font-size: 13px; font-weight: 400;" data-element="guarantee"><p>We won't send you spam. Unsubscribe at any time.</p></div></div></div></form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>AI Business Tools — Helping small businesses leverage AI</p>
+            <p class="meta" style="margin-top: 8px;">Last Updated: February 3, 2026</p>
+            <p class="disclaimer">Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
+            <div class="footer-links" style="margin-top: 24px; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;">
+                <div style="margin-right: 40px;">
+                    <strong style="display: block; margin-bottom: 12px; color: var(--text);">Browse</strong>
+                    <a href="index.html">Home</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="guides.html">Guides</a>
+                </div>
+                <div style="margin-right: 40px;">
+                    <strong style="display: block; margin-bottom: 12px; color: var(--text);">Popular</strong>
+                    <a href="content/articles/notion-vs-clickup.html">Notion vs ClickUp</a>
+                    <a href="content/articles/best-ai-writing-tools.html">AI Writing Tools</a>
+                    <a href="content/articles/solopreneur-ai-stack.html">AI Stack</a>
+                </div>
+                <div>
+                    <strong style="display: block; margin-bottom: 12px; color: var(--text);">Company</strong>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Exit Intent Popup
+        document.addEventListener('mouseout', function(e) {
+            if (!e.toElement && !e.relatedTarget && !localStorage.getItem('exitPopupShown')) {
+                const popup = document.getElementById('exit-intent-popup');
+                if (popup) {
+                    popup.style.display = 'flex';
+                    localStorage.setItem('exitPopupShown', 'true');
+                }
+            }
+        });
+
+        // Close popup handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('exit-intent-popup');
+            const closeBtn = document.querySelector('.exit-close');
+            if (popup) {
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function() {
+                        popup.style.display = 'none';
+                    });
+                }
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        popup.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- Exit Intent Popup -->
+    <div id="exit-intent-popup" class="exit-popup">
+        <div class="exit-popup-content">
+            <button class="exit-close">&times;</button>
+
+<form action="https://app.kit.com/forms/9049288/subscriptions" style="background-color: rgb(26, 26, 46); border-radius: 4px;" class="seva-form formkit-form" method="post" data-sv-form="9049288" data-uid="1e5ef8e8f1" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;amp;ut Content&quot;:&quot;&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div style="opacity: 0.2;" class="formkit-background"></div><div data-style="minimal"><div class="formkit-header" style="color: rgb(233, 69, 96); font-size: 22px; font-weight: 700;" data-element="header"><h2>Get Our Free AI Tools Guide 2026</h2></div><div class="formkit-subheader" style="color: rgb(255, 255, 255); font-size: 16px;" data-element="subheader"><p>Join 1,000+ solopreneurs saving 10+ hours/week with AI</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(26, 26, 46); border-color: rgb(26, 26, 46); border-radius: 8px; font-weight: 400;" aria-label="Email Address" placeholder="Email Address" required="" type="email"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(233, 69, 96); border-radius: 12px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Get My Free Guide</span></button></div><div class="formkit-guarantee" style="color: rgb(182, 182, 182); font-size: 13px; font-weight: 400;" data-element="guarantee"><p>We won't send you spam. Unsubscribe at any time.</p></div></div></div></form>
+            <p class="disclaimer">No spam, unsubscribe anytime.</p>
+        </div>
+    </div>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

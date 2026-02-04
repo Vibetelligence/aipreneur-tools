@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Database | Browse 50+ AI Tools for Solopreneurs</title>
+    <meta name="description" content="Comprehensive database of 50+ AI tools for solopreneurs. Browse tools by category including writing, project management, automation, video editing, CRM, and more.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Tools Database | Browse 50+ AI Tools for Solopreneurs">
+    <meta property="og:description" content="Comprehensive database of AI tools for solopreneurs. Find the perfect tools for your business.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --surface: #0f0f1a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--surface);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        a {
+            color: var(--highlight);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--secondary);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .logo span {
+            color: var(--highlight);
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        .header-nav a {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .header-nav a:hover {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--secondary);
+            min-width: 220px;
+            border-radius: 8px;
+            padding: 12px 0;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text);
+            margin: 0;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary);
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 20px;
+                background: transparent;
+            }
+
+            .nav-dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Category Navigation */
+        .category-nav {
+            background: var(--secondary);
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: sticky;
+            top: 72px;
+            z-index: 99;
+        }
+
+        .category-nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            justify-content: center;
+        }
+
+        .category-nav a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .category-nav a:hover {
+            color: var(--text);
+            background: rgba(233, 69, 96, 0.2);
+            text-decoration: none;
+        }
+
+        /* Category Sections */
+        .category-section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .category-section:last-child {
+            border-bottom: none;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--highlight);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .category-header h2 {
+            font-size: 1.75rem;
+            color: var(--text);
+        }
+
+        .category-header .tool-count {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-left: auto;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        /* Tool Card */
+        .tool-card {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .tool-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tool-card .mentions {
+            font-size: 0.75rem;
+            background: rgba(233, 69, 96, 0.15);
+            color: var(--highlight);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .tool-card .tool-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .tool-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .tool-meta span {
+            font-size: 0.8rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .category-tag {
+            background: rgba(255,255,255,0.08);
+            color: var(--text-muted);
+        }
+
+        .tool-links {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .cta-btn {
+            flex: 1;
+            display: inline-block;
+            background: var(--highlight);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+            text-decoration: none;
+            opacity: 1;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            color: var(--text);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .read-more:hover {
+            background: rgba(255,255,255,0.12);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--highlight);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .disclaimer {
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--highlight);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .category-nav {
+                top: 62px;
+            }
+
+            .category-nav-inner {
+                gap: 8px 12px;
+            }
+
+            .category-nav a {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-links {
+                flex-direction: column;
+            }
+
+            .header-nav {
+                gap: 16px;
+            }
+        }
+
+        /* Search Styles */
+        .search-container {
+            position: relative;
+            margin-left: 24px;
+        }
+
+        #site-search {
+            width: 200px;
+            padding: 10px 16px;
+            padding-left: 40px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        #site-search::placeholder {
+            color: var(--text-muted);
+        }
+
+        #site-search:focus {
+            outline: none;
+            border-color: var(--highlight);
+            background: rgba(255,255,255,0.08);
+            width: 260px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        .search-results {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 320px;
+            background: var(--secondary);
+            border-radius: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            display: none;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .search-result {
+            display: flex;
+            align-items: flex-start;
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            transition: background 0.2s ease;
+            text-decoration: none !important;
+        }
+
+        .search-result:hover,
+        .search-result.active {
+            background: rgba(233, 69, 96, 0.15);
+        }
+
+        .search-result:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-type {
+            font-size: 1.1rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .search-result-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .search-result-name {
+            font-weight: 500;
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .search-result-keywords {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .search-result mark {
+            background: rgba(233, 69, 96, 0.3);
+            color: var(--highlight);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .search-no-results {
+            padding: 24px 16px;
+            text-align: center;
+        }
+
+        .search-no-results p {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .search-hint {
+            font-size: 0.8rem !important;
+            color: var(--text-muted) !important;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 900px) {
+            .search-container {
+                margin-left: 16px;
+            }
+
+            #site-search {
+                width: 160px;
+                padding: 8px 14px;
+                padding-left: 36px;
+                font-size: 0.85rem;
+            }
+
+            #site-search:focus {
+                width: 200px;
+            }
+
+            .search-icon {
+                left: 12px;
+                font-size: 0.85rem;
+            }
+
+            .search-results {
+                width: 280px;
+                right: 0;
+                left: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                margin-left: 12px;
+            }
+
+            #site-search {
+                width: 40px;
+                padding: 8px;
+                padding-left: 8px;
+                background: transparent;
+                border-color: transparent;
+            }
+
+            #site-search::placeholder {
+                color: transparent;
+            }
+
+            #site-search:focus {
+                width: 200px;
+                padding-left: 36px;
+                background: var(--surface);
+                border-color: rgba(255,255,255,0.1);
+            }
+
+            .search-icon {
+                left: 16px;
+            }
+
+            .search-results {
+                width: calc(100vw - 48px);
+                max-width: 320px;
+                right: -60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">AI<span>Business</span>Tools</a>
+            <nav class="header-nav">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="tools.html" class="nav-link">Tools ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#top-picks">🏆 Top Picks</a>
+                        <a href="#writing">✍️ Writing</a>
+                        <a href="#project-management">📋 Project Management</a>
+                        <a href="#automation">⚡ Automation</a>
+                        <a href="#video-audio">🎬 Video & Audio</a>
+                        <a href="#crm-marketing">📈 CRM & Marketing</a>
+                        <a href="#productivity">🚀 Productivity</a>
+                        <a href="#communication">💬 Communication</a>
+                        <a href="#finance">💰 Finance</a>
+                        <a href="#design">🎨 Design & Creative</a>
+                    </div>
+                </div>
+                <a href="guides.html">Guides</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="comparison.html">Compare</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="site-search" placeholder="Search tools...">
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>AI Tools Database</h1>
+            <p>Browse 50+ AI tools for solopreneurs. Find the perfect tools for your business with our comprehensive database.</p>
+        </div>
+    </section>
+
+    <nav class="category-nav">
+        <div class="container category-nav-inner">
+            <a href="#top-picks">🏆 Top Picks</a>
+            <a href="#writing">Writing</a>
+            <a href="#project-management">Project Management</a>
+            <a href="#automation">Automation</a>
+            <a href="#video-audio">Video/Audio</a>
+            <a href="#crm-marketing">CRM & Marketing</a>
+            <a href="#productivity">Productivity</a>
+            <a href="#communication">Communication</a>
+            <a href="#finance">Finance</a>
+            <a href="#design">Design & Creative</a>
+        </div>
+    </nav>
+
+    <!-- Top Picks Section -->
+    <section class="category-section" id="top-picks">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">🏆</div>
+                <h2>🏆 Our Top Picks</h2>
+                <span class="tool-count">Hand-selected tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Notion</h3>
+                    <p class="tool-description">All-in-one workspace with AI-powered writing, summarization, databases, and collaboration.</p>
+                    <div class="tool-links">
+                        <a href="https://notion.so" target="_blank" rel="noopener" class="cta-btn">Visit Notion →</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3>Make</h3>
+                    <p class="tool-description">Visual automation platform to connect apps and automate repetitive workflows.</p>
+                    <div class="tool-links">
+                        <a href="https://make.com" target="_blank" rel="noopener" class="cta-btn">Visit Make →</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3>ClickUp</h3>
+                    <p class="tool-description">AI-powered project management with writing assistance and task automation.</p>
+                    <div class="tool-links">
+                        <a href="https://clickup.com" target="_blank" rel="noopener" class="cta-btn">Visit ClickUp →</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3>Writesonic</h3>
+                    <p class="tool-description">AI writing platform for creating SEO-friendly content, blog posts, and ads.</p>
+                    <div class="tool-links">
+                        <a href="https://writesonic.com" target="_blank" rel="noopener" class="cta-btn">Visit Writesonic →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Writing Tools -->
+    <section class="category-section" id="writing">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">✍️</div>
+                <h2>AI Writing Tools</h2>
+                <span class="tool-count">4 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="copyai">
+                    <h3>Copy.ai</h3>
+                    <p class="tool-description">AI copywriter for blogs, emails, social media, website copy, and marketing content in seconds.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Writing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://copy.ai" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/best-ai-writing-tools.html" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="jasper">
+                    <h3>Jasper</h3>
+                    <p class="tool-description">Enterprise-grade AI writing assistant for marketing teams, blogs, social media, and content creation at scale.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Writing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://jasper.ai" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/best-ai-writing-tools.html" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="writesonic">
+                    <h3>Writesonic</h3>
+                    <p class="tool-description">AI writing platform for creating SEO-friendly content, blog posts, ads, and product descriptions.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Writing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://writesonic.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="rytr">
+                    <h3>Rytr</h3>
+                    <p class="tool-description">Budget-friendly AI writing assistant for creating high-quality content quickly.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Writing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://rytr.me" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Management Tools -->
+    <section class="category-section" id="project-management">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">📋</div>
+                <h2>Project Management Tools</h2>
+                <span class="tool-count">6 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="notion">
+                    <h3>Notion</h3>
+                    <p class="tool-description">All-in-one workspace with AI-powered writing, summarization, databases, and collaboration. Perfect for organizing your entire business.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Project Management</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://notion.so?ref=aipreneurtools" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/notion-vs-clickup.html" class="read-more">Read Comparison →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="clickup">
+                    <h3>ClickUp</h3>
+                    <p class="tool-description">AI-powered project management with writing assistance, task automation, time tracking, and collaboration tools for teams.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Project Management</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://clickup.com?ref=aipreneurtools" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/notion-vs-clickup.html" class="read-more">Read Comparison →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="asana">
+                    <h3>Asana</h3>
+                    <p class="tool-description">Work management platform for teams to organize, track, and manage their work efficiently.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Project Management</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://asana.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="monday">
+                    <h3>Monday.com</h3>
+                    <p class="tool-description">Work operating system that powers teams to run projects and workflows with confidence.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Project Management</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://monday.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="trello">
+                    <h3>Trello</h3>
+                    <p class="tool-description">Visual project management tool with boards, lists, and cards for organizing work.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Project Management</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://trello.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="airtable">
+                    <h3>Airtable</h3>
+                    <p class="tool-description">Low-code platform for building collaborative apps. Customize your workflow with databases.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Project Management</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://airtable.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation Tools -->
+    <section class="category-section" id="automation">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">⚡</div>
+                <h2>Automation Tools</h2>
+                <span class="tool-count">3 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="make">
+                    <h3>Make</h3>
+                    <p class="tool-description">Visual automation platform to connect your apps and automate repetitive workflows without coding.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Automation</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://www.make.com/en/register?pc=aipreneurtools" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/business-automation-guide.html" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="zapier">
+                    <h3>Zapier</h3>
+                    <p class="tool-description">Automate workflows by connecting your apps and services. No coding required.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Automation</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://zapier.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/business-automation-guide.html" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="n8n">
+                    <h3>n8n</h3>
+                    <p class="tool-description">Powerful workflow automation tool that gives you full control over your data and workflows.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Automation</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://n8n.io" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/business-automation-guide.html" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video/Audio Editing Tools -->
+    <section class="category-section" id="video-audio">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">🎬</div>
+                <h2>Video/Audio Editing Tools</h2>
+                <span class="tool-count">3 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="descript">
+                    <h3>Descript</h3>
+                    <p class="tool-description">AI-powered video and podcast editing. Edit video by editing text, plus remove filler words automatically.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Video/Audio</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://descript.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="runway">
+                    <h3>Runway</h3>
+                    <p class="tool-description">AI-powered video editing and generation platform for creators and content teams.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Video/Audio</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://runwayml.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="canva">
+                    <h3>Canva</h3>
+                    <p class="tool-description">Online design platform with AI features for creating presentations, social media graphics, and videos.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Video/Audio</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://canva.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRM & Marketing Tools -->
+    <section class="category-section" id="crm-marketing">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">📈</div>
+                <h2>CRM & Marketing Tools</h2>
+                <span class="tool-count">6 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="hubspot">
+                    <h3>HubSpot</h3>
+                    <p class="tool-description">All-in-one CRM platform with marketing, sales, and customer service tools for growing businesses.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">CRM & Marketing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://hubspot.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/best-ai-tools-real-estate.html" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="convertkit">
+                    <h3>ConvertKit</h3>
+                    <p class="tool-description">Email marketing platform designed for creators. Build your audience and monetize your content.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">CRM & Marketing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://convertkit.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="mailchimp">
+                    <h3>Mailchimp</h3>
+                    <p class="tool-description">Email marketing and automation platform with landing pages, ads, and customer journey tools.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">CRM & Marketing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://mailchimp.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="activecampaign">
+                    <h3>ActiveCampaign</h3>
+                    <p class="tool-description">Email marketing, automation, and CRM platform for small businesses and marketers.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">CRM & Marketing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://activecampaign.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="buffer">
+                    <h3>Buffer</h3>
+                    <p class="tool-description">Social media management tool for scheduling posts, analyzing performance, and engaging your audience.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">CRM & Marketing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://buffer.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="hootsuite">
+                    <h3>Hootsuite</h3>
+                    <p class="tool-description">Social media management platform for scheduling, monitoring, and analyzing social media content.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">CRM & Marketing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://hootsuite.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productivity Tools -->
+    <section class="category-section" id="productivity">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">🚀</div>
+                <h2>Productivity Tools</h2>
+                <span class="tool-count">3 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="chatgpt">
+                    <h3>ChatGPT / OpenAI</h3>
+                    <p class="tool-description">AI conversational assistant for answering questions, writing, coding, and creative tasks. Free and paid plans available.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Productivity</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://chatgpt.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/solopreneur-ai-stack.html" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="grammarly">
+                    <h3>Grammarly</h3>
+                    <p class="tool-description">AI-powered writing assistant that helps you write more clearly and effectively across all your apps.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Productivity</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://grammarly.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="todoist">
+                    <h3>Todoist</h3>
+                    <p class="tool-description">AI-powered task management for personal productivity. Organize work and life with smart suggestions.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Productivity</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://todoist.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="content/articles/solopreneur-ai-stack.html" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communication Tools -->
+    <section class="category-section" id="communication">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">💬</div>
+                <h2>Communication Tools</h2>
+                <span class="tool-count">2 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="slack">
+                    <h3>Slack</h3>
+                    <p class="tool-description">Team communication platform with channels, direct messaging, and integrations for seamless collaboration.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Communication</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://slack.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="zoom">
+                    <h3>Zoom</h3>
+                    <p class="tool-description">Video conferencing platform for meetings, webinars, and remote collaboration.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Communication</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://zoom.us" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finance Tools -->
+    <section class="category-section" id="finance">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">💰</div>
+                <h2>Finance Tools</h2>
+                <span class="tool-count">3 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="quickbooks">
+                    <h3>QuickBooks</h3>
+                    <p class="tool-description">Accounting software for small businesses to manage invoices, expenses, and financial reports.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Finance</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://quickbooks.intuit.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="stripe">
+                    <h3>Stripe</h3>
+                    <p class="tool-description">Payment processing platform for online businesses to accept payments and manage subscriptions.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Finance</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://stripe.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="paypal">
+                    <h3>PayPal</h3>
+                    <p class="tool-description">Online payment platform for sending and receiving money globally.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Finance</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://paypal.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design & Creative Tools -->
+    <section class="category-section" id="design">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">🎨</div>
+                <h2>Design & Creative Tools</h2>
+                <span class="tool-count">2 tools</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" id="adobe">
+                    <h3>Adobe</h3>
+                    <p class="tool-description">Industry-standard creative software including Photoshop, Illustrator, and Premiere Pro.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Design & Creative</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://adobe.com" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" id="removebg">
+                    <h3>Remove.bg</h3>
+                    <p class="tool-description">AI-powered tool to automatically remove backgrounds from images in seconds.</p>
+                    <div class="tool-meta">
+                        <span class="category-tag">Design & Creative</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://remove.bg" target="_blank" rel="noopener" class="cta-btn">Visit Tool →</a>
+                        <a href="#" class="read-more">Read Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Browse Tools</h4>
+                    <a href="#writing">Writing Tools</a>
+                    <a href="#project-management">Project Management</a>
+                    <a href="#automation">Automation</a>
+                    <a href="#crm-marketing">CRM & Marketing</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="guides.html">Guides</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="content/articles/solopreneur-ai-stack.html">AI Stack</a>
+                    <a href="content/articles/business-automation-guide.html">Automation Guide</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular</h4>
+                    <a href="content/articles/notion-vs-clickup.html">Notion vs ClickUp</a>
+                    <a href="content/articles/best-ai-writing-tools.html">AI Writing Tools</a>
+                    <a href="content/articles/solopreneur-ai-stack.html">Solopreneur Stack</a>
+                    <a href="content/articles/ai-tools-pricing.html">Pricing Comparison</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>AI Business Tools — Helping solopreneurs leverage AI</p>
+                <p class="meta" style="margin-top: 8px;">Last Updated: February 3, 2026</p>
+                <p class="disclaimer">Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" title="Back to top">↑</a>
+
+    <script>
+        // Back to Top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for category navigation
+        document.querySelectorAll('.category-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const categoryNavHeight = document.querySelector('.category-nav').offsetHeight;
+                    const offset = headerHeight + categoryNavHeight + 20;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

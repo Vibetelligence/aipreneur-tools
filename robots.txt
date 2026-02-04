@@ -1,0 +1,10 @@
+# Robots.txt for AI Business Tools
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aibusiness.tools/sitemap.xml
+
+# Disallow private/admin pages (if any)
+Disallow: /dashboard
+Disallow: /api/

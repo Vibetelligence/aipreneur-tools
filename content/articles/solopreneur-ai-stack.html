@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete AI Stack for Solopreneurs (2026) | AI Business Tools</title>
+    <meta name="description" content="Build your essential AI stack for solopreneurs. The must-have AI tools that work together to run your entire business.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Complete AI Stack for Solopreneurs">
+    <meta property="og:description" content="Build your essential AI stack for solopreneurs. The must-have AI tools that work together to run your entire business.">
+    <meta property="og:image" content="https://aibusiness.tools/images/og-solopreneur-stack.jpg">
+    <meta property="og:url" content="https://aibusiness.tools/content/articles/solopreneur-ai-stack.html">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Complete AI Stack for Solopreneurs">
+    <meta name="twitter:description" content="Build your essential AI stack for solopreneurs. The must-have AI tools that work together to run your entire business.">
+    <meta name="twitter:image" content="https://aibusiness.tools/images/og-solopreneur-stack.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --text: #eaeaea; --text-muted: #a0a0a0; --surface: #0f0f1a; }
+        body { font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text); line-height: 1.8; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--highlight); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: #ff6b81; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        header { background: var(--secondary); padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: var(--text); }
+        .logo span { color: var(--highlight); }
+        nav a { color: var(--text); margin-left: 24px; font-weight: 500; }
+        nav a:hover { color: var(--highlight); }
+        .breadcrumb { padding: 20px 0 0; color: var(--text-muted); font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-muted); }
+        .breadcrumb a:hover { color: var(--highlight); }
+        article { padding: 40px 0 60px; }
+        .article-header { text-align: center; margin-bottom: 50px; }
+        .article-header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 16px; }
+        .article-header p { color: var(--text-muted); font-size: 1.1rem; }
+        .article-content h2 { font-size: 1.8rem; margin: 50px 0 20px; }
+        .article-content h3 { font-size: 1.4rem; margin: 35px 0 15px; }
+        .article-content p { margin-bottom: 20px; color: #d0d0d0; }
+        .tool-category { background: var(--secondary); border-radius: 16px; padding: 30px; margin: 30px 0; }
+        .tool-category h3 { margin-top: 0; color: var(--highlight); }
+        .tool-list { list-style: none; padding: 0; }
+        .tool-list li { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .tool-list li:last-child { border-bottom: none; }
+        .tool-name { font-weight: 600; color: var(--text); }
+        .tool-desc { color: var(--text-muted); font-size: 0.9rem; }
+        .cost-badge { display: inline-block; background: rgba(233, 69, 96, 0.2); color: var(--highlight); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-left: 10px; }
+        .pricing-table { background: var(--secondary); border-radius: 16px; padding: 30px; margin: 30px 0; }
+        .pricing-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .pricing-row:last-child { border-bottom: none; }
+        .pricing-row.header { font-weight: 600; color: var(--highlight); }
+        .cta-box { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); border-radius: 16px; padding: 40px; text-align: center; margin: 50px 0; }
+        .cta-box h3 { margin-bottom: 16px; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 24px; }
+        .cta-btn { display: inline-block; background: var(--highlight); color: white; padding: 14px 36px; border-radius: 50px; font-weight: 600; transition: transform 0.3s; }
+        .cta-btn:hover { transform: translateY(-3px); text-decoration: none; }
+        footer { background: var(--primary); padding: 30px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
+        .disclaimer { margin-top: 16px; font-size: 0.8rem; }
+        @media (max-width: 768px) { .pricing-row { grid-template-columns: 1fr; gap: 10px; } }
+
+        /* Newsletter Styles */
+        .newsletter-cta {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        .newsletter-cta h3 { font-size: 1.5rem; margin-bottom: 12px; }
+        .newsletter-cta p { color: var(--text-muted); margin-bottom: 24px; }
+        .newsletter-form-inline { display: flex; gap: 12px; max-width: 400px; margin: 0 auto; }
+        .newsletter-form-inline input[type="email"] { flex: 1; padding: 12px 16px; border: 2px solid rgba(255,255,255,0.1); border-radius: 8px; background: var(--surface); color: var(--text); font-size: 0.95rem; }
+        .newsletter-form-inline input[type="email"]:focus { outline: none; border-color: var(--highlight); }
+        .newsletter-form-inline button { padding: 12px 24px; background: var(--highlight); color: white; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: transform 0.3s; }
+        .newsletter-form-inline button:hover { transform: translateY(-2px); }
+
+        /* Exit Intent Popup */
+        .exit-popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; display: none; align-items: center; justify-content: center; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .exit-popup-content { background: var(--secondary); padding: 50px 40px; border-radius: 20px; max-width: 500px; text-align: center; position: relative; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .exit-close { position: absolute; top: 15px; right: 20px; font-size: 32px; background: none; border: none; color: var(--text-muted); cursor: pointer; transition: color 0.2s; line-height: 1; }
+        .exit-close:hover { color: var(--text); }
+        .exit-popup-content h3 { font-size: 1.8rem; margin-bottom: 16px; color: var(--text); }
+        .exit-popup-content > p { color: var(--text-muted); margin-bottom: 24px; font-size: 1rem; }
+        .exit-popup .newsletter-form input[type="email"] { margin-bottom: 12px; width: 100%; padding: 14px 18px; border: 2px solid rgba(255,255,255,0.1); border-radius: 10px; background: var(--surface); color: var(--text); font-size: 1rem; }
+        .exit-popup .newsletter-form { display: flex; flex-direction: column; }
+        .exit-popup .newsletter-form button { padding: 14px 28px; background: var(--highlight); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+        .exit-popup .disclaimer { font-size: 0.8rem; color: var(--text-muted); margin-top: 16px; }
+        @media (max-width: 600px) { .newsletter-form-inline { flex-direction: column; } .exit-popup-content { margin: 20px; padding: 40px 24px; } }
+
+        /* ConvertKit Form Styling - Match Site Theme */
+        .formkit-form {
+            background: var(--secondary) !important;
+            border-radius: 16px !important;
+            padding: 40px !important;
+            max-width: 600px !important;
+            margin: 40px auto !important;
+            border: none !important;
+        }
+
+        .formkit-form[data-style="minimal"] {
+            padding: 40px !important;
+        }
+
+        .formkit-header h2 {
+            color: var(--highlight) !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 28px !important;
+            margin-bottom: 16px !important;
+        }
+
+        .formkit-subheader p {
+            color: var(--text) !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 18px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .formkit-input {
+            background: var(--surface) !important;
+            border: 2px solid var(--accent) !important;
+            border-radius: 8px !important;
+            color: var(--text) !important;
+            padding: 16px !important;
+            font-size: 16px !important;
+            width: 100% !important;
+            margin-bottom: 16px !important;
+        }
+
+        .formkit-input::placeholder {
+            color: var(--text-muted) !important;
+        }
+
+        .formkit-input:focus {
+            outline: none !important;
+            border-color: var(--highlight) !important;
+        }
+
+        .formkit-submit {
+            background: var(--highlight) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 16px 40px !important;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            width: 100% !important;
+            cursor: pointer !important;
+            transition: transform 0.2s !important;
+        }
+
+        .formkit-submit:hover {
+            transform: scale(1.02) !important;
+        }
+
+        .formkit-guarantee {
+            color: var(--text-muted) !important;
+            font-size: 14px !important;
+            margin-top: 16px !important;
+        }
+
+        .formkit-powered-by {
+            display: none !important;
+        }
+
+        /* Remove default form styling conflicts */
+        .formkit-form .formkit-background {
+            display: none !important;
+        }
+
+        .formkit-form .formkit-fields {
+            margin-top: 24px !important;
+        }
+
+        .seva-fields.formkit-fields {
+            flex-direction: column !important;
+        }
+
+        .formkit-field {
+            margin-bottom: 0 !important;
+            min-width: auto !important;
+        }
+
+        .formkit-submit {
+            margin-top: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../../index.html" class="logo">AI<span>Business</span>Tools</a>
+            <nav>
+                <a href="../../index.html#tools">Tools</a>
+                <a href="../../reviews.html">Reviews</a>
+                <a href="../../guides.html">Guides</a>
+                <a href="../about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a> › <a href="../../comparison.html">Tools</a> › <span>Complete AI Stack for Solopreneurs</span>
+        </nav>
+    </div>
+
+    <article>
+        <div class="container">
+            <div class="article-header">
+                <h1>The Complete AI Stack for Solopreneurs (2026)</h1>
+                <p>Essential AI tools that work together to run your entire business efficiently</p>
+                <div class="meta">Last updated: February 2026 • 8 min read</div>
+            </div>
+
+            <div class="article-content">
+                <p>As a solopreneur, you need tools that multiply your efforts. The right AI stack can handle tasks that would otherwise require employees or contractors. For comparison, see our <a href="ai-tools-pricing.html">complete AI pricing guide</a> to find the best value tools.</p>
+
+                <div class="cta-box">
+                    <h3>Build Your AI-Powered Business</h3>
+                    <p>Start with Notion's free plan and organize your entire business in one workspace.</p>
+                    <a href="https://notion.so?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Notion →</a>
+                </div>
+
+                <p>Here's our curated list of AI tools that work together seamlessly.</p>
+
+                <div class="quick-summary">
+                    <h4>🚀 Quick Summary</h4>
+                    <ul>
+                        <li><strong>Essential Tools:</strong> Copy.ai, Notion, Descript, Make, ConvertKit</li>
+                        <li><strong>Total Investment:</strong> ~$113/month for full stack</li>
+                        <li><strong>Best for:</strong> Solopreneurs wanting to run entire business with AI</li>
+                    </ul>
+                </div>
+
+                <div class="tool-category">
+                    <h3>📝 Writing & Content</h3>
+                    <ul class="tool-list">
+                        <li>
+                            <span class="tool-name">Copy.ai</span>
+                            <span class="cost-badge">30% recurring</span>
+                            <p class="tool-desc">AI copywriter for blogs, emails, social media. Great for general content.</p>
+                        </li>
+                        <li>
+                            <span class="tool-name">Jasper AI</span>
+                            <span class="cost-badge">30% recurring</span>
+                            <p class="tool-desc">Enterprise-grade writing for marketing teams. More templates, brand voice features.</p>
+                        </li>
+                        <li>
+                            <span class="tool-name">Grammarly</span>
+                            <span class="cost-badge">30% recurring</span>
+                            <p class="tool-desc">AI-powered grammar, spelling, and style checking for polished business writing at $12-15/month.</p>
+                            <a href="https://grammarly.com?ref=aipreneurtools" style="font-size: 0.85rem;">Visit Grammarly →</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tool-category">
+                    <h3>📊 Project Management</h3>
+                    <ul class="tool-list">
+                        <li>
+                            <span class="tool-name">ClickUp</span>
+                            <span class="cost-badge">30% recurring</span>
+                            <p class="tool-desc">AI-powered task management, docs, and goals. 180-day cookie.</p>
+                        </li>
+                        <li>
+                            <span class="tool-name">Notion</span>
+                            <span class="cost-badge">50% first year</span>
+                            <p class="tool-desc">All-in-one workspace with AI features. Best for docs + tasks.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tool-category">
+                    <h3>🎬 Video & Audio</h3>
+                    <ul class="tool-list">
+                        <li>
+                            <span class="tool-name">Descript</span>
+                            <span class="cost-badge">30% recurring</span>
+                            <p class="tool-desc">Edit video/audio by editing text. Great for podcasts and YouTube.</p>
+                        </li>
+                        <li>
+                            <span class="tool-name">Canva</span>
+                            <span class="cost-badge">Varies</span>
+                            <p class="tool-desc">AI-powered design with templates for social media, presentations, more.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tool-category">
+                    <h3>⚡ Automation</h3>
+                    <ul class="tool-list">
+                        <li>
+                            <span class="tool-name">Make (Integromat)</span>
+                            <span class="cost-badge">20-30%</span>
+                            <p class="tool-desc">Visual automation to connect apps and create workflows.</p>
+                        </li>
+                        <li>
+                            <span class="tool-name">Zapier</span>
+                            <span class="cost-badge">20-30%</span>
+                            <p class="tool-desc">Connect 5,000+ apps and automate tasks without code.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tool-category">
+                    <h3>📧 Email & CRM</h3>
+                    <ul class="tool-list">
+                        <li>
+                            <span class="tool-name">ConvertKit</span>
+                            <span class="cost-badge">30% recurring</span>
+                            <p class="tool-desc">Email marketing for creators with AI-powered automation.</p>
+                        </li>
+                        <li>
+                            <span class="tool-name">ActiveCampaign</span>
+                            <span class="cost-badge">30% recurring</span>
+                            <p class="tool-desc">Advanced automation for email marketing and CRM.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2>Monthly Cost Breakdown</h2>
+                <div class="pricing-table">
+                    <div class="pricing-row header">
+                        <div>Category</div>
+                        <div>Tool</div>
+                        <div>Est. Monthly Cost</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div>Writing</div>
+                        <div>Copy.ai Pro</div>
+                        <div>$49/mo</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div>Management</div>
+                        <div>Notion AI</div>
+                        <div>$10/mo</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div>Video</div>
+                        <div>Descript</div>
+                        <div>$15/mo</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div>Automation</div>
+                        <div>Make</div>
+                        <div>$10/mo</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div>Email</div>
+                        <div>ConvertKit</div>
+                        <div>$29/mo</div>
+                    </div>
+                    <div class="pricing-row" style="font-weight: 600; color: var(--highlight);">
+                        <div colspan="2">Total Monthly Investment</div>
+                        <div>~$113/mo</div>
+                    </div>
+                </div>
+
+                <h2>Getting Started</h2>
+                <p>You don't need all these tools at once. Start with:</p>
+                <ol>
+                    <li><strong>Week 1:</strong> Get Copy.ai for content creation</li>
+                    <li><strong>Week 2:</strong> Add Notion for organization</li>
+                    <li><strong>Week 3:</strong> Set up ConvertKit for email marketing</li>
+                    <li><strong>Week 4:</strong> Add automation with Make</li>
+                </ol>
+
+                <div class="cta-box">
+                    <h3>Automate Workflows with Make</h3>
+                    <p>Connect your apps and automate repetitive tasks with visual workflows.</p>
+                    <a href="https://www.make.com/en/register?pc=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Make →</a>
+                </div>
+
+                <h2>The Power of Integration</h2>
+                <p>The real magic happens when these tools work together. For example:</p>
+                <ul>
+                    <li>Notion task → triggers Zapier → sends Slack notification</li>
+                    <li>New email subscriber → ConvertKit automation → sends welcome sequence</li>
+                    <li>New video uploaded → Descript processes → auto-generates blog post</li>
+                </ul>
+
+                <div class="cta-box">
+                    <h3>Build Your AI Stack Today</h3>
+                    <p>Start with Copy.ai for content creation and scale as you grow.</p>
+                    <a href="https://copy.ai?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Copy.ai →</a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Organize with Notion</h3>
+                    <p>All-in-one workspace with AI for notes, docs, databases, and light task management.</p>
+                    <a href="https://notion.so?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Notion →</a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Manage Projects with ClickUp</h3>
+                    <p>AI-powered task management, docs, and goals in one powerful platform.</p>
+                    <a href="https://clickup.com?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit ClickUp →</a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Write Better with Jasper</h3>
+                    <p>Enterprise-grade AI writing with brand voice and team collaboration features.</p>
+                    <a href="https://jasper.ai?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Jasper →</a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Edit Video with Descript</h3>
+                    <p>Edit video by editing text — perfect for podcasts and YouTube content.</p>
+                    <a href="https://descript.com?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Descript →</a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Automate with Make</h3>
+                    <p>Visual workflow builder to connect your apps and automate repetitive tasks.</p>
+                    <a href="https://www.make.com/en/register?pc=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Make →</a>
+                </div>
+
+                <h2>Complete AI Stack Comparison</h2>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Tool</th>
+                            <th>Price</th>
+                            <th>Free Tier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Writing</strong></td>
+                            <td>Copy.ai</td>
+                            <td>$49/mo</td>
+                            <td>2,000 words/mo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Writing</strong></td>
+                            <td>Jasper</td>
+                            <td>$39-99/mo</td>
+                            <td>7-day trial</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Writing</strong></td>
+                            <td>Grammarly</td>
+                            <td>$12-15/mo</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Management</strong></td>
+                            <td>Notion AI</td>
+                            <td>$10/mo</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Management</strong></td>
+                            <td>ClickUp</td>
+                            <td>$7-12/mo</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Video</strong></td>
+                            <td>Descript</td>
+                            <td>$15-30/mo</td>
+                            <td>1 hour</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Design</strong></td>
+                            <td>Canva Pro</td>
+                            <td>$13/mo</td>
+                            <td>Limited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Automation</strong></td>
+                            <td>Make</td>
+                            <td>$9-49/mo</td>
+                            <td>1,000 ops/mo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Automation</strong></td>
+                            <td>Zapier</td>
+                            <td>$69+/mo</td>
+                            <td>100 tasks/mo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td>ConvertKit</td>
+                            <td>$29+/mo</td>
+                            <td>1,000 subs</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="cta-box">
+                    <h3>Write with ChatGPT Plus</h3>
+                    <p>Versatile AI assistant for all your business writing needs at $20/month.</p>
+                    <a href="https://chatgpt.com" class="cta-btn" target="_blank" rel="noopener">Visit ChatGPT →</a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Boost Productivity with Todoist</h3>
+                    <p>AI-enhanced task management for personal productivity at $5/month.</p>
+                    <a href="https://todoist.com?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Todoist →</a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Build with Airtable</h3>
+                    <p>Database-powered project management with AI starting at $20/month.</p>
+                    <a href="https://airtable.com?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Airtable →</a>
+                </div>
+
+                <div class="related-articles">
+                    <h3>📚 Related Articles</h3>
+                    <ul>
+                        <li><a href="best-ai-writing-tools.html">Best AI Writing Tools for Small Business</a></li>
+                        <li><a href="business-automation-guide.html">How to Automate Your Business with AI</a></li>
+                        <li><a href="notion-vs-clickup.html">Notion vs ClickUp: Which AI Workspace Wins?</a></li>
+                        <li><a href="ai-tools-photographers.html">AI Tools for Photographers & Creatives</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Newsletter CTA -->
+    <div class="container">
+        <div class="newsletter-cta">
+            <form class="newsletter-form-inline">
+                <input type="email" placeholder="Your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>AI Business Tools — Helping small businesses leverage AI</p>
+            <div class="footer-links">
+                <a href="../about.html">About</a>
+                <a href="../../contact.html">Contact</a>
+                <a href="../../privacy-policy.html">Privacy</a>
+                <a href="../../terms.html">Terms</a>
+            </div>
+            <p class="disclaimer">Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
+        </div>
+    </footer>
+</body>
+</html>
