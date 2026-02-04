@@ -86,6 +86,37 @@
         .footer-links a { color: var(--text-muted); margin: 0 12px; }
         .footer-links a:hover { color: var(--highlight); }
         @media (max-width: 768px) { .pricing-row { grid-template-columns: 1fr; gap: 10px; font-size: 0.9rem; } }
+        
+        /* Newsletter Styles */
+        .newsletter-cta {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        .newsletter-cta h3 { font-size: 1.5rem; margin-bottom: 12px; }
+        .newsletter-cta p { color: var(--text-muted); margin-bottom: 24px; }
+        .newsletter-form-inline { display: flex; gap: 12px; max-width: 400px; margin: 0 auto; }
+        .newsletter-form-inline input[type="email"] { flex: 1; padding: 12px 16px; border: 2px solid rgba(255,255,255,0.1); border-radius: 8px; background: var(--surface); color: var(--text); font-size: 0.95rem; }
+        .newsletter-form-inline input[type="email"]:focus { outline: none; border-color: var(--highlight); }
+        .newsletter-form-inline button { padding: 12px 24px; background: var(--highlight); color: white; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: transform 0.3s; }
+        .newsletter-form-inline button:hover { transform: translateY(-2px); }
+        
+        /* Exit Intent Popup */
+        .exit-popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; display: none; align-items: center; justify-content: center; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .exit-popup-content { background: var(--secondary); padding: 50px 40px; border-radius: 20px; max-width: 500px; text-align: center; position: relative; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .exit-close { position: absolute; top: 15px; right: 20px; font-size: 32px; background: none; border: none; color: var(--text-muted); cursor: pointer; transition: color 0.2s; line-height: 1; }
+        .exit-close:hover { color: var(--text); }
+        .exit-popup-content h3 { font-size: 1.8rem; margin-bottom: 16px; color: var(--text); }
+        .exit-popup-content > p { color: var(--text-muted); margin-bottom: 24px; font-size: 1rem; }
+        .exit-popup .newsletter-form input[type="email"] { margin-bottom: 12px; width: 100%; padding: 14px 18px; border: 2px solid rgba(255,255,255,0.1); border-radius: 10px; background: var(--surface); color: var(--text); font-size: 1rem; }
+        .exit-popup .newsletter-form { display: flex; flex-direction: column; }
+        .exit-popup .newsletter-form button { padding: 14px 28px; background: var(--highlight); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+        .exit-popup .disclaimer { font-size: 0.8rem; color: var(--text-muted); margin-top: 16px; }
+        @media (max-width: 600px) { .newsletter-form-inline { flex-direction: column; } .exit-popup-content { margin: 20px; padding: 40px 24px; } }
     </style>
 </head>
 <body>
@@ -423,3 +454,83 @@
                                 <td>Yes (1,000 ops/mo)</td>
                                 <td>$9/mo</td>
                                 <td>$49/mo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Newsletter CTA -->
+    <div class="container">
+        <div class="newsletter-cta">
+            <h3>More AI Tools for Your Business</h3>
+            <p>Subscribe for weekly tool reviews, comparisons, and guides delivered to your inbox.</p>
+            <form class="newsletter-form-inline">
+                <input type="email" placeholder="Your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>AI Business Tools — Helping small businesses leverage AI</p>
+            <div class="footer-links">
+                <a href="../about.html">About</a>
+                <a href="../../contact.html">Contact</a>
+                <a href="../../privacy-policy.html">Privacy</a>
+                <a href="../../terms.html">Terms</a>
+            </div>
+            <p class="disclaimer">Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
+        </div>
+    </footer>
+
+    <!-- Exit Intent Popup -->
+    <div id="exit-intent-popup" class="exit-popup">
+        <div class="exit-popup-content">
+            <button class="exit-close">&times;</button>
+            <h3>Wait! Don't Miss Out</h3>
+            <p>Get our free "Ultimate AI Tools Guide 2026" and stay updated with the best tools for your business.</p>
+            <form class="newsletter-form" action="#" method="post">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Get My Free Guide</button>
+            </form>
+            <p class="disclaimer">No spam, unsubscribe anytime.</p>
+        </div>
+    </div>
+
+    <script>
+        // Exit Intent Popup
+        document.addEventListener('mouseout', function(e) {
+            if (!e.toElement && !e.relatedTarget && !localStorage.getItem('exitPopupShown')) {
+                const popup = document.getElementById('exit-intent-popup');
+                if (popup) {
+                    popup.style.display = 'flex';
+                    localStorage.setItem('exitPopupShown', 'true');
+                }
+            }
+        });
+
+        // Close popup handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('exit-intent-popup');
+            const closeBtn = document.querySelector('.exit-close');
+            
+            if (popup) {
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function() {
+                        popup.style.display = 'none';
+                    });
+                }
+                
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        popup.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
