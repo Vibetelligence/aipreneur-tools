@@ -99,6 +99,68 @@
             text-decoration: none;
         }
 
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--secondary);
+            min-width: 220px;
+            border-radius: 8px;
+            padding: 12px 0;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text);
+            margin: 0;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary);
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 20px;
+                background: transparent;
+            }
+
+            .nav-dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+
         /* Hero */
         .hero {
             padding: 80px 0 60px;
@@ -409,6 +471,192 @@
                 gap: 16px;
             }
         }
+
+        /* Search Styles */
+        .search-container {
+            position: relative;
+            margin-left: 24px;
+        }
+
+        #site-search {
+            width: 200px;
+            padding: 10px 16px;
+            padding-left: 40px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        #site-search::placeholder {
+            color: var(--text-muted);
+        }
+
+        #site-search:focus {
+            outline: none;
+            border-color: var(--highlight);
+            background: rgba(255,255,255,0.08);
+            width: 260px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        .search-results {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 320px;
+            background: var(--secondary);
+            border-radius: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            display: none;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .search-result {
+            display: flex;
+            align-items: flex-start;
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            transition: background 0.2s ease;
+            text-decoration: none !important;
+        }
+
+        .search-result:hover,
+        .search-result.active {
+            background: rgba(233, 69, 96, 0.15);
+        }
+
+        .search-result:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-type {
+            font-size: 1.1rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .search-result-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .search-result-name {
+            font-weight: 500;
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .search-result-keywords {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .search-result mark {
+            background: rgba(233, 69, 96, 0.3);
+            color: var(--highlight);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .search-no-results {
+            padding: 24px 16px;
+            text-align: center;
+        }
+
+        .search-no-results p {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .search-hint {
+            font-size: 0.8rem !important;
+            color: var(--text-muted) !important;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 900px) {
+            .search-container {
+                margin-left: 16px;
+            }
+
+            #site-search {
+                width: 160px;
+                padding: 8px 14px;
+                padding-left: 36px;
+                font-size: 0.85rem;
+            }
+
+            #site-search:focus {
+                width: 200px;
+            }
+
+            .search-icon {
+                left: 12px;
+                font-size: 0.85rem;
+            }
+
+            .search-results {
+                width: 280px;
+                right: 0;
+                left: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                margin-left: 12px;
+            }
+
+            #site-search {
+                width: 40px;
+                padding: 8px;
+                padding-left: 8px;
+                background: transparent;
+                border-color: transparent;
+            }
+
+            #site-search::placeholder {
+                color: transparent;
+            }
+
+            #site-search:focus {
+                width: 200px;
+                padding-left: 36px;
+                background: var(--surface);
+                border-color: rgba(255,255,255,0.1);
+            }
+
+            .search-icon {
+                left: 16px;
+            }
+
+            .search-results {
+                width: calc(100vw - 48px);
+                max-width: 320px;
+                right: -60px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -417,11 +665,30 @@
             <a href="index.html" class="logo">AI<span>Business</span>Tools</a>
             <nav class="header-nav">
                 <a href="index.html">Home</a>
-                <a href="tools.html">Tools</a>
+                <div class="nav-dropdown">
+                    <a href="tools.html" class="nav-link">Tools ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#writing">✍️ Writing</a>
+                        <a href="#project-management">📋 Project Management</a>
+                        <a href="#automation">⚡ Automation</a>
+                        <a href="#video-audio">🎬 Video & Audio</a>
+                        <a href="#crm-marketing">📈 CRM & Marketing</a>
+                        <a href="#productivity">🚀 Productivity</a>
+                        <a href="#communication">💬 Communication</a>
+                        <a href="#finance">💰 Finance</a>
+                        <a href="#design">🎨 Design & Creative</a>
+                    </div>
+                </div>
                 <a href="guides.html">Guides</a>
                 <a href="reviews.html">Reviews</a>
+                <a href="comparison.html">Compare</a>
                 <a href="about.html">About</a>
             </nav>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="site-search" placeholder="Search tools...">
+                <div id="search-results" class="search-results"></div>
+            </div>
         </div>
     </header>
 

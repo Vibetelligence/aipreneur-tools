@@ -33,6 +33,68 @@
         .logo span { color: var(--highlight); }
         nav a { color: var(--text); margin-left: 24px; font-weight: 500; }
         nav a:hover { color: var(--highlight); }
+
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--secondary);
+            min-width: 220px;
+            border-radius: 8px;
+            padding: 12px 0;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text);
+            margin: 0;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary);
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 20px;
+                background: transparent;
+            }
+
+            .nav-dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
         .breadcrumb { padding: 20px 0 0; color: var(--text-muted); font-size: 0.9rem; }
         .breadcrumb a { color: var(--text-muted); }
         .breadcrumb a:hover { color: var(--highlight); }
@@ -266,6 +328,12 @@
 
                 <p>According to our research, small businesses using AI writing tools report saving an average of 10-15 hours per week on content creation—that's almost two full workdays reclaimed every week. For more automation tips, see our <a href="business-automation-guide.html">complete guide to automating your business with AI</a>.</p>
 
+                <div class="cta-box">
+                    <h3>Ready to Transform Your Writing?</h3>
+                    <p>Get started with Copy.ai today and create content 10x faster.</p>
+                    <a href="https://copy.ai?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Copy.ai →</a>
+                </div>
+
                 <h2>Detailed Tool Comparisons</h2>
 
                 <div class="tool-card">
@@ -427,6 +495,12 @@
                 <div class="use-case">
                     <h4>🎯 Choose Writesonic if:</h4>
                     <p>You need both AI writing and image generation, focus heavily on blog content, or want access to real-time information through the chatbot feature.</p>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Create Blog Posts with Writesonic</h3>
+                    <p>Generate SEO-optimized articles with AI-powered image creation included.</p>
+                    <a href="https://writesonic.com?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Writesonic →</a>
                 </div>
 
                 <h2>Getting Started Tips</h2>

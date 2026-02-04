@@ -31,6 +31,52 @@
         .logo span { color: var(--highlight); }
         nav a { color: var(--text); margin-left: 24px; font-weight: 500; }
         nav a:hover { color: var(--highlight); }
+
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--secondary);
+            min-width: 220px;
+            border-radius: 8px;
+            padding: 12px 0;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text);
+            margin: 0;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary);
+            color: var(--highlight);
+            text-decoration: none;
+        }
         .breadcrumb { padding: 20px 0 0; color: var(--text-muted); font-size: 0.9rem; }
         .breadcrumb a { color: var(--text-muted); }
         .breadcrumb a:hover { color: var(--highlight); }
@@ -363,6 +409,12 @@
 
                 <h2>Step 4: Build Your First Automation</h2>
                 <p>Start simple. Your first automation should be straightforward and high-impact.</p>
+
+                <div class="cta-box">
+                    <h3>Connect Apps with Zapier</h3>
+                    <p>Automate tasks between 5,000+ apps with the easiest-to-use automation platform.</p>
+                    <a href="https://zapier.com?ref=aipreneurtools" class="cta-btn" target="_blank" rel="noopener">Visit Zapier →</a>
+                </div>
 
                 <div class="step">
                     <h3><span class="step-number">1</span> Choose a Simple Starting Point</h3>

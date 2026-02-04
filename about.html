@@ -35,6 +35,52 @@
         .logo span { color: var(--highlight); }
         nav a { color: var(--text); margin-left: 24px; font-weight: 500; }
         nav a:hover { color: var(--highlight); }
+
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--secondary);
+            min-width: 220px;
+            border-radius: 8px;
+            padding: 12px 0;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text);
+            margin: 0;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary);
+            color: var(--highlight);
+            text-decoration: none;
+        }
         article { padding: 60px 0; }
         .page-header { text-align: center; margin-bottom: 60px; padding: 80px 0; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); }
         .page-header h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
@@ -64,10 +110,24 @@
         <div class="header-inner">
             <a href="index.html" class="logo">AI<span>Business</span>Tools</a>
             <nav>
-                <a href="index.html#tools">Tools</a>
-                <a href="index.html#articles">Guides</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+                <div class="nav-dropdown">
+                    <a href="tools.html" class="nav-link">Tools ▾</a>
+                    <div class="dropdown-content">
+                        <a href="tools.html#writing">✍️ Writing</a>
+                        <a href="tools.html#project-management">📋 Project Management</a>
+                        <a href="tools.html#automation">⚡ Automation</a>
+                        <a href="tools.html#video-audio">🎬 Video & Audio</a>
+                        <a href="tools.html#crm-marketing">📈 CRM & Marketing</a>
+                        <a href="tools.html#productivity">🚀 Productivity</a>
+                        <a href="tools.html#communication">💬 Communication</a>
+                        <a href="tools.html#finance">💰 Finance</a>
+                        <a href="tools.html#design">🎨 Design & Creative</a>
+                    </div>
+                </div>
+                <a href="comparison.html" class="nav-link">Reviews</a>
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="about.html" class="nav-link" style="color: var(--highlight);">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
