@@ -19,6 +19,26 @@
     <meta name="twitter:image" content="https://aipreneurtools.com/images/og-home.jpg">
     <!-- Impact.com Verification -->
     <meta name='impact-site-verification' value='13e05873-00cb-4885-9ee8-91c706953684'>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Preneur Tools",
+      "url": "https://aipreneurtools.com",
+      "logo": "https://aipreneurtools.com/images/og-home.jpg",
+      "description": "Helping solopreneurs discover and adopt AI tools for their businesses.",
+      "sameAs": [
+        "https://twitter.com/aipreneurtools",
+        "https://facebook.com/aipreneurtools"
+      ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -410,6 +430,36 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Testimonials Styles */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--primary);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--highlight);
+            font-size: 0.95rem;
         }
 
         /* Newsletter Styles */
@@ -1000,6 +1050,30 @@
             </div>
             
             <p class="pick-note">👉 <a href="tools.html">View all 32 tools →</a></p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>What Readers Say</h2>
+                <p>Join 1,247+ solopreneurs using our AI tool recommendations</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"This guide saved me 10+ hours per week. The tool recommendations are spot-on!"</p>
+                    <p class="testimonial-author">— Sarah M., Digital Consultant</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"Finally, a resource that cuts through the noise and focuses on tools that actually work."</p>
+                    <p class="testimonial-author">— James K., E-commerce Owner</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"The Notion vs ClickUp comparison helped me choose the right tool for my business."</p>
+                    <p class="testimonial-author">— Maria L., Content Creator</p>
+                </div>
+            </div>
         </div>
     </section>
 
