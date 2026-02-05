@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="120" rx="16" fill="url(#grad1)"/>
+  
+  <!-- Simple AI Text Logo -->
+  <text x="50%" y="70" text-anchor="middle" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="42" font-weight="800" fill="#ffffff">
+    <tspan fill="#e94560">AI</tspan>PreneurTools
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="50%" y="100" text-anchor="middle" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="400" fill="rgba(255,255,255,0.6)">AI TOOLS FOR SOLOPRENEURS</text>
+</svg>

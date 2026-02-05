@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Solopreneur's AI Toolkit - Free Guide</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --surface: #0f0f1a;
+            --white: #ffffff;
+            --light-gray: #f3f4f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: 8.5in 11in; margin: 0.75in; }
+        body { font-family: 'Segoe UI', 'Inter', sans-serif; background: var(--white); color: #1f2937; line-height: 1.7; font-size: 11pt; }
+        h1 { font-size: 32pt; font-weight: 700; color: var(--primary); margin-bottom: 16pt; line-height: 1.2; }
+        h2 { font-size: 24pt; font-weight: 700; color: var(--primary); margin: 28pt 0 14pt 0; padding-top: 14pt; border-top: 3px solid var(--highlight); }
+        h3 { font-size: 18pt; font-weight: 600; color: var(--secondary); margin: 20pt 0 10pt 0; }
+        h4 { font-size: 14pt; font-weight: 600; color: var(--accent); margin: 16pt 0 8pt 0; }
+        p { margin-bottom: 12pt; color: #374151; }
+        .cover-page { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%); min-height: 10.5in; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60pt; position: relative; overflow: hidden; }
+        .cover-page::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 200%; background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 50%); }
+        .cover-page h1 { font-size: 42pt; color: var(--white); margin-bottom: 16pt; }
+        .cover-page .subtitle { font-size: 20pt; color: rgba(255,255,255,0.9); margin-bottom: 24pt; }
+        .cover-page .tagline { font-size: 14pt; color: var(--highlight); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40pt; }
+        .cover-page .badge { background: var(--highlight); color: var(--white); padding: 10pt 24pt; border-radius: 30px; font-size: 12pt; font-weight: 600; }
+        .icons-row { display: flex; justify-content: center; gap: 20pt; margin: 30pt 0; }
+        .icon-circle { width: 50pt; height: 50pt; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20pt; }
+        .cta-button { display: inline-block; background: var(--highlight); color: var(--white); padding: 12pt 24pt; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 12pt; transition: all 0.3s ease; border: none; cursor: pointer; }
+        .cta-button:hover { background: #d13d56; transform: translateY(-2px); }
+        .callout { padding: 16pt 20pt; border-radius: 10px; margin: 20pt 0; border-left: 5px solid; }
+        .callout.info { background: #eff6ff; border-color: #3b82f6; }
+        .callout.success { background: #ecfdf5; border-color: var(--success); }
+        .callout.warning { background: #fffbeb; border-color: var(--warning); }
+        .callout.highlight { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-color: var(--highlight); }
+        .callout-title { font-weight: 700; font-size: 12pt; margin-bottom: 8pt; }
+        .pro-tip { background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); color: var(--white); padding: 16pt 20pt; border-radius: 10px; margin: 20pt 0; }
+        .pro-tip-title { font-weight: 700; font-size: 12pt; margin-bottom: 8pt; color: var(--highlight); }
+        .tool-card { background: var(--white); border: 1px solid #e5e7eb; border-radius: 12px; padding: 24pt; margin: 20pt 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .tool-header { display: flex; align-items: center; gap: 16pt; margin-bottom: 16pt; padding-bottom: 16pt; border-bottom: 2px solid var(--light-gray); }
+        .tool-number { background: var(--primary); color: var(--white); width: 40pt; height: 40pt; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16pt; }
+        .tool-title { flex: 1; }
+        .tool-title h3 { margin: 0; font-size: 20pt; color: var(--primary); }
+        .tool-tagline { color: var(--highlight); font-size: 12pt; margin: 4pt 0 0 0; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 24pt; margin: 20pt 0; }
+        .pricing-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 10px; padding: 16pt; margin: 16pt 0; }
+        .pricing-row { display: flex; justify-content: space-between; padding: 8pt 0; border-bottom: 1px dashed #bae6fd; }
+        .pricing-row:last-child { border-bottom: none; }
+        .pricing-label { font-weight: 600; color: var(--secondary); }
+        .pricing-value { color: var(--primary); font-weight: 600; }
+        .pricing-highlight { background: var(--highlight); color: var(--white); padding: 2pt 8pt; border-radius: 4px; font-size: 9pt; }
+        .mistake-card { background: #fef3c7; border-left: 4px solid var(--warning); padding: 16pt; margin: 12pt 0; border-radius: 0 8px 8px 0; }
+        .mistake-title { font-weight: 700; color: #92400e; font-size: 12pt; margin-bottom: 8pt; }
+        .mistake-solution { color: #78350f; }
+        .metrics-row { display: flex; justify-content: space-between; gap: 16pt; margin: 24pt 0; }
+        .metric-box { flex: 1; background: var(--white); border: 2px solid var(--primary); border-radius: 12px; padding: 20pt; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .metric-value { font-size: 36pt; font-weight: 700; color: var(--highlight); line-height: 1; }
+        .metric-label { font-size: 11pt; color: var(--secondary); margin-top: 8pt; font-weight: 500; }
+        .section-header { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: var(--white); padding: 24pt; border-radius: 12px; margin: 32pt 0 24pt 0; text-align: center; }
+        .section-header h2 { margin: 0; padding: 0; border: none; color: var(--white); }
+        .section-header p { color: rgba(255,255,255,0.9); margin: 8pt 0 0 0; }
+        .decision-tree { background: var(--light-gray); padding: 24pt; border-radius: 12px; margin: 24pt 0; }
+        .decision-tree h3 { text-align: center; margin-top: 0; }
+        .decision-item { display: flex; align-items: center; padding: 12pt 0; border-bottom: 1px solid #d1d5db; }
+        .decision-item:last-child { border-bottom: none; }
+        .decision-label { font-weight: 600; color: var(--primary); min-width: 150pt; }
+        .decision-arrow { color: var(--highlight); margin: 0 12pt; }
+        .decision-target { color: var(--accent); font-weight: 500; }
+        .page-break { page-break-before: always; }
+        .page-footer { text-align: center; padding: 20pt; color: var(--text-muted); font-size: 9pt; border-top: 1px solid #e5e7eb; margin-top: 32pt; }
+        .container { max-width: 7in; margin: 0 auto; padding: 0 0.25in; }
+        .highlight-text { color: var(--highlight); font-weight: 600; }
+        @media print { .cta-button { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    </style>
+</head>
+<body>
+    <div class="cover-page">
+        <div class="icons-row">
+            <div class="icon-circle">🤖</div>
+            <div class="icon-circle">⚡</div>
+            <div class="icon-circle">📊</div>
+            <div class="icon-circle">🎯</div>
+            <div class="icon-circle">🚀</div>
+        </div>
+        <h1>The Solopreneur's AI Toolkit</h1>
+        <p class="subtitle">10 Essential AI Tools to Save 10+ Hours Every Week</p>
+        <div class="badge">Free Guide</div>
+        <p style="margin-top: 40pt; color: rgba(255,255,255,0.8); font-size: 12pt;">A practical, actionable guide for busy solopreneurs</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="container">
+        <h2>Introduction: The Solopreneur's Reality</h2>
+        <div class="callout warning">
+            <div class="callout-title">⚠️ The Uncomfortable Truth</div>
+            <p>You're working 60+ hours a week. You're drowning in repetitive tasks—writing emails, creating content, managing social media, invoicing clients, scheduling appointments.</p>
+            <p style="margin-top: 12pt;"><strong>The average solopreneur spends 60% of their time on tasks that could be automated.</strong></p>
+        </div>
+        <h3>The AI Solution</h3>
+        <p>This guide introduces 10 AI-powered tools that top-performing solopreneurs use to reclaim their time.</p>
+        <div class="metrics-row">
+            <div class="metric-box"><div class="metric-value">-50%</div><div class="metric-label">Writing Time</div></div>
+            <div class="metric-box"><div class="metric-value">-60%</div><div class="metric-label">Social Media</div></div>
+            <div class="metric-box"><div class="metric-value">-70%</div><div class="metric-label">Meeting Prep</div></div>
+            <div class="metric-box"><div class="metric-value">-55%</div><div class="metric-label">Admin Tasks</div></div>
+        </div>
+        <div class="page-footer">Page 1 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <div class="section-header">
+            <h2>🚀 Quick-Start Framework</h2>
+            <p>Getting Started in 5 Minutes Per Tool</p>
+        </div>
+        <div class="decision-tree">
+            <h3>🔍 Which Tool Should You Start With?</h3>
+            <p style="text-align: center;"><strong>What's your biggest time sink?</strong></p>
+            <div class="decision-item"><span class="decision-label">📝 Writing/Content</span><span class="decision-arrow">→</span><span class="decision-target">Section 3</span></div>
+            <div class="decision-item"><span class="decision-label">📱 Social Media</span><span class="decision-arrow">→</span><span class="decision-target">Section 6</span></div>
+            <div class="decision-item"><span class="decision-label">📋 Tasks/Projects</span><span class="decision-arrow">→</span><span class="decision-target">Section 4</span></div>
+            <div class="decision-item"><span class="decision-label">💬 Client Calls</span><span class="decision-arrow">→</span><span class="decision-target">Section 5</span></div>
+            <div class="decision-item"><span class="decision-label">💰 Finance</span><span class="decision-arrow">→</span><span class="decision-target">Section 7</span></div>
+            <div class="decision-item"><span class="decision-label">🎨 Graphics</span><span class="decision-arrow">→</span><span class="decision-target">Section 8</span></div>
+        </div>
+        <div class="page-footer">Page 2 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <div class="section-header">
+            <h2>📝 Section 3: Content Creation Tools</h2>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">3.1</div>
+                <div class="tool-title">
+                    <h3>🤖 Claude</h3>
+                    <p class="tool-tagline">The AI Assistant That Thinks Deeply</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Claude excels at complex writing, analysis, and creative work with 200K+ token context.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Long-form content</li><li>Research synthesis</li><li>Strategic planning</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Limited</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Pro</span><span class="pricing-value">$20/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Pro Tip</div>
+                <p>Be specific in prompts. "Write a 500-word intro about AI tools" works better than "write about marketing."</p>
+            </div>
+            <div style="text-align: center;"><a href="https://claude.ai" class="cta-button">Try Claude Free →</a></div>
+            <div class="mistake-card"><div class="mistake-title">⚠️ Common Mistakes</div><p class="mistake-solution">Being too vague, not providing context, accepting first responses without iteration.</p></div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">3.2</div>
+                <div class="tool-title">
+                    <h3>✍️ Jasper</h3>
+                    <p class="tool-tagline">Marketing Copy That Converts</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Marketing copy templates trained on proven frameworks for ads, social, emails.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Social media captions</li><li>Email campaigns</li><li>Website copy</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Trial</span><span class="pricing-value">7-day free</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Creator</span><span class="pricing-value">$39/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Pro Tip</div><p>Create a "Brand Voice" profile for consistent tone.</p></div>
+            <div style="text-align: center;"><a href="https://jasper.ai" class="cta-button">Start Free Trial →</a></div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">3.3</div>
+                <div class="tool-title">
+                    <h3>✅ Grammarly</h3>
+                    <p class="tool-tagline">Write with Confidence</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Catches errors and suggests improvements for clarity, tone, professionalism.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Business emails</li><li>Website copy</li><li>Client communications</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Basic</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Premium</span><span class="pricing-value">$12/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Quick Win</div><p>Use "Tone Detector" before sending important client emails.</p></div>
+            <div style="text-align: center;"><a href="https://grammarly.com" class="cta-button">Install Grammarly →</a></div>
+        </div>
+        <div class="page-footer">Page 3-4 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <div class="section-header">
+            <h2>📋 Section 4: Productivity & Organization</h2>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">4.1</div>
+                <div class="tool-title">
+                    <h3>📝 Notion</h3>
+                    <p class="tool-tagline">Your All-in-One Workspace</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Notes, databases, documents, and project management in one flexible platform.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Knowledge management</li><li>Project tracking</li><li>Content calendars</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Personal</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Plus</span><span class="pricing-value">$10/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;"><a href="https://notion.so" class="cta-button">Try Notion Free →</a></div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">4.2</div>
+                <div class="tool-title">
+                    <h3>✓ Todoist</h3>
+                    <p class="tool-tagline">Organize Your Work, Live Better</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Natural language task entry. Type "Submit report Friday at 3pm" and it sets reminders.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Daily task management</li><li>Recurring tasks</li><li>Client follow-ups</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Basic</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Pro</span><span class="pricing-value">$5/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Hack</div><p>Use "Today" view ruthlessly—only 3-5 tasks that MUST be completed.</p></div>
+            <div style="text-align: center;"><a href="https://todoist.com" class="cta-button">Download Todoist →</a></div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">4.3</div>
+                <div class="tool-title">
+                    <h3>🎥 Loom</h3>
+                    <p class="tool-tagline">Asynchronous Video Messaging</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Replaces long emails/meetings with quick, shareable videos.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Client onboarding</li><li>Product demos</li><li>Team updates</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Limited</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Pro</span><span class="pricing-value">$12/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Best Practice</div><p>Keep videos under 3 minutes for higher engagement.</p></div>
+            <div style="text-align: center;"><a href="https://loom.com" class="cta-button">Record Your First Video →</a></div>
+        </div>
+        <div class="page-footer">Page 5 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <div class="section-header">
+            <h2>💬 Section 5: Communication Tools</h2>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">5.1</div>
+                <div class="tool-title">
+                    <h3>🎙️ Otter.ai</h3>
+                    <p class="tool-tagline">Meeting Notes That Write Themselves</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Real-time transcription for meetings, interviews, calls with searchable summaries.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Client meetings</li><li>Podcast interviews</li><li>Webinar attendance</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">300 min/mo</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Pro</span><span class="pricing-value">$17/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Time Saver</div><p>Set up auto-join for calendar events to record and transcribe automatically.</p></div>
+            <div style="text-align: center;"><a href="https://otter.ai" class="cta-button">Try Otter Free →</a></div>
+        </div>
+        <div class="page-footer">Page 6 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <div class="section-header">
+            <h2>📱 Section 6: Marketing & Social Media</h2>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">6.1</div>
+                <div class="tool-title">
+                    <h3>🎨 Canva</h3>
+                    <p class="tool-tagline">Design for Everyone</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Drag-and-drop design with AI features and thousands of templates.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Social graphics</li><li>Presentations</li><li>Marketing materials</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Basic</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Pro</span><span class="pricing-value">$13/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Pro Tip</div><p>Set up Brand Kit (colors, fonts, logos) first for consistency.</p></div>
+            <div style="text-align: center;"><a href="https://canva.com" class="cta-button">Start Designing →</a></div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">6.2</div>
+                <div class="tool-title">
+                    <h3>📊 Buffer</h3>
+                    <p class="tool-tagline">Social Media Made Simple</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Scheduling, analytics, and engagement across all social platforms.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Content scheduling</li><li>Performance analytics</li><li>Multi-platform management</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Limited</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Premium</span><span class="pricing-value">$6/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Best Time to Post</div><p>Buffer shows your audience's most active times—use these insights.</p></div>
+            <div style="text-align: center;"><a href="https://buffer.com" class="cta-button">Schedule Your First Post →</a></div>
+        </div>
+        <div class="page-footer">Page 7 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <div class="section-header">
+            <h2>💰 Section 7: Finance & Operations</h2>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">7.1</div>
+                <div class="tool-title">
+                    <h3>📈 Wave</h3>
+                    <p class="tool-tagline">Free Accounting Software</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Invoicing, receipts, and financial reports—completely free.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Invoicing clients</li><li>Expense tracking</li><li>Financial reporting</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Core</span><span class="pricing-value">FREE</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Add-ons</span><span class="pricing-value">Optional</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Money-Saving Tip</div><p>Wave's free invoicing saves $15-50/month vs paid alternatives.</p></div>
+            <div style="text-align: center;"><a href="https://waveapps.com" class="cta-button">Start Invoicing Free →</a></div>
+        </div>
+
+        <div class="section-header">
+            <h2>🎨 Section 8: Design & Visual Tools</h2>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">8.1</div>
+                <div class="tool-title">
+                    <h3>🖼️ Midjourney</h3>
+                    <p class="tool-tagline">Generate Stunning Images from Text</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Creates unique images from text descriptions—commercial use allowed.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Social media visuals</li><li>Blog headers</li><li>Marketing materials</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Basic</span><span class="pricing-value">$10/mo</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Standard</span><span class="pricing-value">$30/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Prompt Tip</div><p>"Professional headshot on blue background" works better than just "person."</p></div>
+            <div style="text-align: center;"><a href="https://midjourney.com" class="cta-button">Generate Your First Image →</a></div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-number">8.2</div>
+                <div class="tool-title">
+                    <h3>✂️ Remove.bg</h3>
+                    <p class="tool-tagline">One-Click Background Removal</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h4>What It Does</h4>
+                    <p>Automatically removes backgrounds from images in seconds.</p>
+                    <h4>Best For</h4>
+                    <ul><li>Product photos</li><li>Profile pictures</li><li>Social content</li></ul>
+                </div>
+                <div>
+                    <div class="pricing-box">
+                        <div class="pricing-row"><span class="pricing-label">Free</span><span class="pricing-value">Low-res</span></div>
+                        <div class="pricing-row"><span class="pricing-label">Premium</span><span class="pricing-value">$10/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;"><a href="https://remove.bg" class="cta-button">Remove Background Free →</a></div>
+        </div>
+        <div class="page-footer">Page 8 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <h2>📋 Your 30-Day Implementation Plan</h2>
+        
+        <div class="section-header">
+            <h3>Week 1: Foundation 🚀</h3>
+        </div>
+        <ul class="checklist">
+            <li>Identify your top 3 business challenges</li>
+            <li>Sign up for 2-3 tools from this guide</li>
+            <li>Complete onboarding for each tool</li>
+            <li>Execute your first task in each tool</li>
+            <li>Track baseline time spent on key tasks</li>
+        </ul>
+
+        <div class="section-header">
+            <h3>Week 2: Integration 🔗</h3>
+        </div>
+        <ul class="checklist">
+            <li>Connect tools to your existing workflows</li>
+            <li>Create templates for recurring tasks</li>
+            <li>Track time saved on manual tasks</li>
+            <li>Identify which tools provide most value</li>
+        </ul>
+
+        <div class="section-header">
+            <h3>Week 3: Optimization ⚡</h3>
+        </div>
+        <ul class="checklist">
+            <li>Refine your processes based on experience</li>
+            <li>Explore advanced features</li>
+            <li>Share tools with team members if applicable</li>
+            <li>Document your workflow for consistency</li>
+        </ul>
+
+        <div class="section-header">
+            <h3>Week 4: Evaluation 📊</h3>
+        </div>
+        <ul class="checklist">
+            <li>Assess ROI of each tool (time saved × value)</li>
+            <li>Decide which paid upgrades make sense</li>
+            <li>Identify gaps for additional tools</li>
+            <li>Consider upgrading to Master Class</li>
+        </ul>
+        <div class="page-footer">Page 9 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <h2>📊 Tool Comparison Matrix</h2>
+
+        <table>
+            <thead>
+                <tr><th>Tool</th><th>Best For</th><th>Free Tier</th><th>Paid Tier</th><th>Setup</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Claude</strong></td><td>Writing, analysis</td><td>Limited</td><td>$20/mo</td><td>5 min</td></tr>
+                <tr><td><strong>Jasper</strong></td><td>Marketing copy</td><td>7-day trial</td><td>$39/mo</td><td>5 min</td></tr>
+                <tr><td><strong>Grammarly</strong></td><td>Editing</td><td>Basic</td><td>$12/mo</td><td>3 min</td></tr>
+                <tr><td><strong>Notion</strong></td><td>Workspace</td><td>Personal</td><td>$10/mo</td><td>5 min</td></tr>
+                <tr><td><strong>Todoist</strong></td><td>Task management</td><td>Basic</td><td>$5/mo</td><td>3 min</td></tr>
+                <tr><td><strong>Loom</strong></td><td>Video messaging</td><td>Limited</td><td>$12/mo</td><td>3 min</td></tr>
+                <tr><td><strong>Otter.ai</strong></td><td>Transcription</td><td>300 min/mo</td><td>$17/mo</td><td>3 min</td></tr>
+                <tr><td><strong>Canva</strong></td><td>Design</td><td>Basic</td><td>$13/mo</td><td>5 min</td></tr>
+                <tr><td><strong>Buffer</strong></td><td>Social scheduling</td><td>Limited</td><td>$6/mo</td><td>5 min</td></tr>
+                <tr><td><strong>Wave</strong></td><td>Accounting</td><td>Full</td><td>Add-ons</td><td>5 min</td></tr>
+                <tr><td><strong>Midjourney</strong></td><td>Image generation</td><td>Trial</td><td>$10/mo</td><td>5 min</td></tr>
+                <tr class="table-highlight"><td><strong>Remove.bg</strong></td><td>Background removal</td><td>Low-res</td><td>$10/mo</td><td>1 min</td></tr>
+            </tbody>
+        </table>
+
+        <h2>⚠️ 7 Mistakes to Avoid</h2>
+
+        <div class="mistake-card">
+            <div class="mistake-title">Mistake #1: Trying Everything at Once</div>
+            <p class="mistake-solution"><strong>Solution:</strong> Start with 1-2 tools that address your biggest pain point. Master them before adding more.</p>
+        </div>
+
+        <div class="mistake-card">
+            <div class="mistake-title">Mistake #2: Not Leveraging Free Tiers</div>
+            <p class="mistake-solution"><strong>Solution:</strong> Every tool offers free access or trials. Maximize free value before paying.</p>
+        </div>
+
+        <div class="mistake-card">
+            <div class="mistake-title">Mistake #3: Abandoning Tools Too Quickly</div>
+            <p class="mistake-solution"><strong>Solution:</strong> Give each tool at least 2 weeks. Learning curves exist, but payoff is worth it.</p>
+        </div>
+
+        <div class="mistake-card">
+            <div class="mistake-title">Mistake #4: Ignoring Documentation</div>
+            <p class="mistake-solution"><strong>Solution:</strong> Most tools have excellent help centers. Search before asking for help.</p>
+        </div>
+
+        <div class="mistake-card">
+            <div class="mistake-title">Mistake #5: Not Tracking Results</div>
+            <p class="mistake-solution"><strong>Solution:</strong> Measure time saved or tasks completed. Document before/after comparisons.</p>
+        </div>
+        <div class="page-footer">Page 10 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Do I really need all 10 tools?</div>
+            <div class="faq-answer">A: No. Start with 1-2 tools that address your biggest time drain. Add more only when you've mastered the first ones. Most solopreneurs use 3-5 tools regularly.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How much do these tools cost total?</div>
+            <div class="faq-answer">A: If you use free tiers: $0. If you upgrade to paid tiers: $30-80/month total. Compare this to hiring help ($500+/month) or your hourly rate × time saved.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: I'm not tech-savvy. Will this work for me?</div>
+            <div class="faq-answer">A: Yes. Every tool was selected for ease of use. Most have free tiers and onboarding wizards. If you can use email, you can use these tools.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How long until I see results?</div>
+            <div class="faq-answer">A: Most users save 2-4 hours in the first week. Consistent use over 30 days typically reveals 10+ hours of weekly time savings.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: What if a tool doesn't work for my business?</div>
+            <div class="faq-answer">A: That's why we start with free tiers. Test each tool for 2 weeks. If it doesn't fit, move on. The right tool should feel intuitive.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Is my data safe with AI tools?</div>
+            <div class="faq-answer">A: Major tools like Claude, Notion, and Grammarly have strong security policies. Always check privacy settings and avoid sharing sensitive client data.</div>
+        </div>
+
+        <h2>📈 Success Metrics to Track</h2>
+
+        <div class="callout info">
+            <div class="callout-title">📝 Before You Start (Baseline)</div>
+            <p>Record: Hours spent on [biggest time sink] per week, Number of tasks completed per week, Time spent on secondary time sinks.</p>
+        </div>
+
+        <div class="callout success">
+            <div class="callout-title">✅ After 30 Days (Results)</div>
+            <p>Compare: Hours saved per week, Tasks completed per week, Time reduction %, Quality improvements, Revenue impact.</p>
+        </div>
+        <div class="page-footer">Page 11 | The Solopreneur's AI Toolkit</div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container">
+        <div class="upgrade-section">
+            <h2>🚀 Ready to Transform Your Business Completely?</h2>
+            <p>If you found value in these 10 tools, you'll love the <strong>Master Class AI Tools Guide</strong>—the complete toolkit for ambitious solopreneurs.</p>
+
+            <div class="price-box">
+                <div class="price-original">$47</div>
+                <div class="price-current">$37</div>
+                <div class="price-period">one-time • launch price</div>
+            </div>
+
+            <h3>What's Included in Master Class</h3>
+            <div class="two-column" style="text-align: left; margin-top: 16pt;">
+                <div>
+                    <ul>
+                        <li>75+ tools across 9 categories</li>
+                        <li>Detailed implementation guides</li>
+                        <li>10+ templates & worksheets</li>
+                        <li>Quarterly updates</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>Detailed comparison matrices</li>
+                        <li>Decision frameworks</li>
+                        <li>Private community access</li>
+                        <li>Monthly Q&A sessions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 24pt;">
+                <a href="#" class="cta-button large">Get the Complete Toolkit →</a>
+            </div>
+
+            <p style="margin-top: 16pt; font-size: 11pt;"><strong>100% Money-Back Guarantee.</strong> Try 30 days. If you don't save 10+ hours, full refund.</p>
+        </div>
+
+        <h2>🎯 Your Next Steps</h2>
+
+        <div class="metrics-row">
+            <div class="metric-box" style="border-color: var(--success);">
+                <div class="metric-value" style="font-size: 24pt;">Today</div>
+                <div class="metric-label">5 minutes • Identify challenge → Sign up → Complete task</div>
+            </div>
+            <div class="metric-box" style="border-color: var(--accent);">
+                <div class="metric-value" style="font-size: 24pt;">This Week</div>
+                <div class="metric-label">30 minutes • Try 2-3 tools → Complete checklist</div>
+            </div>
+            <div class="metric-box" style="border-color: var(--highlight);">
+                <div class="metric-value" style="font-size: 24pt;">This Month</div>
+                <div class="metric-label">2 hours • Evaluate → Optimize → Consider upgrade</div>
+            </div>
+        </div>
+
+        <h2>📚 Quick Reference</h2>
+
+        <table>
+            <thead>
+                <tr><th>Category</th><th>Top Tool</th><th>Key Benefit</th><th>Time Saved</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Writing</td><td>Claude</td><td>AI assistant</td><td>5+ hrs/week</td></tr>
+                <tr><td>Copywriting</td><td>Jasper</td><td>Marketing templates</td><td>3+ hrs/week</td></tr>
+                <tr><td>Editing</td><td>Grammarly</td><td>Error-free writing</td><td>2+ hrs/week</td></tr>
+                <tr><td>Organization</td><td>Notion</td><td>All-in-one workspace</td><td>4+ hrs/week</td></tr>
+                <tr><td>Tasks</td><td>Todoist</td><td>Task automation</td><td>3+ hrs/week</td></tr>
+                <tr><td>Video</td><td>Loom</td><td>Async communication</td><td>2+ hrs/week</td></tr>
+                <tr><td>Transcription</td><td>Otter.ai</td><td>Auto meeting notes</td><td>3+ hrs/week</td></tr>
+                <tr><td>Design</td><td>Canva</td><td>Professional graphics</td><td>5+ hrs/week</td></tr>
+                <tr><td>Social</td><td>Buffer</td><td>Schedule + analytics</td><td>4+ hrs/week</td></tr>
+                <tr><td>Finance</td><td>Wave</td><td>Free accounting</td><td>3+ hrs/week</td></tr>
+                <tr><td>Images</td><td>Midjourney</td><td>AI-generated visuals</td><td>4+ hrs/week</td></tr>
+                <tr><td>Editing</td><td>Remove.bg</td><td>One-click backgrounds</td><td>1+ hrs/week</td></tr>
+            </tbody>
+        </table>
+
+        <h2>🔗 Resource Links</h2>
+        <div class="two-column">
+            <div>
+                <p><strong>Tools:</strong></p>
+                <ul style="font-size: 10pt;">
+                    <li>claude.ai</li>
+                    <li>jasper.ai</li>
+                    <li>grammarly.com</li>
+                    <li>notion.so</li>
+                    <li>todoist.com</li>
+                    <li>loom.com</li>
+                </ul>
+            </div>
+            <div>
+                <p><strong>Tools:</strong></p>
+                <ul style="font-size: 10pt;">
+                    <li>otter.ai</li>
+                    <li>canva.com</li>
+                    <li>buffer.com</li>
+                    <li>waveapps.com</li>
+                    <li>midjourney.com</li>
+                    <li>remove.bg</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <p><strong>The Solopreneur's AI Toolkit</strong></p>
+            <p>© 2026 • Last updated: February 2026</p>
+        </div>
+    </div>
+</body>
+</html>
