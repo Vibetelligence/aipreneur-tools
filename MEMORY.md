@@ -60,15 +60,26 @@ Building an AI tools affiliate website (aipreneurtools.com) to help solopreneurs
 
 ### Solopreneur AI Toolkit (Lead Magnet)
 - **Goal:** Email-gated interactive guide for 12 AI tools
-- **Landing Page:** ConvertKit form integrated (form ID: 9049288)
+- **Landing Page:** ConvertKit form integrated (form ID: **9053254** - updated Feb 2026)
+- **Form Header:** "Get Our Free AI Tools Guide 2026" (#e94560)
+- **Form Subtext:** "Join 1,000+ solopreneurs saving 10+ hours/week with AI"
+- **Form Footer:** "We won't send you spam. Unsubscribe at any time." (#b6b6b6)
 - **Redirect:** thank-you.html → guide-web.html
 - **Interactive Features:** ROI calculator, tool quiz, FAQ accordion, checklist
 - **12 Tools:** Claude, Jasper, Grammarly, Notion, Todoist, Loom, Otter.ai, Canva, Buffer, Wave, Midjourney, Remove.bg
 
+## Recent Fixes (Feb 2026)
+- Cleaned up broken forms (removed visible JSON/code)
+- Removed broken "Read Guide" buttons from tools page (10 removed)
+- All 8 forms now consistent with custom headers
+
 ## Next Actions
 1. ✅ Fix remaining Cloudflare 403 on aipreneurtools.com — **COMPLETED**
 2. ✅ Create ConvertKit-integrated landing page — **COMPLETED**
-3. Deploy lead magnet to Cloudflare Pages
-4. Create thank-you page
-5. Continue affiliate applications
-6. Create new articles (Real Estate AI, ChatGPT Alternatives)
+3. ✅ Update all forms to new Kit form ID 9053254 — **COMPLETED**
+4. ✅ Fix broken form HTML (visible code issue) — **COMPLETED**
+5. ✅ Clean up tools page guide links — **COMPLETED**
+6. Deploy lead magnet to Cloudflare Pages
+7. Create thank-you page
+8. Continue affiliate applications
+9. Create new articles (Video AI, CRM Marketing guides)
